@@ -13,8 +13,8 @@
     <eOperations name="showInterfaces" lowerBound="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showConcreteComponents"/>
-    <eOperations name="showComponentConnections"/>
+    <eOperations name="showConcreteComponents" lowerBound="1"/>
+    <eOperations name="showComponentConnections" lowerBound="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
@@ -27,35 +27,35 @@
         eType="#//EAllocationViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showContainers"/>
-    <eOperations name="showContainerConnections"/>
+    <eOperations name="showContainers" lowerBound="1"/>
+    <eOperations name="showContainerConnections" lowerBound="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showComponentAllocations"/>
+    <eOperations name="showComponentAllocations" lowerBound="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="NewDataType1" instanceClassName="java.lang.void"/>
   <eClassifiers xsi:type="ecore:EClass"/>
   <eClassifiers xsi:type="ecore:EClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="ERepository">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
-        eType="#//EInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
-        eType="#//EComponent"/>
+        eType="#//EComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//EInterface" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ESignature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
-        eType="#//EParameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" lowerBound="1"
         eType="#//PossibleReturnTypes" defaultValueLiteral="Void"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//EParameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EInterface">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signature" upperBound="-1"
-        eType="#//ESignature"/>
+        eType="#//ESignature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EParameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
@@ -75,11 +75,5 @@
     <eLiterals name="STRING" value="9" literal="String"/>
     <eLiterals name="VOID" value="10" literal="Void"/>
     <eLiterals name="EOBJECT" value="11"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ESystem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
-        eType="#//EInterface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
-        eType="#//EComponent"/>
   </eClassifiers>
 </ecore:EPackage>

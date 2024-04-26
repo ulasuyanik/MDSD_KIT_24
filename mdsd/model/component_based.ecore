@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="component_based" nsURI="http://www.example.org/component_based"
+    nsPrefix="component_based">
+  <eClassifiers xsi:type="ecore:EClass" name="EViewPoint" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EViewType" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ESystemIndependentViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repositoryviewtype" lowerBound="1"
+        eType="#//ERepositoryViewType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ERepositoryViewType" eSuperTypes="#//EViewType">
+    <eOperations name="showComponents" lowerBound="1"/>
+    <eOperations name="showInterfaces" lowerBound="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType" eSuperTypes="#//EViewType">
+    <eOperations name="showConcreteComponents"/>
+    <eOperations name="showComponentConnections"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
+        eType="#//EAssemblyViewType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDeploymentViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentviewtype" lowerBound="1"
+        eType="#//EEnvironmentViewType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationviewtype" lowerBound="1"
+        eType="#//EAllocationViewType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType" eSuperTypes="#//EViewType">
+    <eOperations name="showContainers"/>
+    <eOperations name="showContainerConnections"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType" eSuperTypes="#//EViewType">
+    <eOperations name="showComponentAllocations"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NewDataType1" instanceClassName="java.lang.void"/>
+  <eClassifiers xsi:type="ecore:EClass"/>
+  <eClassifiers xsi:type="ecore:EClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ERepository">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//EInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+        eType="#//EComponent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ESignature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//EParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" lowerBound="1"
+        eType="#//PossibleReturnTypes" defaultValueLiteral="Void"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EInterface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" upperBound="-1"
+        eType="#//ESignature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PossibleReturnTypes"
+        defaultValueLiteral="Boolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PossibleReturnTypes">
+    <eLiterals name="BOOLEAN" literal="Boolean"/>
+    <eLiterals name="CHAR" value="1" literal="Char"/>
+    <eLiterals name="DATE" value="2" literal="Date"/>
+    <eLiterals name="DOUBLE" value="3" literal="Double"/>
+    <eLiterals name="FLOAT" value="4" literal="Float"/>
+    <eLiterals name="LIST" value="5" literal="List"/>
+    <eLiterals name="INT" value="6" literal="Int"/>
+    <eLiterals name="LONG" value="7" literal="Long"/>
+    <eLiterals name="MAP" value="8" literal="Map"/>
+    <eLiterals name="STRING" value="9" literal="String"/>
+    <eLiterals name="VOID" value="10" literal="Void"/>
+    <eLiterals name="EOBJECT" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ESystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//EInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+        eType="#//EComponent"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/mdsd/src-gen" creationIcons="false" editDirectory="/mdsd.edit/src-gen"
+    editorDirectory="/mdsd.editor/src-gen" modelPluginID="mdsd" modelName="Component_based"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>component_based.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Component_based" basePackage="mdsd" disposableProviderFactory="true"
+      ecorePackage="component_based.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="component_based.ecore#//PossibleReturnTypes">
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/LIST"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/MAP"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/VOID"/>
+      <genEnumLiterals ecoreEnumLiteral="component_based.ecore#//PossibleReturnTypes/EOBJECT"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="component_based.ecore#//NewDataType1"/>
+    <genClasses ecoreClass="component_based.ecore#//EViewPoint"/>
+    <genClasses ecoreClass="component_based.ecore#//EViewType"/>
+    <genClasses ecoreClass="component_based.ecore#//ESystemIndependentViewPoint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//ESystemIndependentViewPoint/repositoryviewtype"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//ERepositoryViewType">
+      <genOperations ecoreOperation="component_based.ecore#//ERepositoryViewType/showComponents"/>
+      <genOperations ecoreOperation="component_based.ecore#//ERepositoryViewType/showInterfaces"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EAssemblyViewType">
+      <genOperations ecoreOperation="component_based.ecore#//EAssemblyViewType/showConcreteComponents"/>
+      <genOperations ecoreOperation="component_based.ecore#//EAssemblyViewType/showComponentConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EAssemblyViewPoint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyViewPoint/assemblyviewtype"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EDeploymentViewPoint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EDeploymentViewPoint/environmentviewtype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EDeploymentViewPoint/allocationviewtype"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EEnvironmentViewType">
+      <genOperations ecoreOperation="component_based.ecore#//EEnvironmentViewType/showContainers"/>
+      <genOperations ecoreOperation="component_based.ecore#//EEnvironmentViewType/showContainerConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EAllocationViewType">
+      <genOperations ecoreOperation="component_based.ecore#//EAllocationViewType/showComponentAllocations"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//%"/>
+    <genClasses ecoreClass="component_based.ecore#//%.1"/>
+    <genClasses ecoreClass="component_based.ecore#//ERepository">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ERepository/interface"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ERepository/component"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//ESignature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//ESignature/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ESignature/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//ESignature/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EComponent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EInterface/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//EInterface/signature"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//EParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EParameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//ESystem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ESystem/interface"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ESystem/component"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

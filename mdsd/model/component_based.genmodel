@@ -74,5 +74,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EParameter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EParameter/type"/>
     </genClasses>
+    <genClasses ecoreClass="component_based.ecore#//NewEClass17"/>
   </genPackages>
 </genmodel:GenModel>

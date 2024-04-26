@@ -45,7 +45,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ESignature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" lowerBound="1"
-        eType="#//PossibleReturnTypes" defaultValueLiteral="Void"/>
+        eType="#//PossibleReturnTypes" defaultValueLiteral="Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//EParameter" containment="true"/>
   </eClassifiers>
@@ -60,7 +60,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="EParameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PossibleReturnTypes"
-        defaultValueLiteral="Boolean"/>
+        defaultValueLiteral="Double"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PossibleReturnTypes">
     <eLiterals name="BOOLEAN" literal="Boolean"/>
@@ -76,4 +76,5 @@
     <eLiterals name="VOID" value="10" literal="Void"/>
     <eLiterals name="EOBJECT" value="11"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NewEClass17"/>
 </ecore:EPackage>

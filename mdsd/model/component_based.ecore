@@ -2,6 +2,11 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="component_based" nsURI="http://www.example.org/component_based"
     nsPrefix="component_based">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="EViewPoint" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="EViewType" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ESystemIndependentViewPoint" eSuperTypes="#//EViewPoint">
@@ -9,12 +14,12 @@
         eType="#//ERepositoryViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ERepositoryViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showComponents" lowerBound="1"/>
-    <eOperations name="showInterfaces" lowerBound="1"/>
+    <eOperations name="showComponents"/>
+    <eOperations name="showInterfaces"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showConcreteComponents" lowerBound="1"/>
-    <eOperations name="showComponentConnections" lowerBound="1"/>
+    <eOperations name="showConcreteComponents"/>
+    <eOperations name="showComponentConnections"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
@@ -27,15 +32,15 @@
         eType="#//EAllocationViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showContainers" lowerBound="1"/>
-    <eOperations name="showContainerConnections" lowerBound="1"/>
+    <eOperations name="showContainers"/>
+    <eOperations name="showContainerConnections"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
         eType="#//EAllocationContext" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="shows" upperBound="-1"
         eType="#//EContainer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showComponentAllocations" lowerBound="1"/>
+    <eOperations name="showComponentAllocations"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="EVoid" instanceClassName="java.lang.Void"/>
   <eClassifiers xsi:type="ecore:EClass" name="ERepository">
@@ -45,21 +50,27 @@
         eType="#//EInterface" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ESignature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" lowerBound="1"
         eType="#//PossibleReturnTypes" defaultValueLiteral="Void"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//EParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="correspondsTo" upperBound="-1"
+        eType="#//EService"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EComponent">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="providesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="providesConstraint" value=" self.provides -> size() > 0 implies self.provides.signature.correspondsTo -> size() > 0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
         eType="#//EInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providesInterfaceTo" upperBound="-1"
         eType="#//EComponent" eOpposite="#//EComponent/usesInterfaceFrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providesThroughInterface"
-        upperBound="-1" eType="#//EService"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviourdescription" eType="#//EBehaviourDescription"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviourDescription" eType="#//EBehaviourDescription"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usesInterfaceFrom" upperBound="-1"
         eType="#//EComponent" eOpposite="#//EComponent/providesInterfaceTo"/>
@@ -69,14 +80,15 @@
         eType="#//EAssemblyContext" eOpposite="#//EAssemblyContext/instantiates"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EInterface">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signature" upperBound="-1"
         eType="#//ESignature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultsIn" upperBound="-1"
         eType="#//ERole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dfe" eType="#//ESignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EParameter">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PossibleReturnTypes"
         defaultValueLiteral="Boolean"/>
   </eClassifiers>
@@ -94,12 +106,9 @@
     <eLiterals name="VOID" value="10" literal="Void"/>
     <eLiterals name="EOBJECT" value="11"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EService">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="correspondsTo" upperBound="-1"
-        eType="#//ESignature"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EService"/>
   <eClassifiers xsi:type="ecore:EClass" name="EBehaviourDescription">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="internalaction" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalAction" upperBound="-1"
         eType="#//EInternalAction" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="loop" upperBound="-1" eType="#//ELoop"
         containment="true"/>
@@ -115,7 +124,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//EService"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyContext">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" lowerBound="1"
         eType="#//EComponent" eOpposite="#//EComponent/getsInstantiatedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
@@ -160,10 +169,10 @@
         eType="#//ELink" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EContainer">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ELink">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connects" lowerBound="2"
         upperBound="-1" eType="#//EContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="shows" upperBound="-1"

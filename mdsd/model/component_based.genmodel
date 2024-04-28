@@ -46,6 +46,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EDeploymentViewPoint/allocationviewtype"/>
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//EEnvironmentViewType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EEnvironmentViewType/contains"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//EEnvironmentViewType/shows"/>
       <genOperations ecoreOperation="component_based.ecore#//EEnvironmentViewType/showContainers"/>
       <genOperations ecoreOperation="component_based.ecore#//EEnvironmentViewType/showContainerConnections"/>
     </genClasses>
@@ -99,6 +101,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EAssemblyContext/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyContext/instantiates"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyContext/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyContext/allocated"/>
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//ECompositeComponent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ECompositeComponent/encapsulates"/>
@@ -122,13 +125,19 @@
     <genClasses ecoreClass="component_based.ecore#//EAssemblyConnector">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyConnector/linkFrom"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyConnector/linkTo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyConnector/allocatedContainers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyConnector/allocatedLinks"/>
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//EContainer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//EContainer/name"/>
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//ELink">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component_based.ecore#//ELink/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ELink/connects"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//ELink/shows"/>
     </genClasses>
-    <genClasses ecoreClass="component_based.ecore#//EAllocationContext"/>
+    <genClasses ecoreClass="component_based.ecore#//EAllocationContext">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component_based.ecore#//EAllocationContext/controls"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

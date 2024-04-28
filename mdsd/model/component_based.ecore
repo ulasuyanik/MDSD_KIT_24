@@ -29,6 +29,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType" eSuperTypes="#//EViewType">
     <eOperations name="showContainers" lowerBound="1"/>
     <eOperations name="showContainerConnections" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
+        eType="#//EAllocationContext" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="shows" upperBound="-1"
+        eType="#//EContainer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType" eSuperTypes="#//EViewType">
     <eOperations name="showComponentAllocations" lowerBound="1"/>
@@ -116,6 +120,8 @@
         eType="#//EComponent" eOpposite="#//EComponent/getsInstantiatedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
         eType="#//ERole" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocated" upperBound="-1"
+        eType="#//EContainer" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ECompositeComponent" eSuperTypes="#//EComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"
@@ -148,12 +154,23 @@
         eType="#//EProvidedRole"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkTo" lowerBound="1"
         eType="#//ERequiredRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedContainers" upperBound="-1"
+        eType="#//EContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedLinks" upperBound="-1"
+        eType="#//ELink" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ELink">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connects" lowerBound="2"
+        upperBound="-1" eType="#//EContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="shows" upperBound="-1"
+        eType="#//EEnvironmentViewType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EAllocationContext"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EAllocationContext">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
+        eType="#//EContainer"/>
+  </eClassifiers>
 </ecore:EPackage>

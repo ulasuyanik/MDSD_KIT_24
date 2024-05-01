@@ -14,14 +14,17 @@
         eType="#//ERepositoryViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ERepositoryViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showComponents"/>
-    <eOperations name="showInterfaces"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showsComponents" upperBound="-1"
+        eType="#//EComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showsInterfaces" upperBound="-1"
+        eType="#//EInterface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType" eSuperTypes="#//EViewType">
-    <eOperations name="showConcreteComponents"/>
     <eOperations name="showComponentConnections"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mainArtifacts" upperBound="-1"
         eType="#//EAssemblyContext" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showComponents" upperBound="-1"
+        eType="#//EComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
@@ -41,6 +44,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType" eSuperTypes="#//EViewType">
     <eOperations name="showComponentAllocations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
+        eType="#//EAllocationContext" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="EVoid" instanceClassName="java.lang.Void"/>
   <eClassifiers xsi:type="ecore:EClass" name="ERepository">
@@ -52,7 +57,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ESignature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" lowerBound="1"
-        eType="#//PossibleReturnTypes" defaultValueLiteral="Void"/>
+        eType="#//PossibleReturnTypes" defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//EParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="correspondsTo" upperBound="-1"
@@ -99,8 +104,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EParameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PossibleReturnTypes"
-        defaultValueLiteral="Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PossibleParameterTypes"
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PossibleReturnTypes">
     <eLiterals name="BOOLEAN" literal="Boolean"/>
@@ -228,6 +233,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
         eType="#//EContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specifies" lowerBound="1"
-        upperBound="-1" eType="#//EAllocationViewType"/>
+        upperBound="-1" eType="#//ESystem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PossibleParameterTypes">
+    <eLiterals name="BOOLEAN" literal="Boolean"/>
+    <eLiterals name="CHAR" value="1" literal="Char"/>
+    <eLiterals name="DATE" value="2" literal="Date"/>
+    <eLiterals name="DOUBLE" value="3" literal="Double"/>
+    <eLiterals name="FLOAT" value="4" literal="Float"/>
+    <eLiterals name="LIST" value="5" literal="List"/>
+    <eLiterals name="INT" value="6" literal="Int"/>
+    <eLiterals name="LONG" value="7" literal="Long"/>
+    <eLiterals name="MAP" value="8" literal="Map"/>
+    <eLiterals name="STRING" value="9" literal="String"/>
+    <eLiterals name="EOBJECT" value="10" literal="EOBJECT"/>
   </eClassifiers>
 </ecore:EPackage>

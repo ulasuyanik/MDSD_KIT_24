@@ -1,0 +1,6 @@
+Rename the value of EOBJECT to EObject because the entity is defined in Java as EObject.
+Rename the relation externalcall from EExternalCall to EBehaviourDescription as externalCall (camel case)
+Change the cardinality of the relation provides from ESystem to EInterface from [0..n] to [1..n]
+Define the constraints interfaceProvidedByConstraint and interfaceRequiredByConstraint to model the sentence "Provided and required interfaces of a component result in provided and required roles for the assembly contexts of the component."
+Define the constraint providedRoles to model the sentence "If the roles of two assembly contexts are connected by an assembly connector they either have to be  allocated on the same container or the containers on which they are allocated have to be linked."
+Remove the relations allocatedContainers from EAssemblyConnector to EContainer and allocatedLinks from EAssemblyConnector to ELink.

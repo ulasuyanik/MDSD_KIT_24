@@ -17,7 +17,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ESignature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" lowerBound="1"
-        eType="#//PossibleReturnTypes" defaultValueLiteral=""/>
+        eType="#//PossibleReturnTypes" defaultValueLiteral="Void"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//EParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="correspondsTo" upperBound="-1"
@@ -33,7 +33,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providesInterfaceTo" upperBound="-1"
         eType="#//EComponent" eOpposite="#//EComponent/usesInterfaceFrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviourDescription" eType="#//BehaviourDescription/EBehaviourDescription"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviourDescription" eType="#//EBehaviourDescription"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usesInterfaceFrom" upperBound="-1"
         eType="#//EComponent" eOpposite="#//EComponent/providesInterfaceTo"/>
@@ -49,14 +49,14 @@
       <details key="constraints" value="interfaceProvidedByConstraint interfaceRequiredByConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="interfaceProvidedByConstraint" value="self.providedByComponent -> size() > 0 implies self.resultsIn -> exists(x|x.oclIsKindOf(Roles::EProvidedRole))"/>
-      <details key="interfaceRequiredByConstraint" value="self.requiredByComponent -> size() > 0 implies self.resultsIn -> exists(x|x.oclIsKindOf(Roles::ERequiredRole))"/>
+      <details key="interfaceProvidedByConstraint" value="self.providedByComponent -> size() > 0 implies self.resultsIn -> exists(x|x.oclIsKindOf(EProvidedRole))"/>
+      <details key="interfaceRequiredByConstraint" value="self.requiredByComponent -> size() > 0 implies self.resultsIn -> exists(x|x.oclIsKindOf(ERequiredRole))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signature" upperBound="-1"
         eType="#//ESignature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultsIn" upperBound="-1"
-        eType="#//Roles/ERole"/>
+        eType="#//ERole"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedByComponent" upperBound="-1"
         eType="#//EComponent" eOpposite="#//EComponent/provides"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedBySystem" upperBound="-1"
@@ -69,7 +69,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="EParameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PossibleParameterTypes"
-        defaultValueLiteral=""/>
+        defaultValueLiteral="Boolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PossibleReturnTypes">
     <eLiterals name="BOOLEAN" literal="Boolean"/>
@@ -91,16 +91,15 @@
       <details key="constraints" value="providesRole requiresRole encapsulationConstraint connectorConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="providesRole" value="self.instantiates.provides.resultsIn->forAll(x|x.oclIsKindOf(Roles::EProvidedRole)) = true"/>
-      <details key="requiresRole" value="self.instantiates.requires.resultsIn->forAll(x|x.oclIsKindOf(Roles::ERequiredRole)) = true"/>
+      <details key="providesRole" value="self.instantiates.provides->notEmpty() implies self.instantiates.provides.resultsIn->exists(x|x.oclIsKindOf(EProvidedRole)) = true"/>
+      <details key="requiresRole" value="self.instantiates.requires->notEmpty() implies self.instantiates.requires.resultsIn->exists(x|x.oclIsKindOf(ERequiredRole)) = true"/>
       <details key="encapsulationConstraint" value="self -> select(x| self.encapsulatedBySystem -> size() = 0 and self.encapsulatedByComponent -> size() > 0).allocated -> size() = 0 = true"/>
-      <details key="connectorConstraint" value="let x:EAssemblyContext = self , y: EAssemblyContext = self in y.roles->oclAsType(Roles::ERequiredRole)->select(element|x.roles->oclAsType(Roles::EProvidedRole).linkedFrom.linkTo) -> size() > 0 implies x.allocated = y.allocated and x.allocated -> select(element|y.allocated.connectedTo.connects) -> size() > 0"/>
+      <details key="connectorConstraint" value="let x:EAssemblyContext = self , y: EAssemblyContext = self in y.roles->oclAsType(ERequiredRole)->select(element|x.roles->oclAsType(EProvidedRole).linkedFrom.linkTo) -> size() > 0 implies x.allocated = y.allocated or x.allocated -> select(element|y.allocated.connectedTo.connects) -> size() > 0"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-        eType="#//Roles/ERole" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allocated" eType="#//EContainer"
-        containment="true"/>
+        eType="#//ERole" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocated" eType="#//EContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedByComponent"
         upperBound="-1" eType="#//ECompositeComponent" eOpposite="#//ECompositeComponent/encapsulates"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedBySystem" upperBound="-1"
@@ -121,10 +120,10 @@
         eType="#//EAssemblyContext" eOpposite="#//EAssemblyContext/encapsulatedBySystem"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linkFrom" lowerBound="1"
-        eType="#//Roles/EProvidedRole" eOpposite="#//Roles/EProvidedRole/linkedFrom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkTo" lowerBound="1"
-        eType="#//Roles/ERequiredRole" eOpposite="#//Roles/ERequiredRole/linkedTo"/>
+        eType="#//ERequiredRole" eOpposite="#//ERequiredRole/linkedTo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkFrom" lowerBound="1"
+        eType="#//EProvidedRole" eOpposite="#//EProvidedRole/linkedFrom"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -139,8 +138,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="EAllocationContext">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
         eType="#//EContainer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specifies" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specifiesFor" lowerBound="1"
         upperBound="-1" eType="#//ESystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specifies" lowerBound="1"
+        eType="#//EAssemblyContext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PossibleParameterTypes">
     <eLiterals name="BOOLEAN" literal="Boolean"/>
@@ -155,106 +156,95 @@
     <eLiterals name="STRING" value="9" literal="String"/>
     <eLiterals name="EOBJECT" value="10" literal="EObject"/>
   </eClassifiers>
-  <eSubpackages name="Roles" nsURI="Roles" nsPrefix="Roles">
-    <eClassifiers xsi:type="ecore:EClass" name="ERole" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="roleOf" eType="#//EAssemblyContext"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ERequiredRole" eSuperTypes="#//Roles/ERole">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
-          eType="#//EAssemblyConnector" eOpposite="#//EAssemblyConnector/linkTo"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EProvidedRole" eSuperTypes="#//Roles/ERole">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" lowerBound="1"
-          eType="#//EAssemblyConnector" eOpposite="#//EAssemblyConnector/linkFrom"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="DelegationConnnectors" nsURI="DelegationConnnectors" nsPrefix="DelegationConnnectors">
-    <eClassifiers xsi:type="ecore:EClass" name="EDelegationConnector" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EProvidedDelegationConnector" eSuperTypes="#//DelegationConnnectors/EDelegationConnector">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="providedConstraint"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="providedConstraint" value="self.linkFrom.providedBySystem -> size() > 0 or self.linkFrom.providedByComponent -> exists(x|x.oclIsKindOf(ECompositeComponent)) = true"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkFrom" lowerBound="1"
-          eType="#//EInterface"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkTo" lowerBound="1"
-          eType="#//Roles/EProvidedRole"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ERequiredDelegationConnector" eSuperTypes="#//DelegationConnnectors/EDelegationConnector">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="requiredConstraint"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="requiredConstraint" value="self.linkTo.requiredBySystem -> size() > 0 or self.linkTo.requiredByComponent -> exists(x|x.oclIsKindOf(ECompositeComponent)) = true"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkFrom" lowerBound="1"
-          eType="#//Roles/ERequiredRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkTo" lowerBound="1"
-          eType="#//EInterface"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="BehaviourDescription" nsURI="BehaviourDescription" nsPrefix="BehaviourDescription">
-    <eClassifiers xsi:type="ecore:EClass" name="EExternalCall">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//EService"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EInternalAction"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ELoop"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EBranch"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EBehaviourDescription">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="internalAction" upperBound="-1"
-          eType="#//BehaviourDescription/EInternalAction" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="loop" upperBound="-1"
-          eType="#//BehaviourDescription/ELoop" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="branch" upperBound="-1"
-          eType="#//BehaviourDescription/EBranch" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="externalCall" upperBound="-1"
-          eType="#//BehaviourDescription/EExternalCall" containment="true"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="ViewTypes" nsURI="ViewTypes" nsPrefix="ViewTypes">
-    <eClassifiers xsi:type="ecore:EClass" name="EViewType" abstract="true" interface="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType" eSuperTypes="#//ViewTypes/EViewType">
-      <eOperations name="showComponentConnections"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="mainArtifacts" upperBound="-1"
-          eType="#//EAssemblyContext" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="showsComponents" upperBound="-1"
-          eType="#//EComponent"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ERepositoryViewType" eSuperTypes="#//ViewTypes/EViewType">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="showsComponents" upperBound="-1"
-          eType="#//EComponent"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="showsInterfaces" upperBound="-1"
-          eType="#//EInterface"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType" eSuperTypes="#//ViewTypes/EViewType">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="showsContainers" upperBound="-1"
-          eType="#//EContainer"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="showsLinks" upperBound="-1"
-          eType="#//ELink"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType" eSuperTypes="#//ViewTypes/EViewType">
-      <eOperations name="showComponentAllocations"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
-          eType="#//EAllocationContext" containment="true"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="ViewPoints" nsURI="ViewPoints" nsPrefix="ViewPoints">
-    <eClassifiers xsi:type="ecore:EClass" name="EViewPoint" abstract="true" interface="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//ViewPoints/EViewPoint">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
-          eType="#//ViewTypes/EAssemblyViewType" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EDeploymentViewPoint" eSuperTypes="#//ViewPoints/EViewPoint">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="environmentviewtype"
-          lowerBound="1" eType="#//ViewTypes/EEnvironmentViewType" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allocationviewtype" lowerBound="1"
-          eType="#//ViewTypes/EAllocationViewType" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ESystemIndependentViewPoint" eSuperTypes="#//ViewPoints/EViewPoint">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="repositoryviewtype" lowerBound="1"
-          eType="#//ViewTypes/ERepositoryViewType" containment="true"/>
-    </eClassifiers>
-  </eSubpackages>
+  <eClassifiers xsi:type="ecore:EClass" name="ERequiredDelegationConnector" eSuperTypes="#//EDelegationConnector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="requiredConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="requiredConstraint" value="self.linkTo.requiredBySystem -> size() > 0 or self.linkTo.requiredByComponent -> exists(x|x.oclIsKindOf(ECompositeComponent)) = true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkFrom" lowerBound="1"
+        eType="#//ERequiredRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkTo" lowerBound="1"
+        eType="#//EInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EProvidedDelegationConnector" eSuperTypes="#//EDelegationConnector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="providedConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="providedConstraint" value="self.linkFrom.providedBySystem -> size() > 0 or self.linkFrom.providedByComponent -> exists(x|x.oclIsKindOf(ECompositeComponent)) = true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkFrom" lowerBound="1"
+        eType="#//EInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkTo" lowerBound="1"
+        eType="#//EProvidedRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDelegationConnector" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ERole" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roleOf" eType="#//EAssemblyContext"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ERequiredRole" eSuperTypes="#//ERole">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" eType="#//EAssemblyConnector"
+        eOpposite="#//EAssemblyConnector/linkTo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EProvidedRole" eSuperTypes="#//ERole">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" eType="#//EAssemblyConnector"
+        eOpposite="#//EAssemblyConnector/linkFrom"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showsContainers" upperBound="-1"
+        eType="#//EContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showsLinks" upperBound="-1"
+        eType="#//ELink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType">
+    <eOperations name="showComponentAllocations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
+        eType="#//EAllocationContext" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType">
+    <eOperations name="showComponentConnections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mainArtifacts" upperBound="-1"
+        eType="#//EAssemblyContext" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showsComponents" upperBound="-1"
+        eType="#//EComponent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ERepositoryViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showsComponents" upperBound="-1"
+        eType="#//EComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="showsInterfaces" upperBound="-1"
+        eType="#//EInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EViewPoint" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ESystemIndependentViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repositoryviewtype" lowerBound="1"
+        eType="#//ERepositoryViewType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
+        eType="#//EAssemblyViewType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDeploymentViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentviewtype" lowerBound="1"
+        eType="#//EEnvironmentViewType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationviewtype" lowerBound="1"
+        eType="#//EAllocationViewType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EBehaviourDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalAction" upperBound="-1"
+        eType="#//EInternalAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loop" upperBound="-1" eType="#//ELoop"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="branch" upperBound="-1"
+        eType="#//EBranch" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalCall" upperBound="-1"
+        eType="#//EExternalCall" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EInternalAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EExternalCall">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//EService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EBranch"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ELoop"/>
 </ecore:EPackage>

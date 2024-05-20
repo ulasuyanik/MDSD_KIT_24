@@ -162,5 +162,6 @@
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//EBranch"/>
     <genClasses ecoreClass="component_based.ecore#//ELoop"/>
+    <genClasses ecoreClass="component_based.ecore#//NewEClass33"/>
   </genPackages>
 </genmodel:GenModel>

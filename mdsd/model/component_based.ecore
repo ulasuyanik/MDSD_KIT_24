@@ -247,4 +247,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EBranch"/>
   <eClassifiers xsi:type="ecore:EClass" name="ELoop"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewEClass33"/>
 </ecore:EPackage>

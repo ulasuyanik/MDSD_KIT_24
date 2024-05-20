@@ -556,75 +556,6 @@ public class Component_basedItemProviderAdapterFactory extends Component_basedAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mdsd.component_based.ESystemIndependentViewPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ESystemIndependentViewPointItemProvider eSystemIndependentViewPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mdsd.component_based.ESystemIndependentViewPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createESystemIndependentViewPointAdapter() {
-		if (eSystemIndependentViewPointItemProvider == null) {
-			eSystemIndependentViewPointItemProvider = new ESystemIndependentViewPointItemProvider(this);
-		}
-
-		return eSystemIndependentViewPointItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link mdsd.component_based.EAssemblyViewPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EAssemblyViewPointItemProvider eAssemblyViewPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mdsd.component_based.EAssemblyViewPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEAssemblyViewPointAdapter() {
-		if (eAssemblyViewPointItemProvider == null) {
-			eAssemblyViewPointItemProvider = new EAssemblyViewPointItemProvider(this);
-		}
-
-		return eAssemblyViewPointItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link mdsd.component_based.EDeploymentViewPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EDeploymentViewPointItemProvider eDeploymentViewPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mdsd.component_based.EDeploymentViewPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEDeploymentViewPointAdapter() {
-		if (eDeploymentViewPointItemProvider == null) {
-			eDeploymentViewPointItemProvider = new EDeploymentViewPointItemProvider(this);
-		}
-
-		return eDeploymentViewPointItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link mdsd.component_based.EBehaviourDescription} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -671,6 +602,29 @@ public class Component_basedItemProviderAdapterFactory extends Component_basedAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mdsd.component_based.EAssemblyViewPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EAssemblyViewPointItemProvider eAssemblyViewPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mdsd.component_based.EAssemblyViewPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEAssemblyViewPointAdapter() {
+		if (eAssemblyViewPointItemProvider == null) {
+			eAssemblyViewPointItemProvider = new EAssemblyViewPointItemProvider(this);
+		}
+
+		return eAssemblyViewPointItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link mdsd.component_based.EExternalCall} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -691,6 +645,52 @@ public class Component_basedItemProviderAdapterFactory extends Component_basedAd
 		}
 
 		return eExternalCallItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mdsd.component_based.EDeploymentViewPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EDeploymentViewPointItemProvider eDeploymentViewPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mdsd.component_based.EDeploymentViewPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEDeploymentViewPointAdapter() {
+		if (eDeploymentViewPointItemProvider == null) {
+			eDeploymentViewPointItemProvider = new EDeploymentViewPointItemProvider(this);
+		}
+
+		return eDeploymentViewPointItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mdsd.component_based.ESystemIndependentViewPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ESystemIndependentViewPointItemProvider eSystemIndependentViewPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mdsd.component_based.ESystemIndependentViewPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createESystemIndependentViewPointAdapter() {
+		if (eSystemIndependentViewPointItemProvider == null) {
+			eSystemIndependentViewPointItemProvider = new ESystemIndependentViewPointItemProvider(this);
+		}
+
+		return eSystemIndependentViewPointItemProvider;
 	}
 
 	/**
@@ -886,18 +886,18 @@ public class Component_basedItemProviderAdapterFactory extends Component_basedAd
 			eAssemblyViewTypeItemProvider.dispose();
 		if (eRepositoryViewTypeItemProvider != null)
 			eRepositoryViewTypeItemProvider.dispose();
-		if (eSystemIndependentViewPointItemProvider != null)
-			eSystemIndependentViewPointItemProvider.dispose();
-		if (eAssemblyViewPointItemProvider != null)
-			eAssemblyViewPointItemProvider.dispose();
-		if (eDeploymentViewPointItemProvider != null)
-			eDeploymentViewPointItemProvider.dispose();
 		if (eBehaviourDescriptionItemProvider != null)
 			eBehaviourDescriptionItemProvider.dispose();
 		if (eInternalActionItemProvider != null)
 			eInternalActionItemProvider.dispose();
+		if (eAssemblyViewPointItemProvider != null)
+			eAssemblyViewPointItemProvider.dispose();
 		if (eExternalCallItemProvider != null)
 			eExternalCallItemProvider.dispose();
+		if (eDeploymentViewPointItemProvider != null)
+			eDeploymentViewPointItemProvider.dispose();
+		if (eSystemIndependentViewPointItemProvider != null)
+			eSystemIndependentViewPointItemProvider.dispose();
 		if (eBranchItemProvider != null)
 			eBranchItemProvider.dispose();
 		if (eLoopItemProvider != null)

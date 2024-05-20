@@ -9,7 +9,8 @@ Bundle-Activator: mdsd.component_based.presentation.Component_basedEditorPlugin$
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: mdsd.component_based.presentation
+Export-Package: mdsd.component_based.ViewPoint.presentation,
+ mdsd.component_based.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  mdsd.edit;visibility:=reexport,

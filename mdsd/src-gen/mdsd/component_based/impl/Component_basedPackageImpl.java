@@ -38,7 +38,6 @@ import mdsd.component_based.ESystemIndependentViewPoint;
 import mdsd.component_based.EViewPoint;
 import mdsd.component_based.PossibleParameterTypes;
 import mdsd.component_based.PossibleReturnTypes;
-
 import mdsd.component_based.util.Component_basedValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -226,34 +225,6 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eViewPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eSystemIndependentViewPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eAssemblyViewPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eDeploymentViewPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass eBehaviourDescriptionEClass = null;
 
 	/**
@@ -268,7 +239,35 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass eAssemblyViewPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass eExternalCallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eViewPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eDeploymentViewPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eSystemIndependentViewPointEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1273,86 +1272,6 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * @generated
 	 */
 	@Override
-	public EClass getEViewPoint() {
-		return eViewPointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getESystemIndependentViewPoint() {
-		return eSystemIndependentViewPointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getESystemIndependentViewPoint_Repositoryviewtype() {
-		return (EReference) eSystemIndependentViewPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getEAssemblyViewPoint() {
-		return eAssemblyViewPointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEAssemblyViewPoint_Assemblyviewtype() {
-		return (EReference) eAssemblyViewPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getEDeploymentViewPoint() {
-		return eDeploymentViewPointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEDeploymentViewPoint_Environmentviewtype() {
-		return (EReference) eDeploymentViewPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEDeploymentViewPoint_Allocationviewtype() {
-		return (EReference) eDeploymentViewPointEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getEBehaviourDescription() {
 		return eBehaviourDescriptionEClass;
 	}
@@ -1413,6 +1332,26 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * @generated
 	 */
 	@Override
+	public EClass getEAssemblyViewPoint() {
+		return eAssemblyViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEAssemblyViewPoint_Assemblyviewtype() {
+		return (EReference) eAssemblyViewPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEExternalCall() {
 		return eExternalCallEClass;
 	}
@@ -1425,6 +1364,66 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	@Override
 	public EReference getEExternalCall_To() {
 		return (EReference) eExternalCallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEViewPoint() {
+		return eViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEDeploymentViewPoint() {
+		return eDeploymentViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEDeploymentViewPoint_Environmentviewtype() {
+		return (EReference) eDeploymentViewPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEDeploymentViewPoint_Allocationviewtype() {
+		return (EReference) eDeploymentViewPointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getESystemIndependentViewPoint() {
+		return eSystemIndependentViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getESystemIndependentViewPoint_Repositoryviewtype() {
+		return (EReference) eSystemIndependentViewPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1621,18 +1620,6 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		createEReference(eRepositoryViewTypeEClass, EREPOSITORY_VIEW_TYPE__SHOWS_COMPONENTS);
 		createEReference(eRepositoryViewTypeEClass, EREPOSITORY_VIEW_TYPE__SHOWS_INTERFACES);
 
-		eViewPointEClass = createEClass(EVIEW_POINT);
-
-		eSystemIndependentViewPointEClass = createEClass(ESYSTEM_INDEPENDENT_VIEW_POINT);
-		createEReference(eSystemIndependentViewPointEClass, ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE);
-
-		eAssemblyViewPointEClass = createEClass(EASSEMBLY_VIEW_POINT);
-		createEReference(eAssemblyViewPointEClass, EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE);
-
-		eDeploymentViewPointEClass = createEClass(EDEPLOYMENT_VIEW_POINT);
-		createEReference(eDeploymentViewPointEClass, EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE);
-		createEReference(eDeploymentViewPointEClass, EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE);
-
 		eBehaviourDescriptionEClass = createEClass(EBEHAVIOUR_DESCRIPTION);
 		createEReference(eBehaviourDescriptionEClass, EBEHAVIOUR_DESCRIPTION__INTERNAL_ACTION);
 		createEReference(eBehaviourDescriptionEClass, EBEHAVIOUR_DESCRIPTION__LOOP);
@@ -1641,8 +1628,20 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 
 		eInternalActionEClass = createEClass(EINTERNAL_ACTION);
 
+		eAssemblyViewPointEClass = createEClass(EASSEMBLY_VIEW_POINT);
+		createEReference(eAssemblyViewPointEClass, EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE);
+
 		eExternalCallEClass = createEClass(EEXTERNAL_CALL);
 		createEReference(eExternalCallEClass, EEXTERNAL_CALL__TO);
+
+		eViewPointEClass = createEClass(EVIEW_POINT);
+
+		eDeploymentViewPointEClass = createEClass(EDEPLOYMENT_VIEW_POINT);
+		createEReference(eDeploymentViewPointEClass, EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE);
+		createEReference(eDeploymentViewPointEClass, EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE);
+
+		eSystemIndependentViewPointEClass = createEClass(ESYSTEM_INDEPENDENT_VIEW_POINT);
+		createEReference(eSystemIndependentViewPointEClass, ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE);
 
 		eBranchEClass = createEClass(EBRANCH);
 
@@ -1690,9 +1689,9 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		eProvidedDelegationConnectorEClass.getESuperTypes().add(this.getEDelegationConnector());
 		eRequiredRoleEClass.getESuperTypes().add(this.getERole());
 		eProvidedRoleEClass.getESuperTypes().add(this.getERole());
-		eSystemIndependentViewPointEClass.getESuperTypes().add(this.getEViewPoint());
 		eAssemblyViewPointEClass.getESuperTypes().add(this.getEViewPoint());
 		eDeploymentViewPointEClass.getESuperTypes().add(this.getEViewPoint());
+		eSystemIndependentViewPointEClass.getESuperTypes().add(this.getEViewPoint());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(eRepositoryEClass, ERepository.class, "ERepository", !IS_ABSTRACT, !IS_INTERFACE,
@@ -2022,30 +2021,6 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 				-1, ERepositoryViewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eViewPointEClass, EViewPoint.class, "EViewPoint", IS_ABSTRACT, IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(eSystemIndependentViewPointEClass, ESystemIndependentViewPoint.class, "ESystemIndependentViewPoint",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getESystemIndependentViewPoint_Repositoryviewtype(), this.getERepositoryViewType(), null,
-				"repositoryviewtype", null, 1, 1, ESystemIndependentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(eAssemblyViewPointEClass, EAssemblyViewPoint.class, "EAssemblyViewPoint", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEAssemblyViewPoint_Assemblyviewtype(), this.getEAssemblyViewType(), null, "assemblyviewtype",
-				null, 1, 1, EAssemblyViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(eDeploymentViewPointEClass, EDeploymentViewPoint.class, "EDeploymentViewPoint", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEDeploymentViewPoint_Environmentviewtype(), this.getEEnvironmentViewType(), null,
-				"environmentviewtype", null, 1, 1, EDeploymentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEDeploymentViewPoint_Allocationviewtype(), this.getEAllocationViewType(), null,
-				"allocationviewtype", null, 1, 1, EDeploymentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(eBehaviourDescriptionEClass, EBehaviourDescription.class, "EBehaviourDescription", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEBehaviourDescription_InternalAction(), this.getEInternalAction(), null, "internalAction",
@@ -2064,11 +2039,35 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		initEClass(eInternalActionEClass, EInternalAction.class, "EInternalAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(eAssemblyViewPointEClass, EAssemblyViewPoint.class, "EAssemblyViewPoint", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEAssemblyViewPoint_Assemblyviewtype(), this.getEAssemblyViewType(), null, "assemblyviewtype",
+				null, 1, 1, EAssemblyViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(eExternalCallEClass, EExternalCall.class, "EExternalCall", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEExternalCall_To(), this.getEService(), null, "to", null, 1, 1, EExternalCall.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eViewPointEClass, EViewPoint.class, "EViewPoint", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(eDeploymentViewPointEClass, EDeploymentViewPoint.class, "EDeploymentViewPoint", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEDeploymentViewPoint_Environmentviewtype(), this.getEEnvironmentViewType(), null,
+				"environmentviewtype", null, 1, 1, EDeploymentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEDeploymentViewPoint_Allocationviewtype(), this.getEAllocationViewType(), null,
+				"allocationviewtype", null, 1, 1, EDeploymentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eSystemIndependentViewPointEClass, ESystemIndependentViewPoint.class, "ESystemIndependentViewPoint",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getESystemIndependentViewPoint_Repositoryviewtype(), this.getERepositoryViewType(), null,
+				"repositoryviewtype", null, 1, 1, ESystemIndependentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eBranchEClass, EBranch.class, "EBranch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

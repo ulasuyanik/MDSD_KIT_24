@@ -99,18 +99,18 @@ public class Component_basedFactoryImpl extends EFactoryImpl implements Componen
 			return createEAssemblyViewType();
 		case Component_basedPackage.EREPOSITORY_VIEW_TYPE:
 			return createERepositoryViewType();
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT:
-			return createESystemIndependentViewPoint();
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT:
-			return createEAssemblyViewPoint();
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT:
-			return createEDeploymentViewPoint();
 		case Component_basedPackage.EBEHAVIOUR_DESCRIPTION:
 			return createEBehaviourDescription();
 		case Component_basedPackage.EINTERNAL_ACTION:
 			return createEInternalAction();
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT:
+			return createEAssemblyViewPoint();
 		case Component_basedPackage.EEXTERNAL_CALL:
 			return createEExternalCall();
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT:
+			return createEDeploymentViewPoint();
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT:
+			return createESystemIndependentViewPoint();
 		case Component_basedPackage.EBRANCH:
 			return createEBranch();
 		case Component_basedPackage.ELOOP:
@@ -395,39 +395,6 @@ public class Component_basedFactoryImpl extends EFactoryImpl implements Componen
 	 * @generated
 	 */
 	@Override
-	public ESystemIndependentViewPoint createESystemIndependentViewPoint() {
-		ESystemIndependentViewPointImpl eSystemIndependentViewPoint = new ESystemIndependentViewPointImpl();
-		return eSystemIndependentViewPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAssemblyViewPoint createEAssemblyViewPoint() {
-		EAssemblyViewPointImpl eAssemblyViewPoint = new EAssemblyViewPointImpl();
-		return eAssemblyViewPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EDeploymentViewPoint createEDeploymentViewPoint() {
-		EDeploymentViewPointImpl eDeploymentViewPoint = new EDeploymentViewPointImpl();
-		return eDeploymentViewPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EBehaviourDescription createEBehaviourDescription() {
 		EBehaviourDescriptionImpl eBehaviourDescription = new EBehaviourDescriptionImpl();
 		return eBehaviourDescription;
@@ -450,9 +417,42 @@ public class Component_basedFactoryImpl extends EFactoryImpl implements Componen
 	 * @generated
 	 */
 	@Override
+	public EAssemblyViewPoint createEAssemblyViewPoint() {
+		EAssemblyViewPointImpl eAssemblyViewPoint = new EAssemblyViewPointImpl();
+		return eAssemblyViewPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EExternalCall createEExternalCall() {
 		EExternalCallImpl eExternalCall = new EExternalCallImpl();
 		return eExternalCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EDeploymentViewPoint createEDeploymentViewPoint() {
+		EDeploymentViewPointImpl eDeploymentViewPoint = new EDeploymentViewPointImpl();
+		return eDeploymentViewPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ESystemIndependentViewPoint createESystemIndependentViewPoint() {
+		ESystemIndependentViewPointImpl eSystemIndependentViewPoint = new ESystemIndependentViewPointImpl();
+		return eSystemIndependentViewPoint;
 	}
 
 	/**

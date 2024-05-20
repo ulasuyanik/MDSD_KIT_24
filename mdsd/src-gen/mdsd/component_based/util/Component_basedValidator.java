@@ -204,20 +204,20 @@ public class Component_basedValidator extends EObjectValidator {
 			return validateEAssemblyViewType((EAssemblyViewType) value, diagnostics, context);
 		case Component_basedPackage.EREPOSITORY_VIEW_TYPE:
 			return validateERepositoryViewType((ERepositoryViewType) value, diagnostics, context);
-		case Component_basedPackage.EVIEW_POINT:
-			return validateEViewPoint((EViewPoint) value, diagnostics, context);
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT:
-			return validateESystemIndependentViewPoint((ESystemIndependentViewPoint) value, diagnostics, context);
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT:
-			return validateEAssemblyViewPoint((EAssemblyViewPoint) value, diagnostics, context);
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT:
-			return validateEDeploymentViewPoint((EDeploymentViewPoint) value, diagnostics, context);
 		case Component_basedPackage.EBEHAVIOUR_DESCRIPTION:
 			return validateEBehaviourDescription((EBehaviourDescription) value, diagnostics, context);
 		case Component_basedPackage.EINTERNAL_ACTION:
 			return validateEInternalAction((EInternalAction) value, diagnostics, context);
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT:
+			return validateEAssemblyViewPoint((EAssemblyViewPoint) value, diagnostics, context);
 		case Component_basedPackage.EEXTERNAL_CALL:
 			return validateEExternalCall((EExternalCall) value, diagnostics, context);
+		case Component_basedPackage.EVIEW_POINT:
+			return validateEViewPoint((EViewPoint) value, diagnostics, context);
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT:
+			return validateEDeploymentViewPoint((EDeploymentViewPoint) value, diagnostics, context);
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT:
+			return validateESystemIndependentViewPoint((ESystemIndependentViewPoint) value, diagnostics, context);
 		case Component_basedPackage.EBRANCH:
 			return validateEBranch((EBranch) value, diagnostics, context);
 		case Component_basedPackage.ELOOP:
@@ -684,45 +684,6 @@ public class Component_basedValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEViewPoint(EViewPoint eViewPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eViewPoint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateESystemIndependentViewPoint(ESystemIndependentViewPoint eSystemIndependentViewPoint,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eSystemIndependentViewPoint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEAssemblyViewPoint(EAssemblyViewPoint eAssemblyViewPoint, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eAssemblyViewPoint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEDeploymentViewPoint(EDeploymentViewPoint eDeploymentViewPoint, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eDeploymentViewPoint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateEBehaviourDescription(EBehaviourDescription eBehaviourDescription,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(eBehaviourDescription, diagnostics, context);
@@ -743,9 +704,48 @@ public class Component_basedValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEAssemblyViewPoint(EAssemblyViewPoint eAssemblyViewPoint, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eAssemblyViewPoint, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEExternalCall(EExternalCall eExternalCall, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(eExternalCall, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEViewPoint(EViewPoint eViewPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eViewPoint, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEDeploymentViewPoint(EDeploymentViewPoint eDeploymentViewPoint, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eDeploymentViewPoint, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateESystemIndependentViewPoint(ESystemIndependentViewPoint eSystemIndependentViewPoint,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eSystemIndependentViewPoint, diagnostics, context);
 	}
 
 	/**

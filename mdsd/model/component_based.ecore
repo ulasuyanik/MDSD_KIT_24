@@ -216,21 +216,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="showsInterfaces" upperBound="-1"
         eType="#//EInterface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EViewPoint" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ESystemIndependentViewPoint" eSuperTypes="#//EViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="repositoryviewtype" lowerBound="1"
-        eType="#//ERepositoryViewType" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
-        eType="#//EAssemblyViewType" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EDeploymentViewPoint" eSuperTypes="#//EViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentviewtype" lowerBound="1"
-        eType="#//EEnvironmentViewType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationviewtype" lowerBound="1"
-        eType="#//EAllocationViewType" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EBehaviourDescription">
     <eStructuralFeatures xsi:type="ecore:EReference" name="internalAction" upperBound="-1"
         eType="#//EInternalAction" containment="true"/>
@@ -242,8 +227,23 @@
         eType="#//EExternalCall" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EInternalAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
+        eType="#//EAssemblyViewType" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EExternalCall">
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//EService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EViewPoint" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EDeploymentViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentviewtype" lowerBound="1"
+        eType="#//EEnvironmentViewType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationviewtype" lowerBound="1"
+        eType="#//EAllocationViewType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ESystemIndependentViewPoint" eSuperTypes="#//EViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repositoryviewtype" lowerBound="1"
+        eType="#//ERepositoryViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EBranch"/>
   <eClassifiers xsi:type="ecore:EClass" name="ELoop"/>

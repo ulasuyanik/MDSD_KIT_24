@@ -182,26 +182,6 @@ public class Component_basedAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEViewPoint(EViewPoint object) {
-			return createEViewPointAdapter();
-		}
-
-		@Override
-		public Adapter caseESystemIndependentViewPoint(ESystemIndependentViewPoint object) {
-			return createESystemIndependentViewPointAdapter();
-		}
-
-		@Override
-		public Adapter caseEAssemblyViewPoint(EAssemblyViewPoint object) {
-			return createEAssemblyViewPointAdapter();
-		}
-
-		@Override
-		public Adapter caseEDeploymentViewPoint(EDeploymentViewPoint object) {
-			return createEDeploymentViewPointAdapter();
-		}
-
-		@Override
 		public Adapter caseEBehaviourDescription(EBehaviourDescription object) {
 			return createEBehaviourDescriptionAdapter();
 		}
@@ -212,8 +192,28 @@ public class Component_basedAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseEAssemblyViewPoint(EAssemblyViewPoint object) {
+			return createEAssemblyViewPointAdapter();
+		}
+
+		@Override
 		public Adapter caseEExternalCall(EExternalCall object) {
 			return createEExternalCallAdapter();
+		}
+
+		@Override
+		public Adapter caseEViewPoint(EViewPoint object) {
+			return createEViewPointAdapter();
+		}
+
+		@Override
+		public Adapter caseEDeploymentViewPoint(EDeploymentViewPoint object) {
+			return createEDeploymentViewPointAdapter();
+		}
+
+		@Override
+		public Adapter caseESystemIndependentViewPoint(ESystemIndependentViewPoint object) {
+			return createESystemIndependentViewPointAdapter();
 		}
 
 		@Override
@@ -568,62 +568,6 @@ public class Component_basedAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mdsd.component_based.EViewPoint
-	 * @generated
-	 */
-	public Adapter createEViewPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mdsd.component_based.ESystemIndependentViewPoint <em>ESystem Independent View Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mdsd.component_based.ESystemIndependentViewPoint
-	 * @generated
-	 */
-	public Adapter createESystemIndependentViewPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EAssemblyViewPoint <em>EAssembly View Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mdsd.component_based.EAssemblyViewPoint
-	 * @generated
-	 */
-	public Adapter createEAssemblyViewPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EDeploymentViewPoint <em>EDeployment View Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mdsd.component_based.EDeploymentViewPoint
-	 * @generated
-	 */
-	public Adapter createEDeploymentViewPointAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EBehaviourDescription <em>EBehaviour Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -652,6 +596,20 @@ public class Component_basedAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EAssemblyViewPoint <em>EAssembly View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mdsd.component_based.EAssemblyViewPoint
+	 * @generated
+	 */
+	public Adapter createEAssemblyViewPointAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EExternalCall <em>EExternal Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -662,6 +620,48 @@ public class Component_basedAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEExternalCallAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mdsd.component_based.EViewPoint
+	 * @generated
+	 */
+	public Adapter createEViewPointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mdsd.component_based.EDeploymentViewPoint <em>EDeployment View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mdsd.component_based.EDeploymentViewPoint
+	 * @generated
+	 */
+	public Adapter createEDeploymentViewPointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mdsd.component_based.ESystemIndependentViewPoint <em>ESystem Independent View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mdsd.component_based.ESystemIndependentViewPoint
+	 * @generated
+	 */
+	public Adapter createESystemIndependentViewPointAdapter() {
 		return null;
 	}
 

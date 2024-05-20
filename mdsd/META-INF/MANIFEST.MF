@@ -9,6 +9,9 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: mdsd.component_based,
+ mdsd.component_based.ViewPoint,
+ mdsd.component_based.ViewPoint.impl,
+ mdsd.component_based.ViewPoint.util,
  mdsd.component_based.impl,
  mdsd.component_based.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,

@@ -1391,154 +1391,6 @@ public interface Component_basedPackage extends EPackage {
 	int EREPOSITORY_VIEW_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mdsd.component_based.EViewPoint
-	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEViewPoint()
-	 * @generated
-	 */
-	int EVIEW_POINT = 23;
-
-	/**
-	 * The number of structural features of the '<em>EView Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVIEW_POINT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>EView Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVIEW_POINT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link mdsd.component_based.impl.ESystemIndependentViewPointImpl <em>ESystem Independent View Point</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mdsd.component_based.impl.ESystemIndependentViewPointImpl
-	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getESystemIndependentViewPoint()
-	 * @generated
-	 */
-	int ESYSTEM_INDEPENDENT_VIEW_POINT = 24;
-
-	/**
-	 * The feature id for the '<em><b>Repositoryviewtype</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>ESystem Independent View Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESYSTEM_INDEPENDENT_VIEW_POINT_FEATURE_COUNT = EVIEW_POINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>ESystem Independent View Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ESYSTEM_INDEPENDENT_VIEW_POINT_OPERATION_COUNT = EVIEW_POINT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link mdsd.component_based.impl.EAssemblyViewPointImpl <em>EAssembly View Point</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mdsd.component_based.impl.EAssemblyViewPointImpl
-	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEAssemblyViewPoint()
-	 * @generated
-	 */
-	int EASSEMBLY_VIEW_POINT = 25;
-
-	/**
-	 * The feature id for the '<em><b>Assemblyviewtype</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>EAssembly View Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EASSEMBLY_VIEW_POINT_FEATURE_COUNT = EVIEW_POINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>EAssembly View Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EASSEMBLY_VIEW_POINT_OPERATION_COUNT = EVIEW_POINT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link mdsd.component_based.impl.EDeploymentViewPointImpl <em>EDeployment View Point</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mdsd.component_based.impl.EDeploymentViewPointImpl
-	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEDeploymentViewPoint()
-	 * @generated
-	 */
-	int EDEPLOYMENT_VIEW_POINT = 26;
-
-	/**
-	 * The feature id for the '<em><b>Environmentviewtype</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Allocationviewtype</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>EDeployment View Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDEPLOYMENT_VIEW_POINT_FEATURE_COUNT = EVIEW_POINT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>EDeployment View Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDEPLOYMENT_VIEW_POINT_OPERATION_COUNT = EVIEW_POINT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link mdsd.component_based.impl.EBehaviourDescriptionImpl <em>EBehaviour Description</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1546,7 +1398,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEBehaviourDescription()
 	 * @generated
 	 */
-	int EBEHAVIOUR_DESCRIPTION = 27;
+	int EBEHAVIOUR_DESCRIPTION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Internal Action</b></em>' containment reference list.
@@ -1610,7 +1462,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEInternalAction()
 	 * @generated
 	 */
-	int EINTERNAL_ACTION = 28;
+	int EINTERNAL_ACTION = 24;
 
 	/**
 	 * The number of structural features of the '<em>EInternal Action</em>' class.
@@ -1631,6 +1483,71 @@ public interface Component_basedPackage extends EPackage {
 	int EINTERNAL_ACTION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mdsd.component_based.EViewPoint
+	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEViewPoint()
+	 * @generated
+	 */
+	int EVIEW_POINT = 27;
+
+	/**
+	 * The number of structural features of the '<em>EView Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIEW_POINT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>EView Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIEW_POINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link mdsd.component_based.impl.EAssemblyViewPointImpl <em>EAssembly View Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mdsd.component_based.impl.EAssemblyViewPointImpl
+	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEAssemblyViewPoint()
+	 * @generated
+	 */
+	int EASSEMBLY_VIEW_POINT = 25;
+
+	/**
+	 * The feature id for the '<em><b>Assemblyviewtype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EAssembly View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EASSEMBLY_VIEW_POINT_FEATURE_COUNT = EVIEW_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>EAssembly View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EASSEMBLY_VIEW_POINT_OPERATION_COUNT = EVIEW_POINT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link mdsd.component_based.impl.EExternalCallImpl <em>EExternal Call</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1638,7 +1555,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEExternalCall()
 	 * @generated
 	 */
-	int EEXTERNAL_CALL = 29;
+	int EEXTERNAL_CALL = 26;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -1666,6 +1583,89 @@ public interface Component_basedPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEXTERNAL_CALL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link mdsd.component_based.impl.EDeploymentViewPointImpl <em>EDeployment View Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mdsd.component_based.impl.EDeploymentViewPointImpl
+	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEDeploymentViewPoint()
+	 * @generated
+	 */
+	int EDEPLOYMENT_VIEW_POINT = 28;
+
+	/**
+	 * The feature id for the '<em><b>Environmentviewtype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Allocationviewtype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>EDeployment View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDEPLOYMENT_VIEW_POINT_FEATURE_COUNT = EVIEW_POINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>EDeployment View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDEPLOYMENT_VIEW_POINT_OPERATION_COUNT = EVIEW_POINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link mdsd.component_based.impl.ESystemIndependentViewPointImpl <em>ESystem Independent View Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mdsd.component_based.impl.ESystemIndependentViewPointImpl
+	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getESystemIndependentViewPoint()
+	 * @generated
+	 */
+	int ESYSTEM_INDEPENDENT_VIEW_POINT = 29;
+
+	/**
+	 * The feature id for the '<em><b>Repositoryviewtype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>ESystem Independent View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESYSTEM_INDEPENDENT_VIEW_POINT_FEATURE_COUNT = EVIEW_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>ESystem Independent View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESYSTEM_INDEPENDENT_VIEW_POINT_OPERATION_COUNT = EVIEW_POINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link mdsd.component_based.impl.EBranchImpl <em>EBranch</em>}' class.
@@ -2699,90 +2699,6 @@ public interface Component_basedPackage extends EPackage {
 	EReference getERepositoryViewType_ShowsInterfaces();
 
 	/**
-	 * Returns the meta object for class '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>EView Point</em>'.
-	 * @see mdsd.component_based.EViewPoint
-	 * @generated
-	 */
-	EClass getEViewPoint();
-
-	/**
-	 * Returns the meta object for class '{@link mdsd.component_based.ESystemIndependentViewPoint <em>ESystem Independent View Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ESystem Independent View Point</em>'.
-	 * @see mdsd.component_based.ESystemIndependentViewPoint
-	 * @generated
-	 */
-	EClass getESystemIndependentViewPoint();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.ESystemIndependentViewPoint#getRepositoryviewtype <em>Repositoryviewtype</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Repositoryviewtype</em>'.
-	 * @see mdsd.component_based.ESystemIndependentViewPoint#getRepositoryviewtype()
-	 * @see #getESystemIndependentViewPoint()
-	 * @generated
-	 */
-	EReference getESystemIndependentViewPoint_Repositoryviewtype();
-
-	/**
-	 * Returns the meta object for class '{@link mdsd.component_based.EAssemblyViewPoint <em>EAssembly View Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>EAssembly View Point</em>'.
-	 * @see mdsd.component_based.EAssemblyViewPoint
-	 * @generated
-	 */
-	EClass getEAssemblyViewPoint();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype <em>Assemblyviewtype</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Assemblyviewtype</em>'.
-	 * @see mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype()
-	 * @see #getEAssemblyViewPoint()
-	 * @generated
-	 */
-	EReference getEAssemblyViewPoint_Assemblyviewtype();
-
-	/**
-	 * Returns the meta object for class '{@link mdsd.component_based.EDeploymentViewPoint <em>EDeployment View Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>EDeployment View Point</em>'.
-	 * @see mdsd.component_based.EDeploymentViewPoint
-	 * @generated
-	 */
-	EClass getEDeploymentViewPoint();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype <em>Environmentviewtype</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Environmentviewtype</em>'.
-	 * @see mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype()
-	 * @see #getEDeploymentViewPoint()
-	 * @generated
-	 */
-	EReference getEDeploymentViewPoint_Environmentviewtype();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype <em>Allocationviewtype</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Allocationviewtype</em>'.
-	 * @see mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype()
-	 * @see #getEDeploymentViewPoint()
-	 * @generated
-	 */
-	EReference getEDeploymentViewPoint_Allocationviewtype();
-
-	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EBehaviourDescription <em>EBehaviour Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2847,6 +2763,27 @@ public interface Component_basedPackage extends EPackage {
 	EClass getEInternalAction();
 
 	/**
+	 * Returns the meta object for class '{@link mdsd.component_based.EAssemblyViewPoint <em>EAssembly View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EAssembly View Point</em>'.
+	 * @see mdsd.component_based.EAssemblyViewPoint
+	 * @generated
+	 */
+	EClass getEAssemblyViewPoint();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype <em>Assemblyviewtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Assemblyviewtype</em>'.
+	 * @see mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype()
+	 * @see #getEAssemblyViewPoint()
+	 * @generated
+	 */
+	EReference getEAssemblyViewPoint_Assemblyviewtype();
+
+	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EExternalCall <em>EExternal Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2866,6 +2803,69 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEExternalCall_To();
+
+	/**
+	 * Returns the meta object for class '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EView Point</em>'.
+	 * @see mdsd.component_based.EViewPoint
+	 * @generated
+	 */
+	EClass getEViewPoint();
+
+	/**
+	 * Returns the meta object for class '{@link mdsd.component_based.EDeploymentViewPoint <em>EDeployment View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EDeployment View Point</em>'.
+	 * @see mdsd.component_based.EDeploymentViewPoint
+	 * @generated
+	 */
+	EClass getEDeploymentViewPoint();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype <em>Environmentviewtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Environmentviewtype</em>'.
+	 * @see mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype()
+	 * @see #getEDeploymentViewPoint()
+	 * @generated
+	 */
+	EReference getEDeploymentViewPoint_Environmentviewtype();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype <em>Allocationviewtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Allocationviewtype</em>'.
+	 * @see mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype()
+	 * @see #getEDeploymentViewPoint()
+	 * @generated
+	 */
+	EReference getEDeploymentViewPoint_Allocationviewtype();
+
+	/**
+	 * Returns the meta object for class '{@link mdsd.component_based.ESystemIndependentViewPoint <em>ESystem Independent View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ESystem Independent View Point</em>'.
+	 * @see mdsd.component_based.ESystemIndependentViewPoint
+	 * @generated
+	 */
+	EClass getESystemIndependentViewPoint();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.ESystemIndependentViewPoint#getRepositoryviewtype <em>Repositoryviewtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Repositoryviewtype</em>'.
+	 * @see mdsd.component_based.ESystemIndependentViewPoint#getRepositoryviewtype()
+	 * @see #getESystemIndependentViewPoint()
+	 * @generated
+	 */
+	EReference getESystemIndependentViewPoint_Repositoryviewtype();
 
 	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EBranch <em>EBranch</em>}'.
@@ -3362,20 +3362,20 @@ public interface Component_basedPackage extends EPackage {
 		EClass EASSEMBLY_CONNECTOR = eINSTANCE.getEAssemblyConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Link From</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EASSEMBLY_CONNECTOR__LINK_FROM = eINSTANCE.getEAssemblyConnector_LinkFrom();
-
-		/**
 		 * The meta object literal for the '<em><b>Link To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference EASSEMBLY_CONNECTOR__LINK_TO = eINSTANCE.getEAssemblyConnector_LinkTo();
+
+		/**
+		 * The meta object literal for the '<em><b>Link From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EASSEMBLY_CONNECTOR__LINK_FROM = eINSTANCE.getEAssemblyConnector_LinkFrom();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EContainerImpl <em>EContainer</em>}' class.
@@ -3712,80 +3712,6 @@ public interface Component_basedPackage extends EPackage {
 		EReference EREPOSITORY_VIEW_TYPE__SHOWS_INTERFACES = eINSTANCE.getERepositoryViewType_ShowsInterfaces();
 
 		/**
-		 * The meta object literal for the '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mdsd.component_based.EViewPoint
-		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEViewPoint()
-		 * @generated
-		 */
-		EClass EVIEW_POINT = eINSTANCE.getEViewPoint();
-
-		/**
-		 * The meta object literal for the '{@link mdsd.component_based.impl.ESystemIndependentViewPointImpl <em>ESystem Independent View Point</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mdsd.component_based.impl.ESystemIndependentViewPointImpl
-		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getESystemIndependentViewPoint()
-		 * @generated
-		 */
-		EClass ESYSTEM_INDEPENDENT_VIEW_POINT = eINSTANCE.getESystemIndependentViewPoint();
-
-		/**
-		 * The meta object literal for the '<em><b>Repositoryviewtype</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE = eINSTANCE
-				.getESystemIndependentViewPoint_Repositoryviewtype();
-
-		/**
-		 * The meta object literal for the '{@link mdsd.component_based.impl.EAssemblyViewPointImpl <em>EAssembly View Point</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mdsd.component_based.impl.EAssemblyViewPointImpl
-		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEAssemblyViewPoint()
-		 * @generated
-		 */
-		EClass EASSEMBLY_VIEW_POINT = eINSTANCE.getEAssemblyViewPoint();
-
-		/**
-		 * The meta object literal for the '<em><b>Assemblyviewtype</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE = eINSTANCE.getEAssemblyViewPoint_Assemblyviewtype();
-
-		/**
-		 * The meta object literal for the '{@link mdsd.component_based.impl.EDeploymentViewPointImpl <em>EDeployment View Point</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mdsd.component_based.impl.EDeploymentViewPointImpl
-		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEDeploymentViewPoint()
-		 * @generated
-		 */
-		EClass EDEPLOYMENT_VIEW_POINT = eINSTANCE.getEDeploymentViewPoint();
-
-		/**
-		 * The meta object literal for the '<em><b>Environmentviewtype</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE = eINSTANCE
-				.getEDeploymentViewPoint_Environmentviewtype();
-
-		/**
-		 * The meta object literal for the '<em><b>Allocationviewtype</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE = eINSTANCE.getEDeploymentViewPoint_Allocationviewtype();
-
-		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EBehaviourDescriptionImpl <em>EBehaviour Description</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3838,6 +3764,24 @@ public interface Component_basedPackage extends EPackage {
 		EClass EINTERNAL_ACTION = eINSTANCE.getEInternalAction();
 
 		/**
+		 * The meta object literal for the '{@link mdsd.component_based.impl.EAssemblyViewPointImpl <em>EAssembly View Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mdsd.component_based.impl.EAssemblyViewPointImpl
+		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEAssemblyViewPoint()
+		 * @generated
+		 */
+		EClass EASSEMBLY_VIEW_POINT = eINSTANCE.getEAssemblyViewPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Assemblyviewtype</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE = eINSTANCE.getEAssemblyViewPoint_Assemblyviewtype();
+
+		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EExternalCallImpl <em>EExternal Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3854,6 +3798,62 @@ public interface Component_basedPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEXTERNAL_CALL__TO = eINSTANCE.getEExternalCall_To();
+
+		/**
+		 * The meta object literal for the '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mdsd.component_based.EViewPoint
+		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEViewPoint()
+		 * @generated
+		 */
+		EClass EVIEW_POINT = eINSTANCE.getEViewPoint();
+
+		/**
+		 * The meta object literal for the '{@link mdsd.component_based.impl.EDeploymentViewPointImpl <em>EDeployment View Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mdsd.component_based.impl.EDeploymentViewPointImpl
+		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEDeploymentViewPoint()
+		 * @generated
+		 */
+		EClass EDEPLOYMENT_VIEW_POINT = eINSTANCE.getEDeploymentViewPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Environmentviewtype</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE = eINSTANCE
+				.getEDeploymentViewPoint_Environmentviewtype();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocationviewtype</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE = eINSTANCE.getEDeploymentViewPoint_Allocationviewtype();
+
+		/**
+		 * The meta object literal for the '{@link mdsd.component_based.impl.ESystemIndependentViewPointImpl <em>ESystem Independent View Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mdsd.component_based.impl.ESystemIndependentViewPointImpl
+		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getESystemIndependentViewPoint()
+		 * @generated
+		 */
+		EClass ESYSTEM_INDEPENDENT_VIEW_POINT = eINSTANCE.getESystemIndependentViewPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Repositoryviewtype</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE = eINSTANCE
+				.getESystemIndependentViewPoint_Repositoryviewtype();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EBranchImpl <em>EBranch</em>}' class.

@@ -211,33 +211,6 @@ public interface Component_basedFactory extends EFactory {
 	ERepositoryViewType createERepositoryViewType();
 
 	/**
-	 * Returns a new object of class '<em>ESystem Independent View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ESystem Independent View Point</em>'.
-	 * @generated
-	 */
-	ESystemIndependentViewPoint createESystemIndependentViewPoint();
-
-	/**
-	 * Returns a new object of class '<em>EAssembly View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>EAssembly View Point</em>'.
-	 * @generated
-	 */
-	EAssemblyViewPoint createEAssemblyViewPoint();
-
-	/**
-	 * Returns a new object of class '<em>EDeployment View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>EDeployment View Point</em>'.
-	 * @generated
-	 */
-	EDeploymentViewPoint createEDeploymentViewPoint();
-
-	/**
 	 * Returns a new object of class '<em>EBehaviour Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,6 +229,15 @@ public interface Component_basedFactory extends EFactory {
 	EInternalAction createEInternalAction();
 
 	/**
+	 * Returns a new object of class '<em>EAssembly View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EAssembly View Point</em>'.
+	 * @generated
+	 */
+	EAssemblyViewPoint createEAssemblyViewPoint();
+
+	/**
 	 * Returns a new object of class '<em>EExternal Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -263,6 +245,24 @@ public interface Component_basedFactory extends EFactory {
 	 * @generated
 	 */
 	EExternalCall createEExternalCall();
+
+	/**
+	 * Returns a new object of class '<em>EDeployment View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EDeployment View Point</em>'.
+	 * @generated
+	 */
+	EDeploymentViewPoint createEDeploymentViewPoint();
+
+	/**
+	 * Returns a new object of class '<em>ESystem Independent View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ESystem Independent View Point</em>'.
+	 * @generated
+	 */
+	ESystemIndependentViewPoint createESystemIndependentViewPoint();
 
 	/**
 	 * Returns a new object of class '<em>EBranch</em>'.

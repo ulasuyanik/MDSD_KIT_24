@@ -237,40 +237,6 @@ public class Component_basedSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Component_basedPackage.EVIEW_POINT: {
-			EViewPoint eViewPoint = (EViewPoint) theEObject;
-			T result = caseEViewPoint(eViewPoint);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT: {
-			ESystemIndependentViewPoint eSystemIndependentViewPoint = (ESystemIndependentViewPoint) theEObject;
-			T result = caseESystemIndependentViewPoint(eSystemIndependentViewPoint);
-			if (result == null)
-				result = caseEViewPoint(eSystemIndependentViewPoint);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT: {
-			EAssemblyViewPoint eAssemblyViewPoint = (EAssemblyViewPoint) theEObject;
-			T result = caseEAssemblyViewPoint(eAssemblyViewPoint);
-			if (result == null)
-				result = caseEViewPoint(eAssemblyViewPoint);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT: {
-			EDeploymentViewPoint eDeploymentViewPoint = (EDeploymentViewPoint) theEObject;
-			T result = caseEDeploymentViewPoint(eDeploymentViewPoint);
-			if (result == null)
-				result = caseEViewPoint(eDeploymentViewPoint);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Component_basedPackage.EBEHAVIOUR_DESCRIPTION: {
 			EBehaviourDescription eBehaviourDescription = (EBehaviourDescription) theEObject;
 			T result = caseEBehaviourDescription(eBehaviourDescription);
@@ -285,9 +251,43 @@ public class Component_basedSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT: {
+			EAssemblyViewPoint eAssemblyViewPoint = (EAssemblyViewPoint) theEObject;
+			T result = caseEAssemblyViewPoint(eAssemblyViewPoint);
+			if (result == null)
+				result = caseEViewPoint(eAssemblyViewPoint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case Component_basedPackage.EEXTERNAL_CALL: {
 			EExternalCall eExternalCall = (EExternalCall) theEObject;
 			T result = caseEExternalCall(eExternalCall);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Component_basedPackage.EVIEW_POINT: {
+			EViewPoint eViewPoint = (EViewPoint) theEObject;
+			T result = caseEViewPoint(eViewPoint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT: {
+			EDeploymentViewPoint eDeploymentViewPoint = (EDeploymentViewPoint) theEObject;
+			T result = caseEDeploymentViewPoint(eDeploymentViewPoint);
+			if (result == null)
+				result = caseEViewPoint(eDeploymentViewPoint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT: {
+			ESystemIndependentViewPoint eSystemIndependentViewPoint = (ESystemIndependentViewPoint) theEObject;
+			T result = caseESystemIndependentViewPoint(eSystemIndependentViewPoint);
+			if (result == null)
+				result = caseEViewPoint(eSystemIndependentViewPoint);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -657,66 +657,6 @@ public class Component_basedSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EView Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EView Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEViewPoint(EViewPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ESystem Independent View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ESystem Independent View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseESystemIndependentViewPoint(ESystemIndependentViewPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EAssembly View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EAssembly View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEAssemblyViewPoint(EAssemblyViewPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EDeployment View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EDeployment View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEDeploymentViewPoint(EDeploymentViewPoint object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EBehaviour Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -747,6 +687,21 @@ public class Component_basedSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EAssembly View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EAssembly View Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEAssemblyViewPoint(EAssemblyViewPoint object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EExternal Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -758,6 +713,51 @@ public class Component_basedSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEExternalCall(EExternalCall object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EView Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EView Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEViewPoint(EViewPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EDeployment View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EDeployment View Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEDeploymentViewPoint(EDeploymentViewPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ESystem Independent View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ESystem Independent View Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseESystemIndependentViewPoint(ESystemIndependentViewPoint object) {
 		return null;
 	}
 

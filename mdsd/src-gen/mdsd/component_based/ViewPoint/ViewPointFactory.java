@@ -1,0 +1,60 @@
+/**
+ */
+package mdsd.component_based.ViewPoint;
+
+import org.eclipse.emf.ecore.EFactory;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Factory</b> for the model.
+ * It provides a create method for each non-abstract class of the model.
+ * <!-- end-user-doc -->
+ * @see mdsd.component_based.ViewPoint.ViewPointPackage
+ * @generated
+ */
+public interface ViewPointFactory extends EFactory {
+	/**
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	ViewPointFactory eINSTANCE = mdsd.component_based.ViewPoint.impl.ViewPointFactoryImpl.init();
+
+	/**
+	 * Returns a new object of class '<em>EAssembly View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EAssembly View Point</em>'.
+	 * @generated
+	 */
+	EAssemblyViewPoint createEAssemblyViewPoint();
+
+	/**
+	 * Returns a new object of class '<em>EDeployment View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EDeployment View Point</em>'.
+	 * @generated
+	 */
+	EDeploymentViewPoint createEDeploymentViewPoint();
+
+	/**
+	 * Returns a new object of class '<em>ESystem Independent View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ESystem Independent View Point</em>'.
+	 * @generated
+	 */
+	ESystemIndependentViewPoint createESystemIndependentViewPoint();
+
+	/**
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
+	ViewPointPackage getViewPointPackage();
+
+} //ViewPointFactory

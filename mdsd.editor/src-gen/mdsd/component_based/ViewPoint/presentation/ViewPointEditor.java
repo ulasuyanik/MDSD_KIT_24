@@ -1,6 +1,6 @@
 /**
  */
-package mdsd.component_based.presentation;
+package mdsd.component_based.ViewPoint.presentation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -153,16 +153,21 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
+import mdsd.component_based.ViewPoint.provider.ViewPointItemProviderAdapterFactory;
+
+import mdsd.component_based.presentation.Component_basedEditorPlugin;
+
 import mdsd.component_based.provider.Component_basedItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**
- * This is an example of a Component_based model editor.
+ * This is an example of a ViewPoint model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Component_basedEditor extends MultiPageEditorPart
+public class ViewPointEditor extends MultiPageEditorPart
 		implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
@@ -323,16 +328,16 @@ public class Component_basedEditor extends MultiPageEditorPart
 		public void partActivated(IWorkbenchPart p) {
 			if (p instanceof ContentOutline) {
 				if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
-					getActionBarContributor().setActiveEditor(Component_basedEditor.this);
+					getActionBarContributor().setActiveEditor(ViewPointEditor.this);
 
 					setCurrentViewer(contentOutlineViewer);
 				}
 			} else if (p instanceof PropertySheet) {
 				if (propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
-					getActionBarContributor().setActiveEditor(Component_basedEditor.this);
+					getActionBarContributor().setActiveEditor(ViewPointEditor.this);
 					handleActivate();
 				}
-			} else if (p == Component_basedEditor.this) {
+			} else if (p == ViewPointEditor.this) {
 				handleActivate();
 			}
 		}
@@ -511,7 +516,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 						public void run() {
 							removedResources.addAll(visitor.getRemovedResources());
 							if (!isDirty()) {
-								getSite().getPage().closeEditor(Component_basedEditor.this, false);
+								getSite().getPage().closeEditor(ViewPointEditor.this, false);
 							}
 						}
 					});
@@ -522,7 +527,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 						@Override
 						public void run() {
 							changedResources.addAll(visitor.getChangedResources());
-							if (getSite().getPage().getActiveEditor() == Component_basedEditor.this) {
+							if (getSite().getPage().getActiveEditor() == ViewPointEditor.this) {
 								handleActivate();
 							}
 						}
@@ -553,7 +558,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(Component_basedEditor.this, false);
+				getSite().getPage().closeEditor(ViewPointEditor.this, false);
 			} else {
 				removedResources.clear();
 				changedResources.clear();
@@ -667,7 +672,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component_basedEditor() {
+	public ViewPointEditor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -685,6 +690,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Component_basedItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ViewPointItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -994,7 +1000,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 			// Create a page for the selection tree view.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), Component_basedEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ViewPointEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						Tree tree = new Tree(composite, SWT.MULTI);
@@ -1030,7 +1036,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 			// Create a page for the parent tree view.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), Component_basedEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ViewPointEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						Tree tree = new Tree(composite, SWT.MULTI);
@@ -1059,7 +1065,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 			// This is the page for the list viewer
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), Component_basedEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ViewPointEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new ListViewer(composite);
@@ -1084,7 +1090,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 			// This is the page for the tree viewer
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), Component_basedEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ViewPointEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new TreeViewer(composite);
@@ -1111,7 +1117,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 			// This is the page for the table viewer.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), Component_basedEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ViewPointEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new TableViewer(composite);
@@ -1154,7 +1160,7 @@ public class Component_basedEditor extends MultiPageEditorPart
 			// This is the page for the table tree viewer.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), Component_basedEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ViewPointEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new TreeViewer(composite);
@@ -1376,8 +1382,8 @@ public class Component_basedEditor extends MultiPageEditorPart
 				ExtendedPropertySheetPage.Decoration.NONE, null, 0, false) {
 			@Override
 			public void setSelectionToViewer(List<?> selection) {
-				Component_basedEditor.this.setSelectionToViewer(selection);
-				Component_basedEditor.this.setFocus();
+				ViewPointEditor.this.setSelectionToViewer(selection);
+				ViewPointEditor.this.setFocus();
 			}
 
 			@Override

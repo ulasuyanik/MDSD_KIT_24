@@ -86,7 +86,7 @@ public enum PossibleParameterTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INT(6, "INT", "Int"),
+	INT(6, "INT", "Integer"),
 
 	/**
 	 * The '<em><b>LONG</b></em>' literal object.
@@ -199,7 +199,7 @@ public enum PossibleParameterTypes implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INT
-	 * @model literal="Int"
+	 * @model literal="Integer"
 	 * @generated
 	 * @ordered
 	 */

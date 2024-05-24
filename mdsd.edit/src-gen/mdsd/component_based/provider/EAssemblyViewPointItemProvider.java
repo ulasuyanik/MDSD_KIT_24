@@ -70,7 +70,7 @@ public class EAssemblyViewPointItemProvider extends ItemProviderAdapter implemen
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE);
+			childrenFeatures.add(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +132,7 @@ public class EAssemblyViewPointItemProvider extends ItemProviderAdapter implemen
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EAssemblyViewPoint.class)) {
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE:
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -151,7 +151,7 @@ public class EAssemblyViewPointItemProvider extends ItemProviderAdapter implemen
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-				.add(createChildParameter(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE,
+				.add(createChildParameter(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE,
 						Component_basedFactory.eINSTANCE.createEAssemblyViewType()));
 	}
 

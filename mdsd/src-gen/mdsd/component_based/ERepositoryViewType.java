@@ -4,8 +4,6 @@ package mdsd.component_based;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>ERepository View Type</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ERepositoryViewType extends EObject {
+public interface ERepositoryViewType extends EViewType {
 	/**
 	 * Returns the value of the '<em><b>Shows Components</b></em>' reference list.
 	 * The list contents are of type {@link mdsd.component_based.EComponent}.

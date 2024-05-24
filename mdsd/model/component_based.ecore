@@ -78,7 +78,7 @@
     <eLiterals name="DOUBLE" value="3" literal="Double"/>
     <eLiterals name="FLOAT" value="4" literal="Float"/>
     <eLiterals name="LIST" value="5" literal="List"/>
-    <eLiterals name="INT" value="6" literal="Int"/>
+    <eLiterals name="INT" value="6" literal="Integer"/>
     <eLiterals name="LONG" value="7" literal="Long"/>
     <eLiterals name="MAP" value="8" literal="Map"/>
     <eLiterals name="STRING" value="9" literal="String"/>
@@ -150,7 +150,7 @@
     <eLiterals name="DOUBLE" value="3" literal="Double"/>
     <eLiterals name="FLOAT" value="4" literal="Float"/>
     <eLiterals name="LIST" value="5" literal="List"/>
-    <eLiterals name="INT" value="6" literal="Int"/>
+    <eLiterals name="INT" value="6" literal="Integer"/>
     <eLiterals name="LONG" value="7" literal="Long"/>
     <eLiterals name="MAP" value="8" literal="Map"/>
     <eLiterals name="STRING" value="9" literal="String"/>
@@ -192,25 +192,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" eType="#//EAssemblyConnector"
         eOpposite="#//EAssemblyConnector/linkFrom"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="EEnvironmentViewType" eSuperTypes="#//EViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="showsContainers" upperBound="-1"
         eType="#//EContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="showsLinks" upperBound="-1"
         eType="#//ELink"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="EAllocationViewType" eSuperTypes="#//EViewType">
     <eOperations name="showComponentAllocations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
         eType="#//EAllocationContext" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewType" eSuperTypes="#//EViewType">
     <eOperations name="showComponentConnections"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mainArtifacts" upperBound="-1"
         eType="#//EAssemblyContext" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="showsComponents" upperBound="-1"
         eType="#//EComponent"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ERepositoryViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="ERepositoryViewType" eSuperTypes="#//EViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="showsComponents" upperBound="-1"
         eType="#//EComponent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="showsInterfaces" upperBound="-1"
@@ -218,17 +218,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EViewPoint" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ESystemIndependentViewPoint" eSuperTypes="#//EViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="repositoryviewtype" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repositoryViewType" lowerBound="1"
         eType="#//ERepositoryViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EAssemblyViewPoint" eSuperTypes="#//EViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyViewType" lowerBound="1"
         eType="#//EAssemblyViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EDeploymentViewPoint" eSuperTypes="#//EViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentviewtype" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentViewType" lowerBound="1"
         eType="#//EEnvironmentViewType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationviewtype" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationViewType" lowerBound="1"
         eType="#//EAllocationViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EBehaviourDescription">
@@ -247,5 +247,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EBranch"/>
   <eClassifiers xsi:type="ecore:EClass" name="ELoop"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NewEClass33"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EViewType" abstract="true" interface="true"/>
 </ecore:EPackage>

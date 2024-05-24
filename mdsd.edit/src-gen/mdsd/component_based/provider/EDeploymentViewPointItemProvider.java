@@ -70,8 +70,8 @@ public class EDeploymentViewPointItemProvider extends ItemProviderAdapter implem
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE);
-			childrenFeatures.add(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE);
+			childrenFeatures.add(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE);
+			childrenFeatures.add(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -133,8 +133,8 @@ public class EDeploymentViewPointItemProvider extends ItemProviderAdapter implem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EDeploymentViewPoint.class)) {
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE:
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE:
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE:
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -153,11 +153,11 @@ public class EDeploymentViewPointItemProvider extends ItemProviderAdapter implem
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-				.add(createChildParameter(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE,
+				.add(createChildParameter(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE,
 						Component_basedFactory.eINSTANCE.createEEnvironmentViewType()));
 
 		newChildDescriptors
-				.add(createChildParameter(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE,
+				.add(createChildParameter(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE,
 						Component_basedFactory.eINSTANCE.createEAllocationViewType()));
 	}
 

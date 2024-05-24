@@ -213,12 +213,16 @@ public class Component_basedSwitch<T> extends Switch<T> {
 			EEnvironmentViewType eEnvironmentViewType = (EEnvironmentViewType) theEObject;
 			T result = caseEEnvironmentViewType(eEnvironmentViewType);
 			if (result == null)
+				result = caseEViewType(eEnvironmentViewType);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case Component_basedPackage.EALLOCATION_VIEW_TYPE: {
 			EAllocationViewType eAllocationViewType = (EAllocationViewType) theEObject;
 			T result = caseEAllocationViewType(eAllocationViewType);
+			if (result == null)
+				result = caseEViewType(eAllocationViewType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -227,12 +231,16 @@ public class Component_basedSwitch<T> extends Switch<T> {
 			EAssemblyViewType eAssemblyViewType = (EAssemblyViewType) theEObject;
 			T result = caseEAssemblyViewType(eAssemblyViewType);
 			if (result == null)
+				result = caseEViewType(eAssemblyViewType);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case Component_basedPackage.EREPOSITORY_VIEW_TYPE: {
 			ERepositoryViewType eRepositoryViewType = (ERepositoryViewType) theEObject;
 			T result = caseERepositoryViewType(eRepositoryViewType);
+			if (result == null)
+				result = caseEViewType(eRepositoryViewType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -302,6 +310,13 @@ public class Component_basedSwitch<T> extends Switch<T> {
 		case Component_basedPackage.ELOOP: {
 			ELoop eLoop = (ELoop) theEObject;
 			T result = caseELoop(eLoop);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Component_basedPackage.EVIEW_TYPE: {
+			EViewType eViewType = (EViewType) theEObject;
+			T result = caseEViewType(eViewType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -788,6 +803,21 @@ public class Component_basedSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseELoop(ELoop object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EView Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EView Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEViewType(EViewType object) {
 		return null;
 	}
 

@@ -4,8 +4,6 @@ package mdsd.component_based;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>EAssembly View Type</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EAssemblyViewType extends EObject {
+public interface EAssemblyViewType extends EViewType {
 	/**
 	 * Returns the value of the '<em><b>Main Artifacts</b></em>' containment reference list.
 	 * The list contents are of type {@link mdsd.component_based.EAssemblyContext}.

@@ -24,32 +24,32 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link mdsd.component_based.impl.EDeploymentViewPointImpl#getEnvironmentviewtype <em>Environmentviewtype</em>}</li>
- *   <li>{@link mdsd.component_based.impl.EDeploymentViewPointImpl#getAllocationviewtype <em>Allocationviewtype</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.EDeploymentViewPointImpl#getEnvironmentViewType <em>Environment View Type</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.EDeploymentViewPointImpl#getAllocationViewType <em>Allocation View Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container implements EDeploymentViewPoint {
 	/**
-	 * The cached value of the '{@link #getEnvironmentviewtype() <em>Environmentviewtype</em>}' containment reference.
+	 * The cached value of the '{@link #getEnvironmentViewType() <em>Environment View Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEnvironmentviewtype()
+	 * @see #getEnvironmentViewType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EEnvironmentViewType environmentviewtype;
+	protected EEnvironmentViewType environmentViewType;
 
 	/**
-	 * The cached value of the '{@link #getAllocationviewtype() <em>Allocationviewtype</em>}' containment reference.
+	 * The cached value of the '{@link #getAllocationViewType() <em>Allocation View Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAllocationviewtype()
+	 * @see #getAllocationViewType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EAllocationViewType allocationviewtype;
+	protected EAllocationViewType allocationViewType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,8 +76,8 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public EEnvironmentViewType getEnvironmentviewtype() {
-		return environmentviewtype;
+	public EEnvironmentViewType getEnvironmentViewType() {
+		return environmentViewType;
 	}
 
 	/**
@@ -85,14 +85,14 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnvironmentviewtype(EEnvironmentViewType newEnvironmentviewtype,
+	public NotificationChain basicSetEnvironmentViewType(EEnvironmentViewType newEnvironmentViewType,
 			NotificationChain msgs) {
-		EEnvironmentViewType oldEnvironmentviewtype = environmentviewtype;
-		environmentviewtype = newEnvironmentviewtype;
+		EEnvironmentViewType oldEnvironmentViewType = environmentViewType;
+		environmentViewType = newEnvironmentViewType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE, oldEnvironmentviewtype,
-					newEnvironmentviewtype);
+					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE, oldEnvironmentViewType,
+					newEnvironmentViewType);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -107,24 +107,24 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public void setEnvironmentviewtype(EEnvironmentViewType newEnvironmentviewtype) {
-		if (newEnvironmentviewtype != environmentviewtype) {
+	public void setEnvironmentViewType(EEnvironmentViewType newEnvironmentViewType) {
+		if (newEnvironmentViewType != environmentViewType) {
 			NotificationChain msgs = null;
-			if (environmentviewtype != null)
-				msgs = ((InternalEObject) environmentviewtype).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE,
+			if (environmentViewType != null)
+				msgs = ((InternalEObject) environmentViewType).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE,
 						null, msgs);
-			if (newEnvironmentviewtype != null)
-				msgs = ((InternalEObject) newEnvironmentviewtype).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE,
+			if (newEnvironmentViewType != null)
+				msgs = ((InternalEObject) newEnvironmentViewType).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE,
 						null, msgs);
-			msgs = basicSetEnvironmentviewtype(newEnvironmentviewtype, msgs);
+			msgs = basicSetEnvironmentViewType(newEnvironmentViewType, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE, newEnvironmentviewtype,
-					newEnvironmentviewtype));
+					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE, newEnvironmentViewType,
+					newEnvironmentViewType));
 	}
 
 	/**
@@ -133,8 +133,8 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public EAllocationViewType getAllocationviewtype() {
-		return allocationviewtype;
+	public EAllocationViewType getAllocationViewType() {
+		return allocationViewType;
 	}
 
 	/**
@@ -142,14 +142,14 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAllocationviewtype(EAllocationViewType newAllocationviewtype,
+	public NotificationChain basicSetAllocationViewType(EAllocationViewType newAllocationViewType,
 			NotificationChain msgs) {
-		EAllocationViewType oldAllocationviewtype = allocationviewtype;
-		allocationviewtype = newAllocationviewtype;
+		EAllocationViewType oldAllocationViewType = allocationViewType;
+		allocationViewType = newAllocationViewType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE, oldAllocationviewtype,
-					newAllocationviewtype);
+					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE, oldAllocationViewType,
+					newAllocationViewType);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -164,24 +164,24 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public void setAllocationviewtype(EAllocationViewType newAllocationviewtype) {
-		if (newAllocationviewtype != allocationviewtype) {
+	public void setAllocationViewType(EAllocationViewType newAllocationViewType) {
+		if (newAllocationViewType != allocationViewType) {
 			NotificationChain msgs = null;
-			if (allocationviewtype != null)
-				msgs = ((InternalEObject) allocationviewtype).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE,
+			if (allocationViewType != null)
+				msgs = ((InternalEObject) allocationViewType).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE,
 						null, msgs);
-			if (newAllocationviewtype != null)
-				msgs = ((InternalEObject) newAllocationviewtype).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE,
+			if (newAllocationViewType != null)
+				msgs = ((InternalEObject) newAllocationViewType).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE,
 						null, msgs);
-			msgs = basicSetAllocationviewtype(newAllocationviewtype, msgs);
+			msgs = basicSetAllocationViewType(newAllocationViewType, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE, newAllocationviewtype,
-					newAllocationviewtype));
+					Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE, newAllocationViewType,
+					newAllocationViewType));
 	}
 
 	/**
@@ -192,10 +192,10 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE:
-			return basicSetEnvironmentviewtype(null, msgs);
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE:
-			return basicSetAllocationviewtype(null, msgs);
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE:
+			return basicSetEnvironmentViewType(null, msgs);
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE:
+			return basicSetAllocationViewType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,10 +208,10 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE:
-			return getEnvironmentviewtype();
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE:
-			return getAllocationviewtype();
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE:
+			return getEnvironmentViewType();
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE:
+			return getAllocationViewType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,11 +224,11 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE:
-			setEnvironmentviewtype((EEnvironmentViewType) newValue);
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE:
+			setEnvironmentViewType((EEnvironmentViewType) newValue);
 			return;
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE:
-			setAllocationviewtype((EAllocationViewType) newValue);
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE:
+			setAllocationViewType((EAllocationViewType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -242,11 +242,11 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE:
-			setEnvironmentviewtype((EEnvironmentViewType) null);
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE:
+			setEnvironmentViewType((EEnvironmentViewType) null);
 			return;
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE:
-			setAllocationviewtype((EAllocationViewType) null);
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE:
+			setAllocationViewType((EAllocationViewType) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -260,10 +260,10 @@ public class EDeploymentViewPointImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE:
-			return environmentviewtype != null;
-		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE:
-			return allocationviewtype != null;
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE:
+			return environmentViewType != null;
+		case Component_basedPackage.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE:
+			return allocationViewType != null;
 		}
 		return super.eIsSet(featureID);
 	}

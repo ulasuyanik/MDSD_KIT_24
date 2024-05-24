@@ -201,6 +201,7 @@ public class Component_basedTables extends AbstractTables
 		public static final EcoreExecutorType _ESystem = new EcoreExecutorType(Component_basedPackage.Literals.ESYSTEM, PACKAGE, 0);
 		public static final EcoreExecutorType _ESystemIndependentViewPoint = new EcoreExecutorType(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT, PACKAGE, 0);
 		public static final EcoreExecutorType _EViewPoint = new EcoreExecutorType(Component_basedPackage.Literals.EVIEW_POINT, PACKAGE, 0 | ExecutorType.ABSTRACT);
+		public static final EcoreExecutorType _EViewType = new EcoreExecutorType(Component_basedPackage.Literals.EVIEW_TYPE, PACKAGE, 0 | ExecutorType.ABSTRACT);
 		public static final EcoreExecutorType _EVoid = new EcoreExecutorType("EVoid", PACKAGE, 0);
 		public static final EcoreExecutorEnumeration _PossibleParameterTypes = new EcoreExecutorEnumeration(Component_basedPackage.Literals.POSSIBLE_PARAMETER_TYPES, PACKAGE, 0);
 		public static final EcoreExecutorEnumeration _PossibleReturnTypes = new EcoreExecutorEnumeration(Component_basedPackage.Literals.POSSIBLE_RETURN_TYPES, PACKAGE, 0);
@@ -238,6 +239,7 @@ public class Component_basedTables extends AbstractTables
 			_ESystem,
 			_ESystemIndependentViewPoint,
 			_EViewPoint,
+			_EViewType,
 			_EVoid,
 			_PossibleParameterTypes,
 			_PossibleReturnTypes
@@ -271,6 +273,7 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorFragment _EAllocationContext__OclElement = new ExecutorFragment(Types._EAllocationContext, OCLstdlibTables.Types._OclElement);
 
 		private static final ExecutorFragment _EAllocationViewType__EAllocationViewType = new ExecutorFragment(Types._EAllocationViewType, Component_basedTables.Types._EAllocationViewType);
+		private static final ExecutorFragment _EAllocationViewType__EViewType = new ExecutorFragment(Types._EAllocationViewType, Component_basedTables.Types._EViewType);
 		private static final ExecutorFragment _EAllocationViewType__OclAny = new ExecutorFragment(Types._EAllocationViewType, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _EAllocationViewType__OclElement = new ExecutorFragment(Types._EAllocationViewType, OCLstdlibTables.Types._OclElement);
 
@@ -288,6 +291,7 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorFragment _EAssemblyViewPoint__OclElement = new ExecutorFragment(Types._EAssemblyViewPoint, OCLstdlibTables.Types._OclElement);
 
 		private static final ExecutorFragment _EAssemblyViewType__EAssemblyViewType = new ExecutorFragment(Types._EAssemblyViewType, Component_basedTables.Types._EAssemblyViewType);
+		private static final ExecutorFragment _EAssemblyViewType__EViewType = new ExecutorFragment(Types._EAssemblyViewType, Component_basedTables.Types._EViewType);
 		private static final ExecutorFragment _EAssemblyViewType__OclAny = new ExecutorFragment(Types._EAssemblyViewType, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _EAssemblyViewType__OclElement = new ExecutorFragment(Types._EAssemblyViewType, OCLstdlibTables.Types._OclElement);
 
@@ -322,6 +326,7 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorFragment _EDeploymentViewPoint__OclElement = new ExecutorFragment(Types._EDeploymentViewPoint, OCLstdlibTables.Types._OclElement);
 
 		private static final ExecutorFragment _EEnvironmentViewType__EEnvironmentViewType = new ExecutorFragment(Types._EEnvironmentViewType, Component_basedTables.Types._EEnvironmentViewType);
+		private static final ExecutorFragment _EEnvironmentViewType__EViewType = new ExecutorFragment(Types._EEnvironmentViewType, Component_basedTables.Types._EViewType);
 		private static final ExecutorFragment _EEnvironmentViewType__OclAny = new ExecutorFragment(Types._EEnvironmentViewType, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _EEnvironmentViewType__OclElement = new ExecutorFragment(Types._EEnvironmentViewType, OCLstdlibTables.Types._OclElement);
 
@@ -364,6 +369,7 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorFragment _ERepository__OclElement = new ExecutorFragment(Types._ERepository, OCLstdlibTables.Types._OclElement);
 
 		private static final ExecutorFragment _ERepositoryViewType__ERepositoryViewType = new ExecutorFragment(Types._ERepositoryViewType, Component_basedTables.Types._ERepositoryViewType);
+		private static final ExecutorFragment _ERepositoryViewType__EViewType = new ExecutorFragment(Types._ERepositoryViewType, Component_basedTables.Types._EViewType);
 		private static final ExecutorFragment _ERepositoryViewType__OclAny = new ExecutorFragment(Types._ERepositoryViewType, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _ERepositoryViewType__OclElement = new ExecutorFragment(Types._ERepositoryViewType, OCLstdlibTables.Types._OclElement);
 
@@ -401,6 +407,10 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorFragment _EViewPoint__EViewPoint = new ExecutorFragment(Types._EViewPoint, Component_basedTables.Types._EViewPoint);
 		private static final ExecutorFragment _EViewPoint__OclAny = new ExecutorFragment(Types._EViewPoint, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _EViewPoint__OclElement = new ExecutorFragment(Types._EViewPoint, OCLstdlibTables.Types._OclElement);
+
+		private static final ExecutorFragment _EViewType__EViewType = new ExecutorFragment(Types._EViewType, Component_basedTables.Types._EViewType);
+		private static final ExecutorFragment _EViewType__OclAny = new ExecutorFragment(Types._EViewType, OCLstdlibTables.Types._OclAny);
+		private static final ExecutorFragment _EViewType__OclElement = new ExecutorFragment(Types._EViewType, OCLstdlibTables.Types._OclElement);
 
 		private static final ExecutorFragment _EVoid__EVoid = new ExecutorFragment(Types._EVoid, Component_basedTables.Types._EVoid);
 		private static final ExecutorFragment _EVoid__OclAny = new ExecutorFragment(Types._EVoid, OCLstdlibTables.Types._OclAny);
@@ -498,7 +508,7 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EAllocationContext__EAllocationViewType__includes = new ExecutorPropertyWithImplementation("EAllocationViewType", Types._EAllocationContext, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EALLOCATION_VIEW_TYPE__INCLUDES));
 
 		public static final ExecutorProperty _EAllocationViewType__includes = new EcoreExecutorProperty(Component_basedPackage.Literals.EALLOCATION_VIEW_TYPE__INCLUDES, Types._EAllocationViewType, 0);
-		public static final ExecutorProperty _EAllocationViewType__EDeploymentViewPoint__allocationviewtype = new ExecutorPropertyWithImplementation("EDeploymentViewPoint", Types._EAllocationViewType, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE));
+		public static final ExecutorProperty _EAllocationViewType__EDeploymentViewPoint__allocationViewType = new ExecutorPropertyWithImplementation("EDeploymentViewPoint", Types._EAllocationViewType, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE));
 
 		public static final ExecutorProperty _EAssemblyConnector__linkFrom = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_FROM, Types._EAssemblyConnector, 0);
 		public static final ExecutorProperty _EAssemblyConnector__linkTo = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_TO, Types._EAssemblyConnector, 1);
@@ -513,11 +523,11 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EAssemblyContext__EAssemblyViewType__mainArtifacts = new ExecutorPropertyWithImplementation("EAssemblyViewType", Types._EAssemblyContext, 7, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_TYPE__MAIN_ARTIFACTS));
 		public static final ExecutorProperty _EAssemblyContext__ERole__roleOf = new ExecutorPropertyWithImplementation("ERole", Types._EAssemblyContext, 8, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROLE__ROLE_OF));
 
-		public static final ExecutorProperty _EAssemblyViewPoint__assemblyviewtype = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE, Types._EAssemblyViewPoint, 0);
+		public static final ExecutorProperty _EAssemblyViewPoint__assemblyViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE, Types._EAssemblyViewPoint, 0);
 
 		public static final ExecutorProperty _EAssemblyViewType__mainArtifacts = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_TYPE__MAIN_ARTIFACTS, Types._EAssemblyViewType, 0);
 		public static final ExecutorProperty _EAssemblyViewType__showsComponents = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_TYPE__SHOWS_COMPONENTS, Types._EAssemblyViewType, 1);
-		public static final ExecutorProperty _EAssemblyViewType__EAssemblyViewPoint__assemblyviewtype = new ExecutorPropertyWithImplementation("EAssemblyViewPoint", Types._EAssemblyViewType, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE));
+		public static final ExecutorProperty _EAssemblyViewType__EAssemblyViewPoint__assemblyViewType = new ExecutorPropertyWithImplementation("EAssemblyViewPoint", Types._EAssemblyViewType, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE));
 
 		public static final ExecutorProperty _EBehaviourDescription__branch = new EcoreExecutorProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__BRANCH, Types._EBehaviourDescription, 0);
 		public static final ExecutorProperty _EBehaviourDescription__externalCall = new EcoreExecutorProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__EXTERNAL_CALL, Types._EBehaviourDescription, 1);
@@ -547,12 +557,12 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EContainer__EAssemblyContext__allocated = new ExecutorPropertyWithImplementation("EAssemblyContext", Types._EContainer, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_CONTEXT__ALLOCATED));
 		public static final ExecutorProperty _EContainer__EEnvironmentViewType__showsContainers = new ExecutorPropertyWithImplementation("EEnvironmentViewType", Types._EContainer, 4, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EENVIRONMENT_VIEW_TYPE__SHOWS_CONTAINERS));
 
-		public static final ExecutorProperty _EDeploymentViewPoint__allocationviewtype = new EcoreExecutorProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE, Types._EDeploymentViewPoint, 0);
-		public static final ExecutorProperty _EDeploymentViewPoint__environmentviewtype = new EcoreExecutorProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE, Types._EDeploymentViewPoint, 1);
+		public static final ExecutorProperty _EDeploymentViewPoint__allocationViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE, Types._EDeploymentViewPoint, 0);
+		public static final ExecutorProperty _EDeploymentViewPoint__environmentViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE, Types._EDeploymentViewPoint, 1);
 
 		public static final ExecutorProperty _EEnvironmentViewType__showsContainers = new EcoreExecutorProperty(Component_basedPackage.Literals.EENVIRONMENT_VIEW_TYPE__SHOWS_CONTAINERS, Types._EEnvironmentViewType, 0);
 		public static final ExecutorProperty _EEnvironmentViewType__showsLinks = new EcoreExecutorProperty(Component_basedPackage.Literals.EENVIRONMENT_VIEW_TYPE__SHOWS_LINKS, Types._EEnvironmentViewType, 1);
-		public static final ExecutorProperty _EEnvironmentViewType__EDeploymentViewPoint__environmentviewtype = new ExecutorPropertyWithImplementation("EDeploymentViewPoint", Types._EEnvironmentViewType, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE));
+		public static final ExecutorProperty _EEnvironmentViewType__EDeploymentViewPoint__environmentViewType = new ExecutorPropertyWithImplementation("EDeploymentViewPoint", Types._EEnvironmentViewType, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE));
 
 		public static final ExecutorProperty _EExternalCall__to = new EcoreExecutorProperty(Component_basedPackage.Literals.EEXTERNAL_CALL__TO, Types._EExternalCall, 0);
 		public static final ExecutorProperty _EExternalCall__EBehaviourDescription__externalCall = new ExecutorPropertyWithImplementation("EBehaviourDescription", Types._EExternalCall, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__EXTERNAL_CALL));
@@ -592,7 +602,7 @@ public class Component_basedTables extends AbstractTables
 
 		public static final ExecutorProperty _ERepositoryViewType__showsComponents = new EcoreExecutorProperty(Component_basedPackage.Literals.EREPOSITORY_VIEW_TYPE__SHOWS_COMPONENTS, Types._ERepositoryViewType, 0);
 		public static final ExecutorProperty _ERepositoryViewType__showsInterfaces = new EcoreExecutorProperty(Component_basedPackage.Literals.EREPOSITORY_VIEW_TYPE__SHOWS_INTERFACES, Types._ERepositoryViewType, 1);
-		public static final ExecutorProperty _ERepositoryViewType__ESystemIndependentViewPoint__repositoryviewtype = new ExecutorPropertyWithImplementation("ESystemIndependentViewPoint", Types._ERepositoryViewType, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE));
+		public static final ExecutorProperty _ERepositoryViewType__ESystemIndependentViewPoint__repositoryViewType = new ExecutorPropertyWithImplementation("ESystemIndependentViewPoint", Types._ERepositoryViewType, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE));
 
 		public static final ExecutorProperty _ERequiredDelegationConnector__linkFrom = new EcoreExecutorProperty(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_FROM, Types._ERequiredDelegationConnector, 0);
 		public static final ExecutorProperty _ERequiredDelegationConnector__linkTo = new EcoreExecutorProperty(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_TO, Types._ERequiredDelegationConnector, 1);
@@ -619,7 +629,7 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _ESystem__requires = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM__REQUIRES, Types._ESystem, 2);
 		public static final ExecutorProperty _ESystem__EAllocationContext__specifiesFor = new ExecutorPropertyWithImplementation("EAllocationContext", Types._ESystem, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EALLOCATION_CONTEXT__SPECIFIES_FOR));
 
-		public static final ExecutorProperty _ESystemIndependentViewPoint__repositoryviewtype = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE, Types._ESystemIndependentViewPoint, 0);
+		public static final ExecutorProperty _ESystemIndependentViewPoint__repositoryViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE, Types._ESystemIndependentViewPoint, 0);
 		static {
 			Init.initEnd();
 		}
@@ -651,9 +661,10 @@ public class Component_basedTables extends AbstractTables
 			{
 				Fragments._EAllocationViewType__OclAny /* 0 */,
 				Fragments._EAllocationViewType__OclElement /* 1 */,
-				Fragments._EAllocationViewType__EAllocationViewType /* 2 */
+				Fragments._EAllocationViewType__EViewType /* 2 */,
+				Fragments._EAllocationViewType__EAllocationViewType /* 3 */
 			};
-		private static final int /*@NonNull*/ [] __EAllocationViewType = { 1,1,1 };
+		private static final int /*@NonNull*/ [] __EAllocationViewType = { 1,1,1,1 };
 
 		private static final ExecutorFragment /*@NonNull*/ [] _EAssemblyConnector =
 			{
@@ -684,9 +695,10 @@ public class Component_basedTables extends AbstractTables
 			{
 				Fragments._EAssemblyViewType__OclAny /* 0 */,
 				Fragments._EAssemblyViewType__OclElement /* 1 */,
-				Fragments._EAssemblyViewType__EAssemblyViewType /* 2 */
+				Fragments._EAssemblyViewType__EViewType /* 2 */,
+				Fragments._EAssemblyViewType__EAssemblyViewType /* 3 */
 			};
-		private static final int /*@NonNull*/ [] __EAssemblyViewType = { 1,1,1 };
+		private static final int /*@NonNull*/ [] __EAssemblyViewType = { 1,1,1,1 };
 
 		private static final ExecutorFragment /*@NonNull*/ [] _EBehaviourDescription =
 			{
@@ -750,9 +762,10 @@ public class Component_basedTables extends AbstractTables
 			{
 				Fragments._EEnvironmentViewType__OclAny /* 0 */,
 				Fragments._EEnvironmentViewType__OclElement /* 1 */,
-				Fragments._EEnvironmentViewType__EEnvironmentViewType /* 2 */
+				Fragments._EEnvironmentViewType__EViewType /* 2 */,
+				Fragments._EEnvironmentViewType__EEnvironmentViewType /* 3 */
 			};
-		private static final int /*@NonNull*/ [] __EEnvironmentViewType = { 1,1,1 };
+		private static final int /*@NonNull*/ [] __EEnvironmentViewType = { 1,1,1,1 };
 
 		private static final ExecutorFragment /*@NonNull*/ [] _EExternalCall =
 			{
@@ -832,9 +845,10 @@ public class Component_basedTables extends AbstractTables
 			{
 				Fragments._ERepositoryViewType__OclAny /* 0 */,
 				Fragments._ERepositoryViewType__OclElement /* 1 */,
-				Fragments._ERepositoryViewType__ERepositoryViewType /* 2 */
+				Fragments._ERepositoryViewType__EViewType /* 2 */,
+				Fragments._ERepositoryViewType__ERepositoryViewType /* 3 */
 			};
-		private static final int /*@NonNull*/ [] __ERepositoryViewType = { 1,1,1 };
+		private static final int /*@NonNull*/ [] __ERepositoryViewType = { 1,1,1,1 };
 
 		private static final ExecutorFragment /*@NonNull*/ [] _ERequiredDelegationConnector =
 			{
@@ -903,6 +917,14 @@ public class Component_basedTables extends AbstractTables
 			};
 		private static final int /*@NonNull*/ [] __EViewPoint = { 1,1,1 };
 
+		private static final ExecutorFragment /*@NonNull*/ [] _EViewType =
+			{
+				Fragments._EViewType__OclAny /* 0 */,
+				Fragments._EViewType__OclElement /* 1 */,
+				Fragments._EViewType__EViewType /* 2 */
+			};
+		private static final int /*@NonNull*/ [] __EViewType = { 1,1,1 };
+
 		private static final ExecutorFragment /*@NonNull*/ [] _EVoid =
 			{
 				Fragments._EVoid__OclAny /* 0 */,
@@ -966,6 +988,7 @@ public class Component_basedTables extends AbstractTables
 			Types._ESystem.initFragments(_ESystem, __ESystem);
 			Types._ESystemIndependentViewPoint.initFragments(_ESystemIndependentViewPoint, __ESystemIndependentViewPoint);
 			Types._EViewPoint.initFragments(_EViewPoint, __EViewPoint);
+			Types._EViewType.initFragments(_EViewType, __EViewType);
 			Types._EVoid.initFragments(_EVoid, __EVoid);
 			Types._PossibleParameterTypes.initFragments(_PossibleParameterTypes, __PossibleParameterTypes);
 			Types._PossibleReturnTypes.initFragments(_PossibleReturnTypes, __PossibleReturnTypes);
@@ -1024,6 +1047,7 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorOperation /*@NonNull*/ [] _EAllocationViewType__EAllocationViewType = {
 			Component_basedTables.Operations._EAllocationViewType__showComponentAllocations /* showComponentAllocations() */
 		};
+		private static final ExecutorOperation /*@NonNull*/ [] _EAllocationViewType__EViewType = {};
 		private static final ExecutorOperation /*@NonNull*/ [] _EAllocationViewType__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -1159,6 +1183,7 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorOperation /*@NonNull*/ [] _EAssemblyViewType__EAssemblyViewType = {
 			Component_basedTables.Operations._EAssemblyViewType__showComponentConnections /* showComponentConnections() */
 		};
+		private static final ExecutorOperation /*@NonNull*/ [] _EAssemblyViewType__EViewType = {};
 		private static final ExecutorOperation /*@NonNull*/ [] _EAssemblyViewType__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -1425,6 +1450,7 @@ public class Component_basedTables extends AbstractTables
 		};
 
 		private static final ExecutorOperation /*@NonNull*/ [] _EEnvironmentViewType__EEnvironmentViewType = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _EEnvironmentViewType__EViewType = {};
 		private static final ExecutorOperation /*@NonNull*/ [] _EEnvironmentViewType__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -1757,6 +1783,7 @@ public class Component_basedTables extends AbstractTables
 		};
 
 		private static final ExecutorOperation /*@NonNull*/ [] _ERepositoryViewType__ERepositoryViewType = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _ERepositoryViewType__EViewType = {};
 		private static final ExecutorOperation /*@NonNull*/ [] _ERepositoryViewType__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -2056,6 +2083,39 @@ public class Component_basedTables extends AbstractTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
+		private static final ExecutorOperation /*@NonNull*/ [] _EViewType__EViewType = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _EViewType__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _EViewType__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances(Integer[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclBase /* oclBase() */,
+			OCLstdlibTables.Operations._OclElement__1_oclBase /* oclBase(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclExtension /* oclExtension(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclExtensions /* oclExtensions() */,
+			OCLstdlibTables.Operations._OclElement__1_oclExtensions /* oclExtensions(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
 		private static final ExecutorOperation /*@NonNull*/ [] _EVoid__EVoid = {};
 		private static final ExecutorOperation /*@NonNull*/ [] _EVoid__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -2162,6 +2222,7 @@ public class Component_basedTables extends AbstractTables
 			Fragments._EAllocationContext__OclElement.initOperations(_EAllocationContext__OclElement);
 
 			Fragments._EAllocationViewType__EAllocationViewType.initOperations(_EAllocationViewType__EAllocationViewType);
+			Fragments._EAllocationViewType__EViewType.initOperations(_EAllocationViewType__EViewType);
 			Fragments._EAllocationViewType__OclAny.initOperations(_EAllocationViewType__OclAny);
 			Fragments._EAllocationViewType__OclElement.initOperations(_EAllocationViewType__OclElement);
 
@@ -2179,6 +2240,7 @@ public class Component_basedTables extends AbstractTables
 			Fragments._EAssemblyViewPoint__OclElement.initOperations(_EAssemblyViewPoint__OclElement);
 
 			Fragments._EAssemblyViewType__EAssemblyViewType.initOperations(_EAssemblyViewType__EAssemblyViewType);
+			Fragments._EAssemblyViewType__EViewType.initOperations(_EAssemblyViewType__EViewType);
 			Fragments._EAssemblyViewType__OclAny.initOperations(_EAssemblyViewType__OclAny);
 			Fragments._EAssemblyViewType__OclElement.initOperations(_EAssemblyViewType__OclElement);
 
@@ -2213,6 +2275,7 @@ public class Component_basedTables extends AbstractTables
 			Fragments._EDeploymentViewPoint__OclElement.initOperations(_EDeploymentViewPoint__OclElement);
 
 			Fragments._EEnvironmentViewType__EEnvironmentViewType.initOperations(_EEnvironmentViewType__EEnvironmentViewType);
+			Fragments._EEnvironmentViewType__EViewType.initOperations(_EEnvironmentViewType__EViewType);
 			Fragments._EEnvironmentViewType__OclAny.initOperations(_EEnvironmentViewType__OclAny);
 			Fragments._EEnvironmentViewType__OclElement.initOperations(_EEnvironmentViewType__OclElement);
 
@@ -2255,6 +2318,7 @@ public class Component_basedTables extends AbstractTables
 			Fragments._ERepository__OclElement.initOperations(_ERepository__OclElement);
 
 			Fragments._ERepositoryViewType__ERepositoryViewType.initOperations(_ERepositoryViewType__ERepositoryViewType);
+			Fragments._ERepositoryViewType__EViewType.initOperations(_ERepositoryViewType__EViewType);
 			Fragments._ERepositoryViewType__OclAny.initOperations(_ERepositoryViewType__OclAny);
 			Fragments._ERepositoryViewType__OclElement.initOperations(_ERepositoryViewType__OclElement);
 
@@ -2292,6 +2356,10 @@ public class Component_basedTables extends AbstractTables
 			Fragments._EViewPoint__EViewPoint.initOperations(_EViewPoint__EViewPoint);
 			Fragments._EViewPoint__OclAny.initOperations(_EViewPoint__OclAny);
 			Fragments._EViewPoint__OclElement.initOperations(_EViewPoint__OclElement);
+
+			Fragments._EViewType__EViewType.initOperations(_EViewType__EViewType);
+			Fragments._EViewType__OclAny.initOperations(_EViewType__OclAny);
+			Fragments._EViewType__OclElement.initOperations(_EViewType__OclElement);
 
 			Fragments._EVoid__EVoid.initOperations(_EVoid__EVoid);
 			Fragments._EVoid__OclAny.initOperations(_EVoid__OclAny);
@@ -2359,7 +2427,7 @@ public class Component_basedTables extends AbstractTables
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _EAssemblyViewPoint = {
-			Component_basedTables.Properties._EAssemblyViewPoint__assemblyviewtype,
+			Component_basedTables.Properties._EAssemblyViewPoint__assemblyViewType,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -2423,8 +2491,8 @@ public class Component_basedTables extends AbstractTables
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _EDeploymentViewPoint = {
-			Component_basedTables.Properties._EDeploymentViewPoint__allocationviewtype,
-			Component_basedTables.Properties._EDeploymentViewPoint__environmentviewtype,
+			Component_basedTables.Properties._EDeploymentViewPoint__allocationViewType,
+			Component_basedTables.Properties._EDeploymentViewPoint__environmentViewType,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -2551,10 +2619,15 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorProperty /*@NonNull*/ [] _ESystemIndependentViewPoint = {
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
-			Component_basedTables.Properties._ESystemIndependentViewPoint__repositoryviewtype
+			Component_basedTables.Properties._ESystemIndependentViewPoint__repositoryViewType
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _EViewPoint = {
+			OCLstdlibTables.Properties._OclElement__oclContainer,
+			OCLstdlibTables.Properties._OclElement__oclContents
+		};
+
+		private static final ExecutorProperty /*@NonNull*/ [] _EViewType = {
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -2607,6 +2680,7 @@ public class Component_basedTables extends AbstractTables
 			Fragments._ESystem__ESystem.initProperties(_ESystem);
 			Fragments._ESystemIndependentViewPoint__ESystemIndependentViewPoint.initProperties(_ESystemIndependentViewPoint);
 			Fragments._EViewPoint__EViewPoint.initProperties(_EViewPoint);
+			Fragments._EViewType__EViewType.initProperties(_EViewType);
 			Fragments._EVoid__EVoid.initProperties(_EVoid);
 			Fragments._PossibleParameterTypes__PossibleParameterTypes.initProperties(_PossibleParameterTypes);
 			Fragments._PossibleReturnTypes__PossibleReturnTypes.initProperties(_PossibleReturnTypes);

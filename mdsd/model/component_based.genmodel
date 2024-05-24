@@ -141,14 +141,14 @@
     </genClasses>
     <genClasses image="false" ecoreClass="component_based.ecore#//EViewPoint"/>
     <genClasses ecoreClass="component_based.ecore#//ESystemIndependentViewPoint">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//ESystemIndependentViewPoint/repositoryviewtype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//ESystemIndependentViewPoint/repositoryViewType"/>
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//EAssemblyViewPoint">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyViewPoint/assemblyviewtype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EAssemblyViewPoint/assemblyViewType"/>
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//EDeploymentViewPoint">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EDeploymentViewPoint/environmentviewtype"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EDeploymentViewPoint/allocationviewtype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EDeploymentViewPoint/environmentViewType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EDeploymentViewPoint/allocationViewType"/>
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//EBehaviourDescription">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component_based.ecore#//EBehaviourDescription/internalAction"/>
@@ -162,6 +162,6 @@
     </genClasses>
     <genClasses ecoreClass="component_based.ecore#//EBranch"/>
     <genClasses ecoreClass="component_based.ecore#//ELoop"/>
-    <genClasses ecoreClass="component_based.ecore#//NewEClass33"/>
+    <genClasses image="false" ecoreClass="component_based.ecore#//EViewType"/>
   </genPackages>
 </genmodel:GenModel>

@@ -11,8 +11,8 @@ package mdsd.component_based;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype <em>Environmentviewtype</em>}</li>
- *   <li>{@link mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype <em>Allocationviewtype</em>}</li>
+ *   <li>{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentViewType <em>Environment View Type</em>}</li>
+ *   <li>{@link mdsd.component_based.EDeploymentViewPoint#getAllocationViewType <em>Allocation View Type</em>}</li>
  * </ul>
  *
  * @see mdsd.component_based.Component_basedPackage#getEDeploymentViewPoint()
@@ -21,47 +21,47 @@ package mdsd.component_based;
  */
 public interface EDeploymentViewPoint extends EViewPoint {
 	/**
-	 * Returns the value of the '<em><b>Environmentviewtype</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Environment View Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Environmentviewtype</em>' containment reference.
-	 * @see #setEnvironmentviewtype(EEnvironmentViewType)
-	 * @see mdsd.component_based.Component_basedPackage#getEDeploymentViewPoint_Environmentviewtype()
+	 * @return the value of the '<em>Environment View Type</em>' containment reference.
+	 * @see #setEnvironmentViewType(EEnvironmentViewType)
+	 * @see mdsd.component_based.Component_basedPackage#getEDeploymentViewPoint_EnvironmentViewType()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EEnvironmentViewType getEnvironmentviewtype();
+	EEnvironmentViewType getEnvironmentViewType();
 
 	/**
-	 * Sets the value of the '{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype <em>Environmentviewtype</em>}' containment reference.
+	 * Sets the value of the '{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentViewType <em>Environment View Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Environmentviewtype</em>' containment reference.
-	 * @see #getEnvironmentviewtype()
+	 * @param value the new value of the '<em>Environment View Type</em>' containment reference.
+	 * @see #getEnvironmentViewType()
 	 * @generated
 	 */
-	void setEnvironmentviewtype(EEnvironmentViewType value);
+	void setEnvironmentViewType(EEnvironmentViewType value);
 
 	/**
-	 * Returns the value of the '<em><b>Allocationviewtype</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Allocation View Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allocationviewtype</em>' containment reference.
-	 * @see #setAllocationviewtype(EAllocationViewType)
-	 * @see mdsd.component_based.Component_basedPackage#getEDeploymentViewPoint_Allocationviewtype()
+	 * @return the value of the '<em>Allocation View Type</em>' containment reference.
+	 * @see #setAllocationViewType(EAllocationViewType)
+	 * @see mdsd.component_based.Component_basedPackage#getEDeploymentViewPoint_AllocationViewType()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EAllocationViewType getAllocationviewtype();
+	EAllocationViewType getAllocationViewType();
 
 	/**
-	 * Sets the value of the '{@link mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype <em>Allocationviewtype</em>}' containment reference.
+	 * Sets the value of the '{@link mdsd.component_based.EDeploymentViewPoint#getAllocationViewType <em>Allocation View Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Allocationviewtype</em>' containment reference.
-	 * @see #getAllocationviewtype()
+	 * @param value the new value of the '<em>Allocation View Type</em>' containment reference.
+	 * @see #getAllocationViewType()
 	 * @generated
 	 */
-	void setAllocationviewtype(EAllocationViewType value);
+	void setAllocationViewType(EAllocationViewType value);
 
 } // EDeploymentViewPoint

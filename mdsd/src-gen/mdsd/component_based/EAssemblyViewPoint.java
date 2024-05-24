@@ -11,7 +11,7 @@ package mdsd.component_based;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype <em>Assemblyviewtype</em>}</li>
+ *   <li>{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyViewType <em>Assembly View Type</em>}</li>
  * </ul>
  *
  * @see mdsd.component_based.Component_basedPackage#getEAssemblyViewPoint()
@@ -20,25 +20,25 @@ package mdsd.component_based;
  */
 public interface EAssemblyViewPoint extends EViewPoint {
 	/**
-	 * Returns the value of the '<em><b>Assemblyviewtype</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Assembly View Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assemblyviewtype</em>' containment reference.
-	 * @see #setAssemblyviewtype(EAssemblyViewType)
-	 * @see mdsd.component_based.Component_basedPackage#getEAssemblyViewPoint_Assemblyviewtype()
+	 * @return the value of the '<em>Assembly View Type</em>' containment reference.
+	 * @see #setAssemblyViewType(EAssemblyViewType)
+	 * @see mdsd.component_based.Component_basedPackage#getEAssemblyViewPoint_AssemblyViewType()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EAssemblyViewType getAssemblyviewtype();
+	EAssemblyViewType getAssemblyViewType();
 
 	/**
-	 * Sets the value of the '{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype <em>Assemblyviewtype</em>}' containment reference.
+	 * Sets the value of the '{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyViewType <em>Assembly View Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Assemblyviewtype</em>' containment reference.
-	 * @see #getAssemblyviewtype()
+	 * @param value the new value of the '<em>Assembly View Type</em>' containment reference.
+	 * @see #getAssemblyViewType()
 	 * @generated
 	 */
-	void setAssemblyviewtype(EAssemblyViewType value);
+	void setAssemblyViewType(EAssemblyViewType value);
 
 } // EAssemblyViewPoint

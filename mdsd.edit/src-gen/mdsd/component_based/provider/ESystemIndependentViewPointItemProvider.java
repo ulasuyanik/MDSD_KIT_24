@@ -70,7 +70,7 @@ public class ESystemIndependentViewPointItemProvider extends ItemProviderAdapter
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE);
+			childrenFeatures.add(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +132,7 @@ public class ESystemIndependentViewPointItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ESystemIndependentViewPoint.class)) {
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE:
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -150,9 +150,9 @@ public class ESystemIndependentViewPointItemProvider extends ItemProviderAdapter
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE,
-						Component_basedFactory.eINSTANCE.createERepositoryViewType()));
+		newChildDescriptors.add(createChildParameter(
+				Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE,
+				Component_basedFactory.eINSTANCE.createERepositoryViewType()));
 	}
 
 	/**

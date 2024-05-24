@@ -1198,6 +1198,34 @@ public interface Component_basedPackage extends EPackage {
 	int EPROVIDED_ROLE_OPERATION_COUNT = EROLE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link mdsd.component_based.EViewType <em>EView Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mdsd.component_based.EViewType
+	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEViewType()
+	 * @generated
+	 */
+	int EVIEW_TYPE = 32;
+
+	/**
+	 * The number of structural features of the '<em>EView Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIEW_TYPE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>EView Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIEW_TYPE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link mdsd.component_based.impl.EEnvironmentViewTypeImpl <em>EEnvironment View Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1214,7 +1242,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EENVIRONMENT_VIEW_TYPE__SHOWS_CONTAINERS = 0;
+	int EENVIRONMENT_VIEW_TYPE__SHOWS_CONTAINERS = EVIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shows Links</b></em>' reference list.
@@ -1223,7 +1251,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EENVIRONMENT_VIEW_TYPE__SHOWS_LINKS = 1;
+	int EENVIRONMENT_VIEW_TYPE__SHOWS_LINKS = EVIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>EEnvironment View Type</em>' class.
@@ -1232,7 +1260,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EENVIRONMENT_VIEW_TYPE_FEATURE_COUNT = 2;
+	int EENVIRONMENT_VIEW_TYPE_FEATURE_COUNT = EVIEW_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>EEnvironment View Type</em>' class.
@@ -1241,7 +1269,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EENVIRONMENT_VIEW_TYPE_OPERATION_COUNT = 0;
+	int EENVIRONMENT_VIEW_TYPE_OPERATION_COUNT = EVIEW_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link mdsd.component_based.impl.EAllocationViewTypeImpl <em>EAllocation View Type</em>}' class.
@@ -1260,7 +1288,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EALLOCATION_VIEW_TYPE__INCLUDES = 0;
+	int EALLOCATION_VIEW_TYPE__INCLUDES = EVIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>EAllocation View Type</em>' class.
@@ -1269,7 +1297,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EALLOCATION_VIEW_TYPE_FEATURE_COUNT = 1;
+	int EALLOCATION_VIEW_TYPE_FEATURE_COUNT = EVIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Show Component Allocations</em>' operation.
@@ -1278,7 +1306,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EALLOCATION_VIEW_TYPE___SHOW_COMPONENT_ALLOCATIONS = 0;
+	int EALLOCATION_VIEW_TYPE___SHOW_COMPONENT_ALLOCATIONS = EVIEW_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>EAllocation View Type</em>' class.
@@ -1287,7 +1315,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EALLOCATION_VIEW_TYPE_OPERATION_COUNT = 1;
+	int EALLOCATION_VIEW_TYPE_OPERATION_COUNT = EVIEW_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link mdsd.component_based.impl.EAssemblyViewTypeImpl <em>EAssembly View Type</em>}' class.
@@ -1306,7 +1334,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EASSEMBLY_VIEW_TYPE__MAIN_ARTIFACTS = 0;
+	int EASSEMBLY_VIEW_TYPE__MAIN_ARTIFACTS = EVIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shows Components</b></em>' reference list.
@@ -1315,7 +1343,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EASSEMBLY_VIEW_TYPE__SHOWS_COMPONENTS = 1;
+	int EASSEMBLY_VIEW_TYPE__SHOWS_COMPONENTS = EVIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>EAssembly View Type</em>' class.
@@ -1324,7 +1352,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EASSEMBLY_VIEW_TYPE_FEATURE_COUNT = 2;
+	int EASSEMBLY_VIEW_TYPE_FEATURE_COUNT = EVIEW_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Show Component Connections</em>' operation.
@@ -1333,7 +1361,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EASSEMBLY_VIEW_TYPE___SHOW_COMPONENT_CONNECTIONS = 0;
+	int EASSEMBLY_VIEW_TYPE___SHOW_COMPONENT_CONNECTIONS = EVIEW_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>EAssembly View Type</em>' class.
@@ -1342,7 +1370,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EASSEMBLY_VIEW_TYPE_OPERATION_COUNT = 1;
+	int EASSEMBLY_VIEW_TYPE_OPERATION_COUNT = EVIEW_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link mdsd.component_based.impl.ERepositoryViewTypeImpl <em>ERepository View Type</em>}' class.
@@ -1361,7 +1389,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREPOSITORY_VIEW_TYPE__SHOWS_COMPONENTS = 0;
+	int EREPOSITORY_VIEW_TYPE__SHOWS_COMPONENTS = EVIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shows Interfaces</b></em>' reference list.
@@ -1370,7 +1398,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREPOSITORY_VIEW_TYPE__SHOWS_INTERFACES = 1;
+	int EREPOSITORY_VIEW_TYPE__SHOWS_INTERFACES = EVIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>ERepository View Type</em>' class.
@@ -1379,7 +1407,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREPOSITORY_VIEW_TYPE_FEATURE_COUNT = 2;
+	int EREPOSITORY_VIEW_TYPE_FEATURE_COUNT = EVIEW_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>ERepository View Type</em>' class.
@@ -1388,7 +1416,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREPOSITORY_VIEW_TYPE_OPERATION_COUNT = 0;
+	int EREPOSITORY_VIEW_TYPE_OPERATION_COUNT = EVIEW_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link mdsd.component_based.EViewPoint <em>EView Point</em>}' class.
@@ -1429,13 +1457,13 @@ public interface Component_basedPackage extends EPackage {
 	int ESYSTEM_INDEPENDENT_VIEW_POINT = 24;
 
 	/**
-	 * The feature id for the '<em><b>Repositoryviewtype</b></em>' containment reference.
+	 * The feature id for the '<em><b>Repository View Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
+	int ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE = EVIEW_POINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>ESystem Independent View Point</em>' class.
@@ -1466,13 +1494,13 @@ public interface Component_basedPackage extends EPackage {
 	int EASSEMBLY_VIEW_POINT = 25;
 
 	/**
-	 * The feature id for the '<em><b>Assemblyviewtype</b></em>' containment reference.
+	 * The feature id for the '<em><b>Assembly View Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
+	int EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE = EVIEW_POINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>EAssembly View Point</em>' class.
@@ -1503,22 +1531,22 @@ public interface Component_basedPackage extends EPackage {
 	int EDEPLOYMENT_VIEW_POINT = 26;
 
 	/**
-	 * The feature id for the '<em><b>Environmentviewtype</b></em>' containment reference.
+	 * The feature id for the '<em><b>Environment View Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 0;
+	int EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE = EVIEW_POINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Allocationviewtype</b></em>' containment reference.
+	 * The feature id for the '<em><b>Allocation View Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE = EVIEW_POINT_FEATURE_COUNT + 1;
+	int EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE = EVIEW_POINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>EDeployment View Point</em>' class.
@@ -1731,7 +1759,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getPossibleReturnTypes()
 	 * @generated
 	 */
-	int POSSIBLE_RETURN_TYPES = 32;
+	int POSSIBLE_RETURN_TYPES = 33;
 
 	/**
 	 * The meta object id for the '{@link mdsd.component_based.PossibleParameterTypes <em>Possible Parameter Types</em>}' enum.
@@ -1741,7 +1769,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getPossibleParameterTypes()
 	 * @generated
 	 */
-	int POSSIBLE_PARAMETER_TYPES = 33;
+	int POSSIBLE_PARAMETER_TYPES = 34;
 
 	/**
 	 * The meta object id for the '<em>EVoid</em>' data type.
@@ -1751,7 +1779,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEVoid()
 	 * @generated
 	 */
-	int EVOID = 34;
+	int EVOID = 35;
 
 	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.ERepository <em>ERepository</em>}'.
@@ -2719,15 +2747,15 @@ public interface Component_basedPackage extends EPackage {
 	EClass getESystemIndependentViewPoint();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.ESystemIndependentViewPoint#getRepositoryviewtype <em>Repositoryviewtype</em>}'.
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.ESystemIndependentViewPoint#getRepositoryViewType <em>Repository View Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Repositoryviewtype</em>'.
-	 * @see mdsd.component_based.ESystemIndependentViewPoint#getRepositoryviewtype()
+	 * @return the meta object for the containment reference '<em>Repository View Type</em>'.
+	 * @see mdsd.component_based.ESystemIndependentViewPoint#getRepositoryViewType()
 	 * @see #getESystemIndependentViewPoint()
 	 * @generated
 	 */
-	EReference getESystemIndependentViewPoint_Repositoryviewtype();
+	EReference getESystemIndependentViewPoint_RepositoryViewType();
 
 	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EAssemblyViewPoint <em>EAssembly View Point</em>}'.
@@ -2740,15 +2768,15 @@ public interface Component_basedPackage extends EPackage {
 	EClass getEAssemblyViewPoint();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype <em>Assemblyviewtype</em>}'.
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EAssemblyViewPoint#getAssemblyViewType <em>Assembly View Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Assemblyviewtype</em>'.
-	 * @see mdsd.component_based.EAssemblyViewPoint#getAssemblyviewtype()
+	 * @return the meta object for the containment reference '<em>Assembly View Type</em>'.
+	 * @see mdsd.component_based.EAssemblyViewPoint#getAssemblyViewType()
 	 * @see #getEAssemblyViewPoint()
 	 * @generated
 	 */
-	EReference getEAssemblyViewPoint_Assemblyviewtype();
+	EReference getEAssemblyViewPoint_AssemblyViewType();
 
 	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EDeploymentViewPoint <em>EDeployment View Point</em>}'.
@@ -2761,26 +2789,26 @@ public interface Component_basedPackage extends EPackage {
 	EClass getEDeploymentViewPoint();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype <em>Environmentviewtype</em>}'.
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getEnvironmentViewType <em>Environment View Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Environmentviewtype</em>'.
-	 * @see mdsd.component_based.EDeploymentViewPoint#getEnvironmentviewtype()
+	 * @return the meta object for the containment reference '<em>Environment View Type</em>'.
+	 * @see mdsd.component_based.EDeploymentViewPoint#getEnvironmentViewType()
 	 * @see #getEDeploymentViewPoint()
 	 * @generated
 	 */
-	EReference getEDeploymentViewPoint_Environmentviewtype();
+	EReference getEDeploymentViewPoint_EnvironmentViewType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype <em>Allocationviewtype</em>}'.
+	 * Returns the meta object for the containment reference '{@link mdsd.component_based.EDeploymentViewPoint#getAllocationViewType <em>Allocation View Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Allocationviewtype</em>'.
-	 * @see mdsd.component_based.EDeploymentViewPoint#getAllocationviewtype()
+	 * @return the meta object for the containment reference '<em>Allocation View Type</em>'.
+	 * @see mdsd.component_based.EDeploymentViewPoint#getAllocationViewType()
 	 * @see #getEDeploymentViewPoint()
 	 * @generated
 	 */
-	EReference getEDeploymentViewPoint_Allocationviewtype();
+	EReference getEDeploymentViewPoint_AllocationViewType();
 
 	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EBehaviourDescription <em>EBehaviour Description</em>}'.
@@ -2886,6 +2914,16 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getELoop();
+
+	/**
+	 * Returns the meta object for class '{@link mdsd.component_based.EViewType <em>EView Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EView Type</em>'.
+	 * @see mdsd.component_based.EViewType
+	 * @generated
+	 */
+	EClass getEViewType();
 
 	/**
 	 * Returns the meta object for enum '{@link mdsd.component_based.PossibleReturnTypes <em>Possible Return Types</em>}'.
@@ -3732,13 +3770,13 @@ public interface Component_basedPackage extends EPackage {
 		EClass ESYSTEM_INDEPENDENT_VIEW_POINT = eINSTANCE.getESystemIndependentViewPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Repositoryviewtype</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Repository View Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE = eINSTANCE
-				.getESystemIndependentViewPoint_Repositoryviewtype();
+		EReference ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE = eINSTANCE
+				.getESystemIndependentViewPoint_RepositoryViewType();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EAssemblyViewPointImpl <em>EAssembly View Point</em>}' class.
@@ -3751,12 +3789,12 @@ public interface Component_basedPackage extends EPackage {
 		EClass EASSEMBLY_VIEW_POINT = eINSTANCE.getEAssemblyViewPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Assemblyviewtype</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Assembly View Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE = eINSTANCE.getEAssemblyViewPoint_Assemblyviewtype();
+		EReference EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE = eINSTANCE.getEAssemblyViewPoint_AssemblyViewType();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EDeploymentViewPointImpl <em>EDeployment View Point</em>}' class.
@@ -3769,21 +3807,22 @@ public interface Component_basedPackage extends EPackage {
 		EClass EDEPLOYMENT_VIEW_POINT = eINSTANCE.getEDeploymentViewPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Environmentviewtype</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Environment View Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EDEPLOYMENT_VIEW_POINT__ENVIRONMENTVIEWTYPE = eINSTANCE
-				.getEDeploymentViewPoint_Environmentviewtype();
+		EReference EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE = eINSTANCE
+				.getEDeploymentViewPoint_EnvironmentViewType();
 
 		/**
-		 * The meta object literal for the '<em><b>Allocationviewtype</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Allocation View Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EDEPLOYMENT_VIEW_POINT__ALLOCATIONVIEWTYPE = eINSTANCE.getEDeploymentViewPoint_Allocationviewtype();
+		EReference EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE = eINSTANCE
+				.getEDeploymentViewPoint_AllocationViewType();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EBehaviourDescriptionImpl <em>EBehaviour Description</em>}' class.
@@ -3874,6 +3913,16 @@ public interface Component_basedPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ELOOP = eINSTANCE.getELoop();
+
+		/**
+		 * The meta object literal for the '{@link mdsd.component_based.EViewType <em>EView Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mdsd.component_based.EViewType
+		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEViewType()
+		 * @generated
+		 */
+		EClass EVIEW_TYPE = eINSTANCE.getEViewType();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.PossibleReturnTypes <em>Possible Return Types</em>}' enum.

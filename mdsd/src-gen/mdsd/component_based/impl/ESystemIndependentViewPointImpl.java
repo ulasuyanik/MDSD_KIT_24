@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link mdsd.component_based.impl.ESystemIndependentViewPointImpl#getRepositoryviewtype <em>Repositoryviewtype</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.ESystemIndependentViewPointImpl#getRepositoryViewType <em>Repository View Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Container
 		implements ESystemIndependentViewPoint {
 	/**
-	 * The cached value of the '{@link #getRepositoryviewtype() <em>Repositoryviewtype</em>}' containment reference.
+	 * The cached value of the '{@link #getRepositoryViewType() <em>Repository View Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRepositoryviewtype()
+	 * @see #getRepositoryViewType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ERepositoryViewType repositoryviewtype;
+	protected ERepositoryViewType repositoryViewType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,8 +65,8 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public ERepositoryViewType getRepositoryviewtype() {
-		return repositoryviewtype;
+	public ERepositoryViewType getRepositoryViewType() {
+		return repositoryViewType;
 	}
 
 	/**
@@ -74,14 +74,14 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRepositoryviewtype(ERepositoryViewType newRepositoryviewtype,
+	public NotificationChain basicSetRepositoryViewType(ERepositoryViewType newRepositoryViewType,
 			NotificationChain msgs) {
-		ERepositoryViewType oldRepositoryviewtype = repositoryviewtype;
-		repositoryviewtype = newRepositoryviewtype;
+		ERepositoryViewType oldRepositoryViewType = repositoryViewType;
+		repositoryViewType = newRepositoryViewType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE, oldRepositoryviewtype,
-					newRepositoryviewtype);
+					Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE, oldRepositoryViewType,
+					newRepositoryViewType);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -96,26 +96,26 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public void setRepositoryviewtype(ERepositoryViewType newRepositoryviewtype) {
-		if (newRepositoryviewtype != repositoryviewtype) {
+	public void setRepositoryViewType(ERepositoryViewType newRepositoryViewType) {
+		if (newRepositoryViewType != repositoryViewType) {
 			NotificationChain msgs = null;
-			if (repositoryviewtype != null)
-				msgs = ((InternalEObject) repositoryviewtype).eInverseRemove(this,
+			if (repositoryViewType != null)
+				msgs = ((InternalEObject) repositoryViewType).eInverseRemove(this,
 						EOPPOSITE_FEATURE_BASE
-								- Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE,
+								- Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE,
 						null, msgs);
-			if (newRepositoryviewtype != null)
-				msgs = ((InternalEObject) newRepositoryviewtype).eInverseAdd(this,
+			if (newRepositoryViewType != null)
+				msgs = ((InternalEObject) newRepositoryViewType).eInverseAdd(this,
 						EOPPOSITE_FEATURE_BASE
-								- Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE,
+								- Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE,
 						null, msgs);
-			msgs = basicSetRepositoryviewtype(newRepositoryviewtype, msgs);
+			msgs = basicSetRepositoryViewType(newRepositoryViewType, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE, newRepositoryviewtype,
-					newRepositoryviewtype));
+					Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE, newRepositoryViewType,
+					newRepositoryViewType));
 	}
 
 	/**
@@ -126,8 +126,8 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE:
-			return basicSetRepositoryviewtype(null, msgs);
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE:
+			return basicSetRepositoryViewType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -140,8 +140,8 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE:
-			return getRepositoryviewtype();
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE:
+			return getRepositoryViewType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,8 +154,8 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE:
-			setRepositoryviewtype((ERepositoryViewType) newValue);
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE:
+			setRepositoryViewType((ERepositoryViewType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE:
-			setRepositoryviewtype((ERepositoryViewType) null);
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE:
+			setRepositoryViewType((ERepositoryViewType) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -184,8 +184,8 @@ public class ESystemIndependentViewPointImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORYVIEWTYPE:
-			return repositoryviewtype != null;
+		case Component_basedPackage.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE:
+			return repositoryViewType != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -23,21 +23,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link mdsd.component_based.impl.EAssemblyViewPointImpl#getAssemblyviewtype <em>Assemblyviewtype</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.EAssemblyViewPointImpl#getAssemblyViewType <em>Assembly View Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container implements EAssemblyViewPoint {
 	/**
-	 * The cached value of the '{@link #getAssemblyviewtype() <em>Assemblyviewtype</em>}' containment reference.
+	 * The cached value of the '{@link #getAssemblyViewType() <em>Assembly View Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssemblyviewtype()
+	 * @see #getAssemblyViewType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EAssemblyViewType assemblyviewtype;
+	protected EAssemblyViewType assemblyViewType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,8 +64,8 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EAssemblyViewType getAssemblyviewtype() {
-		return assemblyviewtype;
+	public EAssemblyViewType getAssemblyViewType() {
+		return assemblyViewType;
 	}
 
 	/**
@@ -73,13 +73,13 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAssemblyviewtype(EAssemblyViewType newAssemblyviewtype, NotificationChain msgs) {
-		EAssemblyViewType oldAssemblyviewtype = assemblyviewtype;
-		assemblyviewtype = newAssemblyviewtype;
+	public NotificationChain basicSetAssemblyViewType(EAssemblyViewType newAssemblyViewType, NotificationChain msgs) {
+		EAssemblyViewType oldAssemblyViewType = assemblyViewType;
+		assemblyViewType = newAssemblyViewType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE, oldAssemblyviewtype,
-					newAssemblyviewtype);
+					Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE, oldAssemblyViewType,
+					newAssemblyViewType);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -94,24 +94,24 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public void setAssemblyviewtype(EAssemblyViewType newAssemblyviewtype) {
-		if (newAssemblyviewtype != assemblyviewtype) {
+	public void setAssemblyViewType(EAssemblyViewType newAssemblyViewType) {
+		if (newAssemblyViewType != assemblyViewType) {
 			NotificationChain msgs = null;
-			if (assemblyviewtype != null)
-				msgs = ((InternalEObject) assemblyviewtype).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE, null,
+			if (assemblyViewType != null)
+				msgs = ((InternalEObject) assemblyViewType).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE, null,
 						msgs);
-			if (newAssemblyviewtype != null)
-				msgs = ((InternalEObject) newAssemblyviewtype).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE, null,
+			if (newAssemblyViewType != null)
+				msgs = ((InternalEObject) newAssemblyViewType).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE, null,
 						msgs);
-			msgs = basicSetAssemblyviewtype(newAssemblyviewtype, msgs);
+			msgs = basicSetAssemblyViewType(newAssemblyViewType, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE, newAssemblyviewtype,
-					newAssemblyviewtype));
+					Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE, newAssemblyViewType,
+					newAssemblyViewType));
 	}
 
 	/**
@@ -122,8 +122,8 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE:
-			return basicSetAssemblyviewtype(null, msgs);
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE:
+			return basicSetAssemblyViewType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,8 +136,8 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE:
-			return getAssemblyviewtype();
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE:
+			return getAssemblyViewType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,8 +150,8 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE:
-			setAssemblyviewtype((EAssemblyViewType) newValue);
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE:
+			setAssemblyViewType((EAssemblyViewType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,8 +165,8 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE:
-			setAssemblyviewtype((EAssemblyViewType) null);
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE:
+			setAssemblyViewType((EAssemblyViewType) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -180,8 +180,8 @@ public class EAssemblyViewPointImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLYVIEWTYPE:
-			return assemblyviewtype != null;
+		case Component_basedPackage.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE:
+			return assemblyViewType != null;
 		}
 		return super.eIsSet(featureID);
 	}

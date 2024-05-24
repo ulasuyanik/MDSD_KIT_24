@@ -31,13 +31,16 @@ public class MyDslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MyDslGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getEViewPointAccess().getAlternatives(), "rule__EViewPoint__Alternatives");
+			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getERoleAccess().getAlternatives(), "rule__ERole__Alternatives");
 			builder.put(grammarAccess.getEDelegationConnectorAccess().getAlternatives(), "rule__EDelegationConnector__Alternatives");
-			builder.put(grammarAccess.getEViewPointAccess().getAlternatives(), "rule__EViewPoint__Alternatives");
 			builder.put(grammarAccess.getEViewTypeAccess().getAlternatives(), "rule__EViewType__Alternatives");
 			builder.put(grammarAccess.getEComponentAccess().getAlternatives(), "rule__EComponent__Alternatives");
 			builder.put(grammarAccess.getPossibleReturnTypesAccess().getAlternatives(), "rule__PossibleReturnTypes__Alternatives");
 			builder.put(grammarAccess.getPossibleParameterTypesAccess().getAlternatives(), "rule__PossibleParameterTypes__Alternatives");
+			builder.put(grammarAccess.getEParameterAccess().getGroup(), "rule__EParameter__Group__0");
+			builder.put(grammarAccess.getEParameterAccess().getGroup_3(), "rule__EParameter__Group_3__0");
 			builder.put(grammarAccess.getESystemAccess().getGroup(), "rule__ESystem__Group__0");
 			builder.put(grammarAccess.getESystemAccess().getGroup_2(), "rule__ESystem__Group_2__0");
 			builder.put(grammarAccess.getESystemAccess().getGroup_2_2(), "rule__ESystem__Group_2_2__0");
@@ -161,13 +164,13 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getESignatureAccess().getGroup_4_2(), "rule__ESignature__Group_4_2__0");
 			builder.put(grammarAccess.getESignatureAccess().getGroup_5(), "rule__ESignature__Group_5__0");
 			builder.put(grammarAccess.getESignatureAccess().getGroup_5_2(), "rule__ESignature__Group_5_2__0");
-			builder.put(grammarAccess.getEParameterAccess().getGroup(), "rule__EParameter__Group__0");
-			builder.put(grammarAccess.getEParameterAccess().getGroup_3(), "rule__EParameter__Group_3__0");
 			builder.put(grammarAccess.getERepositoryAccess().getGroup(), "rule__ERepository__Group__0");
 			builder.put(grammarAccess.getERepositoryAccess().getGroup_2(), "rule__ERepository__Group_2__0");
 			builder.put(grammarAccess.getERepositoryAccess().getGroup_2_2(), "rule__ERepository__Group_2_2__0");
 			builder.put(grammarAccess.getERepositoryAccess().getGroup_3(), "rule__ERepository__Group_3__0");
 			builder.put(grammarAccess.getERepositoryAccess().getGroup_3_2(), "rule__ERepository__Group_3_2__0");
+			builder.put(grammarAccess.getEParameterAccess().getNameAssignment_1(), "rule__EParameter__NameAssignment_1");
+			builder.put(grammarAccess.getEParameterAccess().getTypeAssignment_3_1(), "rule__EParameter__TypeAssignment_3_1");
 			builder.put(grammarAccess.getESystemAccess().getProvidesAssignment_2_1(), "rule__ESystem__ProvidesAssignment_2_1");
 			builder.put(grammarAccess.getESystemAccess().getProvidesAssignment_2_2_1(), "rule__ESystem__ProvidesAssignment_2_2_1");
 			builder.put(grammarAccess.getESystemAccess().getRequiresAssignment_3_1(), "rule__ESystem__RequiresAssignment_3_1");
@@ -277,8 +280,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getESignatureAccess().getCorrespondsToAssignment_4_2_1(), "rule__ESignature__CorrespondsToAssignment_4_2_1");
 			builder.put(grammarAccess.getESignatureAccess().getParameterAssignment_5_1(), "rule__ESignature__ParameterAssignment_5_1");
 			builder.put(grammarAccess.getESignatureAccess().getParameterAssignment_5_2_1(), "rule__ESignature__ParameterAssignment_5_2_1");
-			builder.put(grammarAccess.getEParameterAccess().getNameAssignment_1(), "rule__EParameter__NameAssignment_1");
-			builder.put(grammarAccess.getEParameterAccess().getTypeAssignment_3_1(), "rule__EParameter__TypeAssignment_3_1");
 			builder.put(grammarAccess.getERepositoryAccess().getComponentAssignment_2_1(), "rule__ERepository__ComponentAssignment_2_1");
 			builder.put(grammarAccess.getERepositoryAccess().getComponentAssignment_2_2_1(), "rule__ERepository__ComponentAssignment_2_2_1");
 			builder.put(grammarAccess.getERepositoryAccess().getInterfaceAssignment_3_1(), "rule__ERepository__InterfaceAssignment_3_1");

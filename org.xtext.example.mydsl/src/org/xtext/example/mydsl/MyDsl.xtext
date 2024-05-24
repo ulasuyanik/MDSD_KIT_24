@@ -4,9 +4,18 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 import "http://www.example.org/component_based" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
+EParameter returns EParameter:
+	"EParameter" 
+	name=EString
+	"<<"
+		("type:" type=PossibleParameterTypes)
+	">>";
+
+EViewPoint returns EViewPoint:
+	ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint;
 
 
-
+	
 ESystem returns ESystem:
 	"ESystem"
 	"<<"
@@ -16,7 +25,7 @@ ESystem returns ESystem:
 	">>";
 
 EString returns ecore::EString:
-	STRING;
+	STRING | ID;
 
 ECompositeComponent returns ECompositeComponent:
 	"ECompositeComponent"
@@ -116,8 +125,7 @@ enum PossibleParameterTypes returns PossibleParameterTypes:
 	BOOLEAN = 'Boolean' | CHAR = 'Char' | DATE = 'Date'| DOUBLE = 'Double' | FLOAT = 'Float' | LIST = 'List' | INT = 'Integer'| LONG = 'Long' | MAP = 'Map' | STRING = 'String'| EOBJECT = 'EObject'
 ;
 
-EViewPoint returns EViewPoint:
-	ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint;
+
 
 ESystemIndependentViewPoint returns ESystemIndependentViewPoint: 
 	"ESystemIndependentViewPoint"
@@ -244,12 +252,7 @@ ESignature returns ESignature:
 		("parameter:" parameter+=EParameter ( "," parameter+=EParameter)* )?
 	">>";
 
-EParameter returns EParameter:
-	"EParameter" 
-	name=EString
-	"<<"
-		("type:" type=PossibleParameterTypes)
-	">>";
+
 	
 ERepository returns ERepository:
 	"ERepository"

@@ -25,6 +25,84 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
+	public class EParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.EParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLessThanSignLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTypePossibleParameterTypesEnumRuleCall_3_1_0 = (RuleCall)cTypeAssignment_3_1.eContents().get(0);
+		private final Keyword cGreaterThanSignGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//EParameter returns EParameter:
+		//    "EParameter"
+		//    name=EString
+		//    "<<"
+		//        ("type:" type=PossibleParameterTypes)
+		//    ">>";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"EParameter"
+		//name=EString
+		//"<<"
+		//    ("type:" type=PossibleParameterTypes)
+		//">>"
+		public Group getGroup() { return cGroup; }
+		
+		//"EParameter"
+		public Keyword getEParameterKeyword_0() { return cEParameterKeyword_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		
+		//"<<"
+		public Keyword getLessThanSignLessThanSignKeyword_2() { return cLessThanSignLessThanSignKeyword_2; }
+		
+		//("type:" type=PossibleParameterTypes)
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//"type:"
+		public Keyword getTypeKeyword_3_0() { return cTypeKeyword_3_0; }
+		
+		//type=PossibleParameterTypes
+		public Assignment getTypeAssignment_3_1() { return cTypeAssignment_3_1; }
+		
+		//PossibleParameterTypes
+		public RuleCall getTypePossibleParameterTypesEnumRuleCall_3_1_0() { return cTypePossibleParameterTypesEnumRuleCall_3_1_0; }
+		
+		//">>"
+		public Keyword getGreaterThanSignGreaterThanSignKeyword_4() { return cGreaterThanSignGreaterThanSignKeyword_4; }
+	}
+	public class EViewPointElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.EViewPoint");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cESystemIndependentViewPointParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEAssemblyViewPointParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEDeploymentViewPointParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//EViewPoint returns EViewPoint:
+		//    ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ESystemIndependentViewPoint
+		public RuleCall getESystemIndependentViewPointParserRuleCall_0() { return cESystemIndependentViewPointParserRuleCall_0; }
+		
+		//EAssemblyViewPoint
+		public RuleCall getEAssemblyViewPointParserRuleCall_1() { return cEAssemblyViewPointParserRuleCall_1; }
+		
+		//EDeploymentViewPoint
+		public RuleCall getEDeploymentViewPointParserRuleCall_2() { return cEDeploymentViewPointParserRuleCall_2; }
+	}
 	public class ESystemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.ESystem");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -180,14 +258,22 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.EString");
-		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//EString returns ecore::EString:
-		//    STRING;
+		//    STRING | ID;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//STRING | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 	public class ECompositeComponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.ECompositeComponent");
@@ -1398,29 +1484,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//ERequiredDelegationConnector
 		public RuleCall getERequiredDelegationConnectorParserRuleCall_1() { return cERequiredDelegationConnectorParserRuleCall_1; }
-	}
-	public class EViewPointElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.EViewPoint");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cESystemIndependentViewPointParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEAssemblyViewPointParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEDeploymentViewPointParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		
-		//EViewPoint returns EViewPoint:
-		//    ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//ESystemIndependentViewPoint
-		public RuleCall getESystemIndependentViewPointParserRuleCall_0() { return cESystemIndependentViewPointParserRuleCall_0; }
-		
-		//EAssemblyViewPoint
-		public RuleCall getEAssemblyViewPointParserRuleCall_1() { return cEAssemblyViewPointParserRuleCall_1; }
-		
-		//EDeploymentViewPoint
-		public RuleCall getEDeploymentViewPointParserRuleCall_2() { return cEDeploymentViewPointParserRuleCall_2; }
 	}
 	public class ESystemIndependentViewPointElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.ESystemIndependentViewPoint");
@@ -2943,61 +3006,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//">>"
 		public Keyword getGreaterThanSignGreaterThanSignKeyword_6() { return cGreaterThanSignGreaterThanSignKeyword_6; }
 	}
-	public class EParameterElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.EParameter");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLessThanSignLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTypePossibleParameterTypesEnumRuleCall_3_1_0 = (RuleCall)cTypeAssignment_3_1.eContents().get(0);
-		private final Keyword cGreaterThanSignGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//EParameter returns EParameter:
-		//    "EParameter"
-		//    name=EString
-		//    "<<"
-		//        ("type:" type=PossibleParameterTypes)
-		//    ">>";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"EParameter"
-		//name=EString
-		//"<<"
-		//    ("type:" type=PossibleParameterTypes)
-		//">>"
-		public Group getGroup() { return cGroup; }
-		
-		//"EParameter"
-		public Keyword getEParameterKeyword_0() { return cEParameterKeyword_0; }
-		
-		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-		
-		//"<<"
-		public Keyword getLessThanSignLessThanSignKeyword_2() { return cLessThanSignLessThanSignKeyword_2; }
-		
-		//("type:" type=PossibleParameterTypes)
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//"type:"
-		public Keyword getTypeKeyword_3_0() { return cTypeKeyword_3_0; }
-		
-		//type=PossibleParameterTypes
-		public Assignment getTypeAssignment_3_1() { return cTypeAssignment_3_1; }
-		
-		//PossibleParameterTypes
-		public RuleCall getTypePossibleParameterTypesEnumRuleCall_3_1_0() { return cTypePossibleParameterTypesEnumRuleCall_3_1_0; }
-		
-		//">>"
-		public Keyword getGreaterThanSignGreaterThanSignKeyword_4() { return cGreaterThanSignGreaterThanSignKeyword_4; }
-	}
 	public class ERepositoryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.ERepository");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3303,6 +3311,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		public Keyword getEOBJECTEObjectKeyword_10_0() { return cEOBJECTEObjectKeyword_10_0; }
 	}
 	
+	private final EParameterElements pEParameter;
+	private final EViewPointElements pEViewPoint;
 	private final ESystemElements pESystem;
 	private final EStringElements pEString;
 	private final ECompositeComponentElements pECompositeComponent;
@@ -3319,7 +3329,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final EDelegationConnectorElements pEDelegationConnector;
 	private final PossibleReturnTypesElements ePossibleReturnTypes;
 	private final PossibleParameterTypesElements ePossibleParameterTypes;
-	private final EViewPointElements pEViewPoint;
 	private final ESystemIndependentViewPointElements pESystemIndependentViewPoint;
 	private final EAssemblyViewPointElements pEAssemblyViewPoint;
 	private final EDeploymentViewPointElements pEDeploymentViewPoint;
@@ -3338,7 +3347,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final EBranchElements pEBranch;
 	private final EExternalCallElements pEExternalCall;
 	private final ESignatureElements pESignature;
-	private final EParameterElements pEParameter;
 	private final ERepositoryElements pERepository;
 	
 	private final Grammar grammar;
@@ -3350,6 +3358,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pEParameter = new EParameterElements();
+		this.pEViewPoint = new EViewPointElements();
 		this.pESystem = new ESystemElements();
 		this.pEString = new EStringElements();
 		this.pECompositeComponent = new ECompositeComponentElements();
@@ -3366,7 +3376,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pEDelegationConnector = new EDelegationConnectorElements();
 		this.ePossibleReturnTypes = new PossibleReturnTypesElements();
 		this.ePossibleParameterTypes = new PossibleParameterTypesElements();
-		this.pEViewPoint = new EViewPointElements();
 		this.pESystemIndependentViewPoint = new ESystemIndependentViewPointElements();
 		this.pEAssemblyViewPoint = new EAssemblyViewPointElements();
 		this.pEDeploymentViewPoint = new EDeploymentViewPointElements();
@@ -3385,7 +3394,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pEBranch = new EBranchElements();
 		this.pEExternalCall = new EExternalCallElements();
 		this.pESignature = new ESignatureElements();
-		this.pEParameter = new EParameterElements();
 		this.pERepository = new ERepositoryElements();
 	}
 	
@@ -3416,6 +3424,30 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 
 	
+	//EParameter returns EParameter:
+	//    "EParameter"
+	//    name=EString
+	//    "<<"
+	//        ("type:" type=PossibleParameterTypes)
+	//    ">>";
+	public EParameterElements getEParameterAccess() {
+		return pEParameter;
+	}
+	
+	public ParserRule getEParameterRule() {
+		return getEParameterAccess().getRule();
+	}
+	
+	//EViewPoint returns EViewPoint:
+	//    ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint;
+	public EViewPointElements getEViewPointAccess() {
+		return pEViewPoint;
+	}
+	
+	public ParserRule getEViewPointRule() {
+		return getEViewPointAccess().getRule();
+	}
+	
 	//ESystem returns ESystem:
 	//    "ESystem"
 	//    "<<"
@@ -3432,7 +3464,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//EString returns ecore::EString:
-	//    STRING;
+	//    STRING | ID;
 	public EStringElements getEStringAccess() {
 		return pEString;
 	}
@@ -3632,16 +3664,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public EnumRule getPossibleParameterTypesRule() {
 		return getPossibleParameterTypesAccess().getRule();
-	}
-	
-	//EViewPoint returns EViewPoint:
-	//    ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint;
-	public EViewPointElements getEViewPointAccess() {
-		return pEViewPoint;
-	}
-	
-	public ParserRule getEViewPointRule() {
-		return getEViewPointAccess().getRule();
 	}
 	
 	//ESystemIndependentViewPoint returns ESystemIndependentViewPoint:
@@ -3891,20 +3913,6 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getESignatureRule() {
 		return getESignatureAccess().getRule();
-	}
-	
-	//EParameter returns EParameter:
-	//    "EParameter"
-	//    name=EString
-	//    "<<"
-	//        ("type:" type=PossibleParameterTypes)
-	//    ">>";
-	public EParameterElements getEParameterAccess() {
-		return pEParameter;
-	}
-	
-	public ParserRule getEParameterRule() {
-		return getEParameterAccess().getRule();
 	}
 	
 	//ERepository returns ERepository:

@@ -27,7 +27,7 @@ public class MyDslParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "ESystem";
+		return "EParameter";
 	}
 
 	public MyDslGrammarAccess getGrammarAccess() {

@@ -12,6 +12,7 @@ package mdsd.component_based;
  * </p>
  * <ul>
  *   <li>{@link mdsd.component_based.EProvidedRole#getLinkedFrom <em>Linked From</em>}</li>
+ *   <li>{@link mdsd.component_based.EProvidedRole#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see mdsd.component_based.Component_basedPackage#getEProvidedRole()
@@ -42,5 +43,27 @@ public interface EProvidedRole extends ERole {
 	 * @generated
 	 */
 	void setLinkedFrom(EAssemblyConnector value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see mdsd.component_based.Component_basedPackage#getEProvidedRole_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link mdsd.component_based.EProvidedRole#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // EProvidedRole

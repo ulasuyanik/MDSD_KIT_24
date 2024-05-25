@@ -3,35 +3,13 @@
  */
 package org.xtext.example.mydsl;
 
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.ISetup;
-import org.eclipse.xtext.resource.IResourceFactory;
-import org.eclipse.xtext.resource.IResourceServiceProvider;
-import com.google.inject.Injector;
 
-public class MyDslStandaloneSetup extends MyDslStandaloneSetupGenerated implements ISetup {
+/**
+ * Initialization support for running Xtext languages without Equinox extension registry.
+ */
+public class MyDslStandaloneSetup extends MyDslStandaloneSetupGenerated {
 
-    @Override
-    public Injector createInjectorAndDoEMFRegistration() {
-        // Create the injector using the generated Guice module
-        Injector injector = super.createInjectorAndDoEMFRegistration();
-      // Register the Xtext resource factory for the .mydsl file extension
-        register(injector);
-        return injector;
-    }
-
-    public void register(Injector injector) {
-        if (!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("xtext")) {
-            Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xtext", 
-                    injector.getInstance(IResourceFactory.class));
-        }
-        if (!IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("xtext")) {
-            IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("xtext",
-                    injector.getInstance(IResourceServiceProvider.class));
-        }
-    }
-
-    public static Injector doSetup() {
-        return new MyDslStandaloneSetup().createInjectorAndDoEMFRegistration();
-    }
+	public static void doSetup() {
+		new MyDslStandaloneSetup().createInjectorAndDoEMFRegistration();
+	}
 }

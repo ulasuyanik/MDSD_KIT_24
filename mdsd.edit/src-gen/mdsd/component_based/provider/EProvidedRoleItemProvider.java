@@ -7,11 +7,14 @@ import java.util.List;
 
 import mdsd.component_based.Component_basedPackage;
 
+import mdsd.component_based.EProvidedRole;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link mdsd.component_based.EProvidedRole} object.
@@ -42,6 +45,7 @@ public class EProvidedRoleItemProvider extends ERoleItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addLinkedFromPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -60,6 +64,22 @@ public class EProvidedRoleItemProvider extends ERoleItemProvider {
 								"_UI_EProvidedRole_type"),
 						Component_basedPackage.Literals.EPROVIDED_ROLE__LINKED_FROM, true, false, true, null, null,
 						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_EProvidedRole_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_EProvidedRole_name_feature",
+								"_UI_EProvidedRole_type"),
+						Component_basedPackage.Literals.EPROVIDED_ROLE__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -91,7 +111,9 @@ public class EProvidedRoleItemProvider extends ERoleItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_EProvidedRole_type");
+		String label = ((EProvidedRole) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_EProvidedRole_type")
+				: getString("_UI_EProvidedRole_type") + " " + label;
 	}
 
 	/**
@@ -104,6 +126,12 @@ public class EProvidedRoleItemProvider extends ERoleItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(EProvidedRole.class)) {
+		case Component_basedPackage.EPROVIDED_ROLE__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

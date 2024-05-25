@@ -224,6 +224,8 @@ public class Component_basedValidator extends EObjectValidator {
 			return validateELoop((ELoop) value, diagnostics, context);
 		case Component_basedPackage.EVIEW_TYPE:
 			return validateEViewType((EViewType) value, diagnostics, context);
+		case Component_basedPackage.EROOT:
+			return validateERoot((ERoot) value, diagnostics, context);
 		case Component_basedPackage.POSSIBLE_RETURN_TYPES:
 			return validatePossibleReturnTypes((PossibleReturnTypes) value, diagnostics, context);
 		case Component_basedPackage.POSSIBLE_PARAMETER_TYPES:
@@ -775,6 +777,15 @@ public class Component_basedValidator extends EObjectValidator {
 	 */
 	public boolean validateEViewType(EViewType eViewType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(eViewType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateERoot(ERoot eRoot, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eRoot, diagnostics, context);
 	}
 
 	/**

@@ -4,7 +4,7 @@
 package org.xtext.example.mydsl.tests
 
 import com.google.inject.Inject
-import mdsd.component_based.EAllocationContext
+import mdsd.component_based.ERoot
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(MyDslInjectorProvider)
 class MyDslParsingTest {
 	@Inject
-	ParseHelper<EAllocationContext> parseHelper
+	ParseHelper<ERoot> parseHelper
 	
 	@Test
 	def void loadModel() {

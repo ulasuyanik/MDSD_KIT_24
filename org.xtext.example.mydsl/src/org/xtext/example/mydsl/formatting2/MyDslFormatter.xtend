@@ -4,8 +4,8 @@
 package org.xtext.example.mydsl.formatting2
 
 import com.google.inject.Inject
-import mdsd.component_based.EAssemblyContext
 import mdsd.component_based.EInterface
+import mdsd.component_based.ERoot
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.xtext.example.mydsl.services.MyDslGrammarAccess
@@ -14,10 +14,73 @@ class MyDslFormatter extends AbstractFormatter2 {
 	
 	@Inject extension MyDslGrammarAccess
 
-	def dispatch void format(EAssemblyContext eAssemblyContext, extension IFormattableDocument document) {
+	def dispatch void format(ERoot eRoot, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (eRole : eAssemblyContext.roles) {
+		for (eViewPoint : eRoot.eviewpoint) {
+			eViewPoint.format
+		}
+		for (eViewType : eRoot.eviewtype) {
+			eViewType.format
+		}
+		for (eParameter : eRoot.eparameter) {
+			eParameter.format
+		}
+		for (eSignature : eRoot.esignature) {
+			eSignature.format
+		}
+		for (eDelegationConnector : eRoot.edelegationconnector) {
+			eDelegationConnector.format
+		}
+		for (eRole : eRoot.erole) {
 			eRole.format
+		}
+		for (eLink : eRoot.elink) {
+			eLink.format
+		}
+		for (eContainer : eRoot.econtainer) {
+			eContainer.format
+		}
+		for (eAssemblyConnector : eRoot.eassemblyconnector) {
+			eAssemblyConnector.format
+		}
+		for (eAssemblyContext : eRoot.eassemblycontext) {
+			eAssemblyContext.format
+		}
+		for (eComponent : eRoot.ecomponent) {
+			eComponent.format
+		}
+		for (eService : eRoot.eservice) {
+			eService.format
+		}
+		for (eInterface : eRoot.einterface) {
+			eInterface.format
+		}
+		for (eSystem : eRoot.esystem) {
+			eSystem.format
+		}
+		for (eRepository : eRoot.erepository) {
+			eRepository.format
+		}
+		for (eBehaviourDescription : eRoot.ebehaviourdescription) {
+			eBehaviourDescription.format
+		}
+		for (eExternalCall : eRoot.eexternalcall) {
+			eExternalCall.format
+		}
+		for (eInternalAction : eRoot.einternalaction) {
+			eInternalAction.format
+		}
+		for (eBranch : eRoot.ebranch) {
+			eBranch.format
+		}
+		for (eLoop : eRoot.eloop) {
+			eLoop.format
+		}
+		for (eCompositeComponent : eRoot.ecompositecomponent) {
+			eCompositeComponent.format
+		}
+		for (eAllocationContext : eRoot.eallocationcontext) {
+			eAllocationContext.format
 		}
 	}
 
@@ -28,5 +91,5 @@ class MyDslFormatter extends AbstractFormatter2 {
 		}
 	}
 	
-	// TODO: implement for ESignature, EComponent, EBehaviourDescription, ECompositeComponent
+	// TODO: implement for ECompositeComponent, EAssemblyContext, ESystemIndependentViewPoint, EAssemblyViewPoint, EDeploymentViewPoint, EAssemblyViewType, EAllocationViewType, EComponent, EBehaviourDescription, ESignature, ERepository
 }

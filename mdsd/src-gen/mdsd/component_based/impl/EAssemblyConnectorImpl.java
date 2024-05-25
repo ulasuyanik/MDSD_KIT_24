@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link mdsd.component_based.impl.EAssemblyConnectorImpl#getLinkTo <em>Link To</em>}</li>
  *   <li>{@link mdsd.component_based.impl.EAssemblyConnectorImpl#getLinkFrom <em>Link From</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.EAssemblyConnectorImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +51,26 @@ public class EAssemblyConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EProvidedRole linkFrom;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +159,30 @@ public class EAssemblyConnectorImpl extends MinimalEObjectImpl.Container impleme
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Component_basedPackage.EASSEMBLY_CONNECTOR__LINK_FROM,
 					newLinkFrom, newLinkFrom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_basedPackage.EASSEMBLY_CONNECTOR__NAME,
+					oldName, name));
 	}
 
 	/**
@@ -264,6 +309,8 @@ public class EAssemblyConnectorImpl extends MinimalEObjectImpl.Container impleme
 			if (resolve)
 				return getLinkFrom();
 			return basicGetLinkFrom();
+		case Component_basedPackage.EASSEMBLY_CONNECTOR__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,6 +328,9 @@ public class EAssemblyConnectorImpl extends MinimalEObjectImpl.Container impleme
 			return;
 		case Component_basedPackage.EASSEMBLY_CONNECTOR__LINK_FROM:
 			setLinkFrom((EProvidedRole) newValue);
+			return;
+		case Component_basedPackage.EASSEMBLY_CONNECTOR__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -300,6 +350,9 @@ public class EAssemblyConnectorImpl extends MinimalEObjectImpl.Container impleme
 		case Component_basedPackage.EASSEMBLY_CONNECTOR__LINK_FROM:
 			setLinkFrom((EProvidedRole) null);
 			return;
+		case Component_basedPackage.EASSEMBLY_CONNECTOR__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -316,8 +369,27 @@ public class EAssemblyConnectorImpl extends MinimalEObjectImpl.Container impleme
 			return linkTo != null;
 		case Component_basedPackage.EASSEMBLY_CONNECTOR__LINK_FROM:
 			return linkFrom != null;
+		case Component_basedPackage.EASSEMBLY_CONNECTOR__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EAssemblyConnectorImpl

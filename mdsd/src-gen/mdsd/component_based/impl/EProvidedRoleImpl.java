@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link mdsd.component_based.impl.EProvidedRoleImpl#getLinkedFrom <em>Linked From</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.EProvidedRoleImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +38,25 @@ public class EProvidedRoleImpl extends ERoleImpl implements EProvidedRole {
 	 * @ordered
 	 */
 	protected EAssemblyConnector linkedFrom;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +153,30 @@ public class EProvidedRoleImpl extends ERoleImpl implements EProvidedRole {
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_basedPackage.EPROVIDED_ROLE__NAME, oldName,
+					name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Component_basedPackage.EPROVIDED_ROLE__LINKED_FROM:
@@ -170,6 +214,8 @@ public class EProvidedRoleImpl extends ERoleImpl implements EProvidedRole {
 			if (resolve)
 				return getLinkedFrom();
 			return basicGetLinkedFrom();
+		case Component_basedPackage.EPROVIDED_ROLE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,6 +230,9 @@ public class EProvidedRoleImpl extends ERoleImpl implements EProvidedRole {
 		switch (featureID) {
 		case Component_basedPackage.EPROVIDED_ROLE__LINKED_FROM:
 			setLinkedFrom((EAssemblyConnector) newValue);
+			return;
+		case Component_basedPackage.EPROVIDED_ROLE__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,6 +249,9 @@ public class EProvidedRoleImpl extends ERoleImpl implements EProvidedRole {
 		case Component_basedPackage.EPROVIDED_ROLE__LINKED_FROM:
 			setLinkedFrom((EAssemblyConnector) null);
 			return;
+		case Component_basedPackage.EPROVIDED_ROLE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -214,8 +266,27 @@ public class EProvidedRoleImpl extends ERoleImpl implements EProvidedRole {
 		switch (featureID) {
 		case Component_basedPackage.EPROVIDED_ROLE__LINKED_FROM:
 			return linkedFrom != null;
+		case Component_basedPackage.EPROVIDED_ROLE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EProvidedRoleImpl

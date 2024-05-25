@@ -7,11 +7,14 @@ import java.util.List;
 
 import mdsd.component_based.Component_basedPackage;
 
+import mdsd.component_based.ERequiredRole;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link mdsd.component_based.ERequiredRole} object.
@@ -42,6 +45,7 @@ public class ERequiredRoleItemProvider extends ERoleItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addLinkedToPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -60,6 +64,22 @@ public class ERequiredRoleItemProvider extends ERoleItemProvider {
 								"_UI_ERequiredRole_type"),
 						Component_basedPackage.Literals.EREQUIRED_ROLE__LINKED_TO, true, false, true, null, null,
 						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ERequiredRole_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ERequiredRole_name_feature",
+								"_UI_ERequiredRole_type"),
+						Component_basedPackage.Literals.EREQUIRED_ROLE__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -91,7 +111,9 @@ public class ERequiredRoleItemProvider extends ERoleItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ERequiredRole_type");
+		String label = ((ERequiredRole) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ERequiredRole_type")
+				: getString("_UI_ERequiredRole_type") + " " + label;
 	}
 
 	/**
@@ -104,6 +126,12 @@ public class ERequiredRoleItemProvider extends ERoleItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ERequiredRole.class)) {
+		case Component_basedPackage.EREQUIRED_ROLE__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -4,33 +4,78 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 import "http://www.example.org/component_based" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-EParameter returns EParameter:
-	"EParameter" 
+ERoot returns ERoot:
+	{ERoot}
+	'ERoot'
+	'{'
+		('eviewpoint:'  eviewpoint+=EViewPoint ( "," eviewpoint+=EViewPoint)*  )?
+		('eviewtype:'  eviewtype+=EViewType ( "," eviewtype+=EViewType)*  )?
+		('eparameter:'  eparameter+=EParameter ( "," eparameter+=EParameter)*  )?
+		('esignature:'  esignature+=ESignature ( "," esignature+=ESignature)*  )?
+		('edelegationconnector:'  edelegationconnector+=EDelegationConnector ( "," edelegationconnector+=EDelegationConnector)*  )?
+		('erole:'  erole+=ERole ( "," erole+=ERole)* )?
+		('elink:'  elink+=ELink ( "," elink+=ELink)*  )?
+		('econtainer:'  econtainer+=EContainer ( "," econtainer+=EContainer)* )?
+		('eassemblyconnector:'  eassemblyconnector+=EAssemblyConnector ( "," eassemblyconnector+=EAssemblyConnector)* )?
+		('eassemblycontext:'  eassemblycontext+=EAssemblyContext ( "," eassemblycontext+=EAssemblyContext)*  )?
+		('ecomponent:'  ecomponent+=EComponent ( "," ecomponent+=EComponent)*  )?
+		('eservice:'  eservice+=EService ( "," eservice+=EService)*  )?
+		('einterface:'  einterface+=EInterface ( "," einterface+=EInterface)* )?
+		('esystem:' esystem+=ESystem ( "," esystem+=ESystem)* )?
+		('erepository:' erepository+=ERepository ( "," erepository+=ERepository)* )?
+		('ebehaviourdescription:' ebehaviourdescription+=EBehaviourDescription ( "," ebehaviourdescription+=EBehaviourDescription)*  )?
+		('eexternalcall:' eexternalcall+=EExternalCall ( "," eexternalcall+=EExternalCall)*  )?
+		('einternalaction:' einternalaction+=EInternalAction ( "," einternalaction+=EInternalAction)*)?
+		('ebranch:' ebranch+=EBranch ( "," ebranch+=EBranch)* )?
+		('eloop:' eloop+=ELoop ( "," eloop+=ELoop)* )?
+		('ecompositecomponent:' ecompositecomponent+=ECompositeComponent ( "," ecompositecomponent+=ECompositeComponent)*)?
+		('eallocationcontext:' eallocationcontext+=EAllocationContext ( "," eallocationcontext+=EAllocationContext)*)?
+	'}';
+
+EInterface returns EInterface:
+	{EInterface}
+	"EInterface"
 	name=EString
-	"<<"
+	"{"
+		("resultsIn:" resultsIn+=[ERole|EString] ( "," resultsIn+=[ERole|EString])* )?
+		("providedByComponent:" providedByComponent+=[EComponent|EString] ( "," providedByComponent+=[EComponent|EString])* )?
+		("providedBySystem:" providedBySystem+=[ESystem|EString] ( "," providedBySystem+=[ESystem|EString])* )?
+		("requiredByComponent:" requiredByComponent+=[EComponent|EString] ( "," requiredByComponent+=[EComponent|EString])* )?
+		("requiredBySystem:" requiredBySystem+=[ESystem|EString] ( "," requiredBySystem+=[ESystem|EString])* )?
+		("signature:" signature+=ESignature ( "," signature+=ESignature)* )?
+	"}";
+
+ESystem returns ESystem:
+	{ESystem}
+	"ESystem" name=EString
+	"{"
+		("provides:" provides+=[EInterface]( "," provides+=[EInterface])*)
+		("requires:" requires+=[EInterface]( "," requires+=[EInterface])*)?
+		("encapsulates:" encapsulates+=[EAssemblyContext]( "," encapsulates+=[EAssemblyContext])*)?
+	"}";
+
+EParameter returns EParameter:
+	{EParameter}
+	"EParameter" name=EString
+	"{"
 		("type:" type=PossibleParameterTypes)
-	">>";
+	"}";
 
 EViewPoint returns EViewPoint:
 	ESystemIndependentViewPoint| EAssemblyViewPoint|EDeploymentViewPoint;
 
 
 	
-ESystem returns ESystem:
-	"ESystem"
-	"<<"
-		("provides:" provides+=[EInterface]( "," provides+=[EInterface])*)
-		("requires:" requires+=[EInterface]( "," requires+=[EInterface])*)?
-		("encapsulates:" encapsulates+=[EAssemblyContext]( "," encapsulates+=[EAssemblyContext])*)?
-	">>";
+
 
 EString returns ecore::EString:
 	STRING | ID;
 
 ECompositeComponent returns ECompositeComponent:
+	{ECompositeComponent}
 	"ECompositeComponent"
 	name=EString
-	"<<"	
+	"{"	
 		("providesInterfaceTo:" providesInterfaceTo+=[EComponent]( "," providesInterfaceTo+=[EComponent])*)?
 		("usesInterfaceFrom:" usesInterfaceFrom+=[EComponent] ("," usesInterfaceFrom+=[EComponent])*)?
 		("providesDirectly:" providesDirectly+=[EService]("," providesDirectly+=[EService])*)?
@@ -38,81 +83,90 @@ ECompositeComponent returns ECompositeComponent:
 		("requires:" requires+=[EInterface]("," requires+=[EInterface])*)?
 		("encapsulates:" encapsulates+=[EAssemblyContext]("," encapsulates+=[EAssemblyContext])*)?
 		("behaviourDescription:" behaviourDescription=EBehaviourDescription)?
-	">>";
+	"}";
 
 EContainer returns EContainer:
+	{EContainer}
 	"EContainer"
 	name=EString
-	"<<"
+	"{"
 		("connectedTo:" connectedTo+=[ELink]("," connectedTo+=[ELink])*)?
-	">>";
+	"}";
 
 
 EAllocationContext returns EAllocationContext:
+	{EAllocationContext}
 	"EAllocationContext"
-	"<<"
+	"{"
 		("controls:" controls+=[EContainer]("," controls+=[EContainer])*)?
 		("specifiesFor:" specifiesFor+=[ESystem]("," specifiesFor+=[ESystem])*) 
 		("specifies:" specifies=[EAssemblyContext])
-	">>";
+	"}";
 
 ERole returns ERole:
 	ERequiredRole | EProvidedRole;
 
 ERequiredRole returns ERequiredRole:
-	"ERequiredRole"
-	"<<"
+	{ERequiredRole}
+	"ERequiredRole" name=EString
+	"{"
 		("roleOf:" roleOf=[EAssemblyContext])?
 		("linkedTo:" linkedTo=[EAssemblyConnector])?
-	">>";
+	"}";
 
 EProvidedRole returns EProvidedRole:
-	"EProvidedRole"
-	"<<"
+	{EProvidedRole}
+	"EProvidedRole" name=EString
+	"{"
 		("roleOf:" roleOf=[EAssemblyContext])?
 		("linkedFrom:" linkedFrom=[EAssemblyConnector])?
-	">>";
+	"}";
 
 ELink returns ELink:
+	{ELink}
 	"ELink"
 	name=EString
-	"<<"
+	"{"
 		("connects:" connects+=[EContainer] (',' connects+=[EContainer])+)
-	">>";
+	"}";
 
 EAssemblyContext returns EAssemblyContext:
+	{EAssemblyContext}
 	"EAssemblyContext"
 	name=EString
-	"<<"
+	"{"
 		("allocated:" allocated=[EContainer])?
 		("encapsulatedByComponent:" encapsulatedByComponent+=[ECompositeComponent]("," encapsulatedByComponent+=[ECompositeComponent])*)?
 		("encapsulatedBySystem:" encapsulatedBySystem+=[ESystem]("," encapsulatedBySystem+=[ESystem])*)?
 		("instantiates:" instantiates+=[EComponent]("," instantiates+=[EComponent])*)?
 		("roles:"  roles+=ERole ("," roles+=ERole)*)?
-	">>";
+	"}";
 
 
 EAssemblyConnector returns EAssemblyConnector:
-	"EAssemblyConnector"
-	"<<"
+	{EAssemblyConnector}
+	"EAssemblyConnector"name=EString
+	"{"
 		("linkTo:" linkTo=[ERequiredRole])
 		("linkFrom:" linkFrom=[EProvidedRole])
-	">>";
+	"}";
 
 EProvidedDelegationConnector returns EProvidedDelegationConnector:
+	{EProvidedDelegationConnector}
 	"EProvidedDelegationConnector"
-	"<<"
+	"{"
 		("linkFrom:" linkFrom=[EInterface])
 		("linkTo:"  linkTo=[EProvidedRole])
-	">>";
+	"}";
 
 	
 ERequiredDelegationConnector returns ERequiredDelegationConnector:
+	{ERequiredDelegationConnector}
 	"ERequiredDelegationConnector"
-	"<<"
+	"{"
 		("linkFrom:"  linkFrom=[ERequiredRole])
 		("linkTo:"  linkTo=[EInterface])
-	">>";
+	"}";
 
 EDelegationConnector returns EDelegationConnector:
 	EProvidedDelegationConnector | ERequiredDelegationConnector;
@@ -128,136 +182,141 @@ enum PossibleParameterTypes returns PossibleParameterTypes:
 
 
 ESystemIndependentViewPoint returns ESystemIndependentViewPoint: 
+	{ESystemIndependentViewPoint}
 	"ESystemIndependentViewPoint"
-	'<<'
+	'{'
 		('repositoryViewType:' repositoryViewType=ERepositoryViewType)
-	'>>'
+	'}'
 ;
 
 EAssemblyViewPoint returns EAssemblyViewPoint:
+	{EAssemblyViewPoint}
 	"EAssemblyViewPoint"
-	'<<'
+	'{'
 		('assemblyViewType:' assemblyViewType = EAssemblyViewType)
-	'>>'
+	'}'
 	
 ;
 
 EDeploymentViewPoint returns EDeploymentViewPoint:
+	{EDeploymentViewPoint}
 	"EDeploymentViewPoint"
-	'<<'
+	'{'
 		'allocationViewType:' allocationViewType = EAllocationViewType
 		'environmentViewType:'environmentViewType = EEnvironmentViewType
-	'>>'
+	'}'
 ;
 
 EViewType returns EViewType:
 	ERepositoryViewType | EAssemblyViewType | EAllocationViewType| EEnvironmentViewType;
 	
 ERepositoryViewType returns ERepositoryViewType:
+	{ERepositoryViewType}
 	"ERepositoryViewType"
-	'<<'
+	'{'
 		('showsInterfaces:' showsInterfaces += [EInterface]("," showsInterfaces += [EInterface])*)?
 		('showsComponents:'showsComponents += [EComponent]("," showsComponents += [EComponent])*)?
-	'>>'
+	'}'
 ;
 
 EAssemblyViewType returns EAssemblyViewType:
+	{EAssemblyViewType}
 	"EAssemblyViewType"
-	'<<'
+	'{'
 		('mainArtifacts:'mainArtifacts += EAssemblyContext ("," mainArtifacts+=EAssemblyContext)*)?
 		('showsComponents:'showsComponents += [EComponent]("," showsComponents += [EComponent])*)?
-	'>>'
+	'}'
 	
 ;
 
 EAllocationViewType returns EAllocationViewType:
+	{EAllocationViewType}
 	"EAllocationViewType"
-	'<<'
+	'{'
 		('includes:' includes += EAllocationContext ("," includes += EAllocationContext )*)?
-	'>>'
+	'}'
 	
 ;
 EEnvironmentViewType returns EEnvironmentViewType:
+	{EEnvironmentViewType}
 	"EEnvironmentViewType"
-	'<<'
+	'{'
 		('showsLinks:'showsLinks += [ELink]("," showsLinks += [ELink])*)?
 		('showsContainers:' showsContainers += [EContainer]("," showsContainers += [EContainer])*)?
-	'>>'
+	'}'
 ;
 
 EComponent returns EComponent:
 	EComponent_Impl | ECompositeComponent;
 	
 EComponent_Impl returns EComponent:
+	{EComponent}
 	"EComponent"
 	name=EString
-	"<<"
+	"{"
 		("providesInterfaceTo:" providesInterfaceTo+=[EComponent|EString] ( "," providesInterfaceTo+=[EComponent|EString])* )?
 		("usesInterfaceFrom:" usesInterfaceFrom+=[EComponent|EString] ( "," usesInterfaceFrom+=[EComponent|EString])* )?
 		("providesDirectly:" providesDirectly+=[EService|EString] ( "," providesDirectly+=[EService|EString])*)?
 		("provides:" provides+=[EInterface|EString] ( "," provides+=[EInterface|EString])* )?
 		("requires:" requires+=[EInterface|EString] ( "," requires+=[EInterface|EString])* )?
 		("behaviourDescription:" behaviourDescription=EBehaviourDescription)?
-	">>";
+	"}";
 	
-EInterface returns EInterface:
-	"EInterface"
-	name=EString
-	"<<"
-		("resultsIn:" resultsIn+=[ERole|EString] ( "," resultsIn+=[ERole|EString])* )?
-		("providedByComponent:" providedByComponent+=[EComponent|EString] ( "," providedByComponent+=[EComponent|EString])* )?
-		("providedBySystem:" providedBySystem+=[ESystem|EString] ( "," providedBySystem+=[ESystem|EString])* )?
-		("requiredByComponent:" requiredByComponent+=[EComponent|EString] ( "," requiredByComponent+=[EComponent|EString])* )?
-		("requiredBySystem:" requiredBySystem+=[ESystem|EString] ( "," requiredBySystem+=[ESystem|EString])* )?
-		("signature:" signature+=ESignature ( "," signature+=ESignature)* )?
-	">>";
+
 	
 EBehaviourDescription returns EBehaviourDescription:
+	{EBehaviourDescription}
 	"EBehaviourDescription"
-	"<<"
+	"{"
 		("internalAction:" internalAction+=EInternalAction ( "," internalAction+=EInternalAction)* )?
 		("loop:" loop+=ELoop ( "," loop+=ELoop)* )?
 		("branch:" branch+=EBranch ( "," branch+=EBranch)* )?
 		("externalCall:" externalCall+=EExternalCall ( "," externalCall+=EExternalCall)* )?
-	">>";
+	"}";
 	
 EService returns EService:
-	"EService"
+	{EService}
+	"EService"name=EString
 	;
 	
 EInternalAction returns EInternalAction:
+	{EInternalAction}
 	"EInternalAction"
 	;
 
 ELoop returns ELoop:
+	{ELoop}
 	"ELoop"
 	;
 
 EBranch returns EBranch:
+	{EBranch}
 	"EBranch"
 	;
 
 EExternalCall returns EExternalCall:
+	{EExternalCall}
 	"EExternalCall"
-	"<<"
+	"{"
 		("to:" to=[EService|EString])
-	">>";
+	"}";
 	
 ESignature returns ESignature:
+	{ESignature}
 	"ESignature"
 	name=EString
-	"<<"
+	"{"
 		("returnType:" returnType=PossibleReturnTypes)
 		("correspondsTo:" correspondsTo+=[EService|EString] ( "," correspondsTo+=[EService|EString])* )?
 		("parameter:" parameter+=EParameter ( "," parameter+=EParameter)* )?
-	">>";
+	"}";
 
 
 	
 ERepository returns ERepository:
+	{ERepository}
 	"ERepository"
-	"<<"
+	"{"
 		("component:" component+=EComponent ( "," component+=EComponent)* )?
 		("interface:" interface+=EInterface ( "," interface+=EInterface)* )?
-	">>";
-
+	"}";

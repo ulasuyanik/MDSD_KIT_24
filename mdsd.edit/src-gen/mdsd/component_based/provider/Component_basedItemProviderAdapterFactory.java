@@ -740,6 +740,29 @@ public class Component_basedItemProviderAdapterFactory extends Component_basedAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mdsd.component_based.ERoot} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ERootItemProvider eRootItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mdsd.component_based.ERoot}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createERootAdapter() {
+		if (eRootItemProvider == null) {
+			eRootItemProvider = new ERootItemProvider(this);
+		}
+
+		return eRootItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -902,6 +925,8 @@ public class Component_basedItemProviderAdapterFactory extends Component_basedAd
 			eBranchItemProvider.dispose();
 		if (eLoopItemProvider != null)
 			eLoopItemProvider.dispose();
+		if (eRootItemProvider != null)
+			eRootItemProvider.dispose();
 	}
 
 }

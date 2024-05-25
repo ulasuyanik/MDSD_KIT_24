@@ -5,10 +5,29 @@ package org.xtext.example.mydsl.formatting2;
 
 import com.google.inject.Inject;
 import java.util.Arrays;
+import mdsd.component_based.EAllocationContext;
+import mdsd.component_based.EAssemblyConnector;
 import mdsd.component_based.EAssemblyContext;
+import mdsd.component_based.EBehaviourDescription;
+import mdsd.component_based.EBranch;
+import mdsd.component_based.EComponent;
+import mdsd.component_based.ECompositeComponent;
+import mdsd.component_based.EContainer;
+import mdsd.component_based.EDelegationConnector;
+import mdsd.component_based.EExternalCall;
 import mdsd.component_based.EInterface;
+import mdsd.component_based.EInternalAction;
+import mdsd.component_based.ELink;
+import mdsd.component_based.ELoop;
+import mdsd.component_based.EParameter;
+import mdsd.component_based.ERepository;
 import mdsd.component_based.ERole;
+import mdsd.component_based.ERoot;
+import mdsd.component_based.EService;
 import mdsd.component_based.ESignature;
+import mdsd.component_based.ESystem;
+import mdsd.component_based.EViewPoint;
+import mdsd.component_based.EViewType;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
@@ -23,10 +42,94 @@ public class MyDslFormatter extends AbstractFormatter2 {
   @Extension
   private MyDslGrammarAccess _myDslGrammarAccess;
 
-  protected void _format(final EAssemblyContext eAssemblyContext, @Extension final IFormattableDocument document) {
-    EList<ERole> _roles = eAssemblyContext.getRoles();
-    for (final ERole eRole : _roles) {
+  protected void _format(final ERoot eRoot, @Extension final IFormattableDocument document) {
+    EList<EViewPoint> _eviewpoint = eRoot.getEviewpoint();
+    for (final EViewPoint eViewPoint : _eviewpoint) {
+      document.<EViewPoint>format(eViewPoint);
+    }
+    EList<EViewType> _eviewtype = eRoot.getEviewtype();
+    for (final EViewType eViewType : _eviewtype) {
+      document.<EViewType>format(eViewType);
+    }
+    EList<EParameter> _eparameter = eRoot.getEparameter();
+    for (final EParameter eParameter : _eparameter) {
+      document.<EParameter>format(eParameter);
+    }
+    EList<ESignature> _esignature = eRoot.getEsignature();
+    for (final ESignature eSignature : _esignature) {
+      document.<ESignature>format(eSignature);
+    }
+    EList<EDelegationConnector> _edelegationconnector = eRoot.getEdelegationconnector();
+    for (final EDelegationConnector eDelegationConnector : _edelegationconnector) {
+      document.<EDelegationConnector>format(eDelegationConnector);
+    }
+    EList<ERole> _erole = eRoot.getErole();
+    for (final ERole eRole : _erole) {
       document.<ERole>format(eRole);
+    }
+    EList<ELink> _elink = eRoot.getElink();
+    for (final ELink eLink : _elink) {
+      document.<ELink>format(eLink);
+    }
+    EList<EContainer> _econtainer = eRoot.getEcontainer();
+    for (final EContainer eContainer : _econtainer) {
+      document.<EContainer>format(eContainer);
+    }
+    EList<EAssemblyConnector> _eassemblyconnector = eRoot.getEassemblyconnector();
+    for (final EAssemblyConnector eAssemblyConnector : _eassemblyconnector) {
+      document.<EAssemblyConnector>format(eAssemblyConnector);
+    }
+    EList<EAssemblyContext> _eassemblycontext = eRoot.getEassemblycontext();
+    for (final EAssemblyContext eAssemblyContext : _eassemblycontext) {
+      document.<EAssemblyContext>format(eAssemblyContext);
+    }
+    EList<EComponent> _ecomponent = eRoot.getEcomponent();
+    for (final EComponent eComponent : _ecomponent) {
+      document.<EComponent>format(eComponent);
+    }
+    EList<EService> _eservice = eRoot.getEservice();
+    for (final EService eService : _eservice) {
+      document.<EService>format(eService);
+    }
+    EList<EInterface> _einterface = eRoot.getEinterface();
+    for (final EInterface eInterface : _einterface) {
+      document.<EInterface>format(eInterface);
+    }
+    EList<ESystem> _esystem = eRoot.getEsystem();
+    for (final ESystem eSystem : _esystem) {
+      document.<ESystem>format(eSystem);
+    }
+    EList<ERepository> _erepository = eRoot.getErepository();
+    for (final ERepository eRepository : _erepository) {
+      document.<ERepository>format(eRepository);
+    }
+    EList<EBehaviourDescription> _ebehaviourdescription = eRoot.getEbehaviourdescription();
+    for (final EBehaviourDescription eBehaviourDescription : _ebehaviourdescription) {
+      document.<EBehaviourDescription>format(eBehaviourDescription);
+    }
+    EList<EExternalCall> _eexternalcall = eRoot.getEexternalcall();
+    for (final EExternalCall eExternalCall : _eexternalcall) {
+      document.<EExternalCall>format(eExternalCall);
+    }
+    EList<EInternalAction> _einternalaction = eRoot.getEinternalaction();
+    for (final EInternalAction eInternalAction : _einternalaction) {
+      document.<EInternalAction>format(eInternalAction);
+    }
+    EList<EBranch> _ebranch = eRoot.getEbranch();
+    for (final EBranch eBranch : _ebranch) {
+      document.<EBranch>format(eBranch);
+    }
+    EList<ELoop> _eloop = eRoot.getEloop();
+    for (final ELoop eLoop : _eloop) {
+      document.<ELoop>format(eLoop);
+    }
+    EList<ECompositeComponent> _ecompositecomponent = eRoot.getEcompositecomponent();
+    for (final ECompositeComponent eCompositeComponent : _ecompositecomponent) {
+      document.<ECompositeComponent>format(eCompositeComponent);
+    }
+    EList<EAllocationContext> _eallocationcontext = eRoot.getEallocationcontext();
+    for (final EAllocationContext eAllocationContext : _eallocationcontext) {
+      document.<EAllocationContext>format(eAllocationContext);
     }
   }
 
@@ -37,28 +140,28 @@ public class MyDslFormatter extends AbstractFormatter2 {
     }
   }
 
-  public void format(final Object eAssemblyContext, final IFormattableDocument document) {
-    if (eAssemblyContext instanceof XtextResource) {
-      _format((XtextResource)eAssemblyContext, document);
+  public void format(final Object eInterface, final IFormattableDocument document) {
+    if (eInterface instanceof XtextResource) {
+      _format((XtextResource)eInterface, document);
       return;
-    } else if (eAssemblyContext instanceof EAssemblyContext) {
-      _format((EAssemblyContext)eAssemblyContext, document);
+    } else if (eInterface instanceof EInterface) {
+      _format((EInterface)eInterface, document);
       return;
-    } else if (eAssemblyContext instanceof EInterface) {
-      _format((EInterface)eAssemblyContext, document);
+    } else if (eInterface instanceof ERoot) {
+      _format((ERoot)eInterface, document);
       return;
-    } else if (eAssemblyContext instanceof EObject) {
-      _format((EObject)eAssemblyContext, document);
+    } else if (eInterface instanceof EObject) {
+      _format((EObject)eInterface, document);
       return;
-    } else if (eAssemblyContext == null) {
+    } else if (eInterface == null) {
       _format((Void)null, document);
       return;
-    } else if (eAssemblyContext != null) {
-      _format(eAssemblyContext, document);
+    } else if (eInterface != null) {
+      _format(eInterface, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(eAssemblyContext, document).toString());
+        Arrays.<Object>asList(eInterface, document).toString());
     }
   }
 }

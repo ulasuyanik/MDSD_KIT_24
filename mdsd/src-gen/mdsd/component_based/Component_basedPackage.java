@@ -436,13 +436,22 @@ public interface Component_basedPackage extends EPackage {
 	int ESERVICE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESERVICE__NAME = 0;
+
+	/**
 	 * The number of structural features of the '<em>EService</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ESERVICE_FEATURE_COUNT = 0;
+	int ESERVICE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>EService</em>' class.
@@ -718,13 +727,22 @@ public interface Component_basedPackage extends EPackage {
 	int ESYSTEM__ENCAPSULATES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESYSTEM__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>ESystem</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ESYSTEM_FEATURE_COUNT = 3;
+	int ESYSTEM_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>ESystem</em>' class.
@@ -764,13 +782,22 @@ public interface Component_basedPackage extends EPackage {
 	int EASSEMBLY_CONNECTOR__LINK_FROM = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EASSEMBLY_CONNECTOR__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>EAssembly Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EASSEMBLY_CONNECTOR_FEATURE_COUNT = 2;
+	int EASSEMBLY_CONNECTOR_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>EAssembly Connector</em>' class.
@@ -1134,13 +1161,22 @@ public interface Component_basedPackage extends EPackage {
 	int EREQUIRED_ROLE__LINKED_TO = EROLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EREQUIRED_ROLE__NAME = EROLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>ERequired Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EREQUIRED_ROLE_FEATURE_COUNT = EROLE_FEATURE_COUNT + 1;
+	int EREQUIRED_ROLE_FEATURE_COUNT = EROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>ERequired Role</em>' class.
@@ -1180,13 +1216,22 @@ public interface Component_basedPackage extends EPackage {
 	int EPROVIDED_ROLE__LINKED_FROM = EROLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPROVIDED_ROLE__NAME = EROLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>EProvided Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EPROVIDED_ROLE_FEATURE_COUNT = EROLE_FEATURE_COUNT + 1;
+	int EPROVIDED_ROLE_FEATURE_COUNT = EROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>EProvided Role</em>' class.
@@ -1752,6 +1797,232 @@ public interface Component_basedPackage extends EPackage {
 	int ELOOP_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link mdsd.component_based.impl.ERootImpl <em>ERoot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mdsd.component_based.impl.ERootImpl
+	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getERoot()
+	 * @generated
+	 */
+	int EROOT = 33;
+
+	/**
+	 * The feature id for the '<em><b>Eviewpoint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EVIEWPOINT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Eviewtype</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EVIEWTYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Eparameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EPARAMETER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Esignature</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ESIGNATURE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Edelegationconnector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EDELEGATIONCONNECTOR = 4;
+
+	/**
+	 * The feature id for the '<em><b>Erole</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EROLE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Elink</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ELINK = 6;
+
+	/**
+	 * The feature id for the '<em><b>Econtainer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ECONTAINER = 7;
+
+	/**
+	 * The feature id for the '<em><b>Eassemblyconnector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EASSEMBLYCONNECTOR = 8;
+
+	/**
+	 * The feature id for the '<em><b>Eassemblycontext</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EASSEMBLYCONTEXT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Ecomponent</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ECOMPONENT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Eservice</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ESERVICE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Einterface</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EINTERFACE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Esystem</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ESYSTEM = 13;
+
+	/**
+	 * The feature id for the '<em><b>Erepository</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EREPOSITORY = 14;
+
+	/**
+	 * The feature id for the '<em><b>Ebehaviourdescription</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EBEHAVIOURDESCRIPTION = 15;
+
+	/**
+	 * The feature id for the '<em><b>Eexternalcall</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EEXTERNALCALL = 16;
+
+	/**
+	 * The feature id for the '<em><b>Einternalaction</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EINTERNALACTION = 17;
+
+	/**
+	 * The feature id for the '<em><b>Ebranch</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EBRANCH = 18;
+
+	/**
+	 * The feature id for the '<em><b>Eloop</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ELOOP = 19;
+
+	/**
+	 * The feature id for the '<em><b>Ecompositecomponent</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__ECOMPOSITECOMPONENT = 20;
+
+	/**
+	 * The feature id for the '<em><b>Eallocationcontext</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT__EALLOCATIONCONTEXT = 21;
+
+	/**
+	 * The number of structural features of the '<em>ERoot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT_FEATURE_COUNT = 22;
+
+	/**
+	 * The number of operations of the '<em>ERoot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EROOT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link mdsd.component_based.PossibleReturnTypes <em>Possible Return Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1759,7 +2030,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getPossibleReturnTypes()
 	 * @generated
 	 */
-	int POSSIBLE_RETURN_TYPES = 33;
+	int POSSIBLE_RETURN_TYPES = 34;
 
 	/**
 	 * The meta object id for the '{@link mdsd.component_based.PossibleParameterTypes <em>Possible Parameter Types</em>}' enum.
@@ -1769,7 +2040,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getPossibleParameterTypes()
 	 * @generated
 	 */
-	int POSSIBLE_PARAMETER_TYPES = 34;
+	int POSSIBLE_PARAMETER_TYPES = 35;
 
 	/**
 	 * The meta object id for the '<em>EVoid</em>' data type.
@@ -1779,7 +2050,7 @@ public interface Component_basedPackage extends EPackage {
 	 * @see mdsd.component_based.impl.Component_basedPackageImpl#getEVoid()
 	 * @generated
 	 */
-	int EVOID = 35;
+	int EVOID = 36;
 
 	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.ERepository <em>ERepository</em>}'.
@@ -2114,6 +2385,17 @@ public interface Component_basedPackage extends EPackage {
 	EClass getEService();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mdsd.component_based.EService#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see mdsd.component_based.EService#getName()
+	 * @see #getEService()
+	 * @generated
+	 */
+	EAttribute getEService_Name();
+
+	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EAssemblyContext <em>EAssembly Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2294,6 +2576,17 @@ public interface Component_basedPackage extends EPackage {
 	EReference getESystem_Encapsulates();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mdsd.component_based.ESystem#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see mdsd.component_based.ESystem#getName()
+	 * @see #getESystem()
+	 * @generated
+	 */
+	EAttribute getESystem_Name();
+
+	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EAssemblyConnector <em>EAssembly Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2313,6 +2606,17 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEAssemblyConnector_LinkFrom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mdsd.component_based.EAssemblyConnector#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see mdsd.component_based.EAssemblyConnector#getName()
+	 * @see #getEAssemblyConnector()
+	 * @generated
+	 */
+	EAttribute getEAssemblyConnector_Name();
 
 	/**
 	 * Returns the meta object for the reference '{@link mdsd.component_based.EAssemblyConnector#getLinkTo <em>Link To</em>}'.
@@ -2569,6 +2873,17 @@ public interface Component_basedPackage extends EPackage {
 	EReference getERequiredRole_LinkedTo();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mdsd.component_based.ERequiredRole#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see mdsd.component_based.ERequiredRole#getName()
+	 * @see #getERequiredRole()
+	 * @generated
+	 */
+	EAttribute getERequiredRole_Name();
+
+	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EProvidedRole <em>EProvided Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2588,6 +2903,17 @@ public interface Component_basedPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEProvidedRole_LinkedFrom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mdsd.component_based.EProvidedRole#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see mdsd.component_based.EProvidedRole#getName()
+	 * @see #getEProvidedRole()
+	 * @generated
+	 */
+	EAttribute getEProvidedRole_Name();
 
 	/**
 	 * Returns the meta object for class '{@link mdsd.component_based.EEnvironmentViewType <em>EEnvironment View Type</em>}'.
@@ -2926,6 +3252,258 @@ public interface Component_basedPackage extends EPackage {
 	EClass getEViewType();
 
 	/**
+	 * Returns the meta object for class '{@link mdsd.component_based.ERoot <em>ERoot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ERoot</em>'.
+	 * @see mdsd.component_based.ERoot
+	 * @generated
+	 */
+	EClass getERoot();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEviewpoint <em>Eviewpoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eviewpoint</em>'.
+	 * @see mdsd.component_based.ERoot#getEviewpoint()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eviewpoint();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEviewtype <em>Eviewtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eviewtype</em>'.
+	 * @see mdsd.component_based.ERoot#getEviewtype()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eviewtype();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEparameter <em>Eparameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eparameter</em>'.
+	 * @see mdsd.component_based.ERoot#getEparameter()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eparameter();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEsignature <em>Esignature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Esignature</em>'.
+	 * @see mdsd.component_based.ERoot#getEsignature()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Esignature();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEdelegationconnector <em>Edelegationconnector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Edelegationconnector</em>'.
+	 * @see mdsd.component_based.ERoot#getEdelegationconnector()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Edelegationconnector();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getErole <em>Erole</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Erole</em>'.
+	 * @see mdsd.component_based.ERoot#getErole()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Erole();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getElink <em>Elink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elink</em>'.
+	 * @see mdsd.component_based.ERoot#getElink()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Elink();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEcontainer <em>Econtainer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Econtainer</em>'.
+	 * @see mdsd.component_based.ERoot#getEcontainer()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Econtainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEassemblyconnector <em>Eassemblyconnector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eassemblyconnector</em>'.
+	 * @see mdsd.component_based.ERoot#getEassemblyconnector()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eassemblyconnector();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEassemblycontext <em>Eassemblycontext</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eassemblycontext</em>'.
+	 * @see mdsd.component_based.ERoot#getEassemblycontext()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eassemblycontext();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEcomponent <em>Ecomponent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ecomponent</em>'.
+	 * @see mdsd.component_based.ERoot#getEcomponent()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Ecomponent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEservice <em>Eservice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eservice</em>'.
+	 * @see mdsd.component_based.ERoot#getEservice()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eservice();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEinterface <em>Einterface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Einterface</em>'.
+	 * @see mdsd.component_based.ERoot#getEinterface()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Einterface();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEsystem <em>Esystem</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Esystem</em>'.
+	 * @see mdsd.component_based.ERoot#getEsystem()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Esystem();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getErepository <em>Erepository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Erepository</em>'.
+	 * @see mdsd.component_based.ERoot#getErepository()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Erepository();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEbehaviourdescription <em>Ebehaviourdescription</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ebehaviourdescription</em>'.
+	 * @see mdsd.component_based.ERoot#getEbehaviourdescription()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Ebehaviourdescription();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEexternalcall <em>Eexternalcall</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eexternalcall</em>'.
+	 * @see mdsd.component_based.ERoot#getEexternalcall()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eexternalcall();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEinternalaction <em>Einternalaction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Einternalaction</em>'.
+	 * @see mdsd.component_based.ERoot#getEinternalaction()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Einternalaction();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEbranch <em>Ebranch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ebranch</em>'.
+	 * @see mdsd.component_based.ERoot#getEbranch()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Ebranch();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEloop <em>Eloop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eloop</em>'.
+	 * @see mdsd.component_based.ERoot#getEloop()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eloop();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEcompositecomponent <em>Ecompositecomponent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ecompositecomponent</em>'.
+	 * @see mdsd.component_based.ERoot#getEcompositecomponent()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Ecompositecomponent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.ERoot#getEallocationcontext <em>Eallocationcontext</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Eallocationcontext</em>'.
+	 * @see mdsd.component_based.ERoot#getEallocationcontext()
+	 * @see #getERoot()
+	 * @generated
+	 */
+	EReference getERoot_Eallocationcontext();
+
+	/**
 	 * Returns the meta object for enum '{@link mdsd.component_based.PossibleReturnTypes <em>Possible Return Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3243,6 +3821,14 @@ public interface Component_basedPackage extends EPackage {
 		EClass ESERVICE = eINSTANCE.getEService();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESERVICE__NAME = eINSTANCE.getEService_Name();
+
+		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EAssemblyContextImpl <em>EAssembly Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3390,6 +3976,14 @@ public interface Component_basedPackage extends EPackage {
 		EReference ESYSTEM__ENCAPSULATES = eINSTANCE.getESystem_Encapsulates();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESYSTEM__NAME = eINSTANCE.getESystem_Name();
+
+		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EAssemblyConnectorImpl <em>EAssembly Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3406,6 +4000,14 @@ public interface Component_basedPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EASSEMBLY_CONNECTOR__LINK_FROM = eINSTANCE.getEAssemblyConnector_LinkFrom();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EASSEMBLY_CONNECTOR__NAME = eINSTANCE.getEAssemblyConnector_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Link To</b></em>' reference feature.
@@ -3618,6 +4220,14 @@ public interface Component_basedPackage extends EPackage {
 		EReference EREQUIRED_ROLE__LINKED_TO = eINSTANCE.getERequiredRole_LinkedTo();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EREQUIRED_ROLE__NAME = eINSTANCE.getERequiredRole_Name();
+
+		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EProvidedRoleImpl <em>EProvided Role</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3634,6 +4244,14 @@ public interface Component_basedPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EPROVIDED_ROLE__LINKED_FROM = eINSTANCE.getEProvidedRole_LinkedFrom();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPROVIDED_ROLE__NAME = eINSTANCE.getEProvidedRole_Name();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.impl.EEnvironmentViewTypeImpl <em>EEnvironment View Type</em>}' class.
@@ -3923,6 +4541,192 @@ public interface Component_basedPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EVIEW_TYPE = eINSTANCE.getEViewType();
+
+		/**
+		 * The meta object literal for the '{@link mdsd.component_based.impl.ERootImpl <em>ERoot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mdsd.component_based.impl.ERootImpl
+		 * @see mdsd.component_based.impl.Component_basedPackageImpl#getERoot()
+		 * @generated
+		 */
+		EClass EROOT = eINSTANCE.getERoot();
+
+		/**
+		 * The meta object literal for the '<em><b>Eviewpoint</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EVIEWPOINT = eINSTANCE.getERoot_Eviewpoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Eviewtype</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EVIEWTYPE = eINSTANCE.getERoot_Eviewtype();
+
+		/**
+		 * The meta object literal for the '<em><b>Eparameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EPARAMETER = eINSTANCE.getERoot_Eparameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Esignature</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ESIGNATURE = eINSTANCE.getERoot_Esignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Edelegationconnector</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EDELEGATIONCONNECTOR = eINSTANCE.getERoot_Edelegationconnector();
+
+		/**
+		 * The meta object literal for the '<em><b>Erole</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EROLE = eINSTANCE.getERoot_Erole();
+
+		/**
+		 * The meta object literal for the '<em><b>Elink</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ELINK = eINSTANCE.getERoot_Elink();
+
+		/**
+		 * The meta object literal for the '<em><b>Econtainer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ECONTAINER = eINSTANCE.getERoot_Econtainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Eassemblyconnector</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EASSEMBLYCONNECTOR = eINSTANCE.getERoot_Eassemblyconnector();
+
+		/**
+		 * The meta object literal for the '<em><b>Eassemblycontext</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EASSEMBLYCONTEXT = eINSTANCE.getERoot_Eassemblycontext();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecomponent</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ECOMPONENT = eINSTANCE.getERoot_Ecomponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Eservice</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ESERVICE = eINSTANCE.getERoot_Eservice();
+
+		/**
+		 * The meta object literal for the '<em><b>Einterface</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EINTERFACE = eINSTANCE.getERoot_Einterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Esystem</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ESYSTEM = eINSTANCE.getERoot_Esystem();
+
+		/**
+		 * The meta object literal for the '<em><b>Erepository</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EREPOSITORY = eINSTANCE.getERoot_Erepository();
+
+		/**
+		 * The meta object literal for the '<em><b>Ebehaviourdescription</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EBEHAVIOURDESCRIPTION = eINSTANCE.getERoot_Ebehaviourdescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Eexternalcall</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EEXTERNALCALL = eINSTANCE.getERoot_Eexternalcall();
+
+		/**
+		 * The meta object literal for the '<em><b>Einternalaction</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EINTERNALACTION = eINSTANCE.getERoot_Einternalaction();
+
+		/**
+		 * The meta object literal for the '<em><b>Ebranch</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EBRANCH = eINSTANCE.getERoot_Ebranch();
+
+		/**
+		 * The meta object literal for the '<em><b>Eloop</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ELOOP = eINSTANCE.getERoot_Eloop();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecompositecomponent</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__ECOMPOSITECOMPONENT = eINSTANCE.getERoot_Ecompositecomponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Eallocationcontext</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EROOT__EALLOCATIONCONTEXT = eINSTANCE.getERoot_Eallocationcontext();
 
 		/**
 		 * The meta object literal for the '{@link mdsd.component_based.PossibleReturnTypes <em>Possible Return Types</em>}' enum.

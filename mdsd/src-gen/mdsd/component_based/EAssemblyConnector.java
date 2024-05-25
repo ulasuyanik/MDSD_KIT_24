@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link mdsd.component_based.EAssemblyConnector#getLinkTo <em>Link To</em>}</li>
  *   <li>{@link mdsd.component_based.EAssemblyConnector#getLinkFrom <em>Link From</em>}</li>
+ *   <li>{@link mdsd.component_based.EAssemblyConnector#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see mdsd.component_based.Component_basedPackage#getEAssemblyConnector()
@@ -45,6 +46,28 @@ public interface EAssemblyConnector extends EObject {
 	 * @generated
 	 */
 	void setLinkFrom(EProvidedRole value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see mdsd.component_based.Component_basedPackage#getEAssemblyConnector_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link mdsd.component_based.EAssemblyConnector#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Link To</b></em>' reference.

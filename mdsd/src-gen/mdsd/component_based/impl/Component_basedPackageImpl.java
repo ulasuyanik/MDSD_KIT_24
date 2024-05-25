@@ -31,6 +31,7 @@ import mdsd.component_based.ERepositoryViewType;
 import mdsd.component_based.ERequiredDelegationConnector;
 import mdsd.component_based.ERequiredRole;
 import mdsd.component_based.ERole;
+import mdsd.component_based.ERoot;
 import mdsd.component_based.EService;
 import mdsd.component_based.ESignature;
 import mdsd.component_based.ESystem;
@@ -291,6 +292,13 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * @generated
 	 */
 	private EClass eViewTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eRootEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -701,6 +709,16 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEService_Name() {
+		return (EAttribute) eServiceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEAssemblyContext() {
 		return eAssemblyContextEClass;
 	}
@@ -871,6 +889,16 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * @generated
 	 */
 	@Override
+	public EAttribute getESystem_Name() {
+		return (EAttribute) eSystemEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEAssemblyConnector() {
 		return eAssemblyConnectorEClass;
 	}
@@ -883,6 +911,16 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	@Override
 	public EReference getEAssemblyConnector_LinkFrom() {
 		return (EReference) eAssemblyConnectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEAssemblyConnector_Name() {
+		return (EAttribute) eAssemblyConnectorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1131,6 +1169,16 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * @generated
 	 */
 	@Override
+	public EAttribute getERequiredRole_Name() {
+		return (EAttribute) eRequiredRoleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEProvidedRole() {
 		return eProvidedRoleEClass;
 	}
@@ -1143,6 +1191,16 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	@Override
 	public EReference getEProvidedRole_LinkedFrom() {
 		return (EReference) eProvidedRoleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEProvidedRole_Name() {
+		return (EAttribute) eProvidedRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1471,6 +1529,236 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 	 * @generated
 	 */
 	@Override
+	public EClass getERoot() {
+		return eRootEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eviewpoint() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eviewtype() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eparameter() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Esignature() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Edelegationconnector() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Erole() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Elink() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Econtainer() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eassemblyconnector() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eassemblycontext() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Ecomponent() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eservice() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Einterface() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Esystem() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Erepository() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Ebehaviourdescription() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eexternalcall() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Einternalaction() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Ebranch() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eloop() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Ecompositecomponent() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getERoot_Eallocationcontext() {
+		return (EReference) eRootEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getPossibleReturnTypes() {
 		return possibleReturnTypesEEnum;
 	}
@@ -1561,6 +1849,7 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		createEAttribute(eParameterEClass, EPARAMETER__TYPE);
 
 		eServiceEClass = createEClass(ESERVICE);
+		createEAttribute(eServiceEClass, ESERVICE__NAME);
 
 		eAssemblyContextEClass = createEClass(EASSEMBLY_CONTEXT);
 		createEAttribute(eAssemblyContextEClass, EASSEMBLY_CONTEXT__NAME);
@@ -1581,10 +1870,12 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		createEReference(eSystemEClass, ESYSTEM__PROVIDES);
 		createEReference(eSystemEClass, ESYSTEM__REQUIRES);
 		createEReference(eSystemEClass, ESYSTEM__ENCAPSULATES);
+		createEAttribute(eSystemEClass, ESYSTEM__NAME);
 
 		eAssemblyConnectorEClass = createEClass(EASSEMBLY_CONNECTOR);
 		createEReference(eAssemblyConnectorEClass, EASSEMBLY_CONNECTOR__LINK_TO);
 		createEReference(eAssemblyConnectorEClass, EASSEMBLY_CONNECTOR__LINK_FROM);
+		createEAttribute(eAssemblyConnectorEClass, EASSEMBLY_CONNECTOR__NAME);
 
 		eContainerEClass = createEClass(ECONTAINER);
 		createEAttribute(eContainerEClass, ECONTAINER__NAME);
@@ -1618,9 +1909,11 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 
 		eRequiredRoleEClass = createEClass(EREQUIRED_ROLE);
 		createEReference(eRequiredRoleEClass, EREQUIRED_ROLE__LINKED_TO);
+		createEAttribute(eRequiredRoleEClass, EREQUIRED_ROLE__NAME);
 
 		eProvidedRoleEClass = createEClass(EPROVIDED_ROLE);
 		createEReference(eProvidedRoleEClass, EPROVIDED_ROLE__LINKED_FROM);
+		createEAttribute(eProvidedRoleEClass, EPROVIDED_ROLE__NAME);
 
 		eEnvironmentViewTypeEClass = createEClass(EENVIRONMENT_VIEW_TYPE);
 		createEReference(eEnvironmentViewTypeEClass, EENVIRONMENT_VIEW_TYPE__SHOWS_CONTAINERS);
@@ -1667,6 +1960,30 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		eLoopEClass = createEClass(ELOOP);
 
 		eViewTypeEClass = createEClass(EVIEW_TYPE);
+
+		eRootEClass = createEClass(EROOT);
+		createEReference(eRootEClass, EROOT__EVIEWPOINT);
+		createEReference(eRootEClass, EROOT__EVIEWTYPE);
+		createEReference(eRootEClass, EROOT__EPARAMETER);
+		createEReference(eRootEClass, EROOT__ESIGNATURE);
+		createEReference(eRootEClass, EROOT__EDELEGATIONCONNECTOR);
+		createEReference(eRootEClass, EROOT__EROLE);
+		createEReference(eRootEClass, EROOT__ELINK);
+		createEReference(eRootEClass, EROOT__ECONTAINER);
+		createEReference(eRootEClass, EROOT__EASSEMBLYCONNECTOR);
+		createEReference(eRootEClass, EROOT__EASSEMBLYCONTEXT);
+		createEReference(eRootEClass, EROOT__ECOMPONENT);
+		createEReference(eRootEClass, EROOT__ESERVICE);
+		createEReference(eRootEClass, EROOT__EINTERFACE);
+		createEReference(eRootEClass, EROOT__ESYSTEM);
+		createEReference(eRootEClass, EROOT__EREPOSITORY);
+		createEReference(eRootEClass, EROOT__EBEHAVIOURDESCRIPTION);
+		createEReference(eRootEClass, EROOT__EEXTERNALCALL);
+		createEReference(eRootEClass, EROOT__EINTERNALACTION);
+		createEReference(eRootEClass, EROOT__EBRANCH);
+		createEReference(eRootEClass, EROOT__ELOOP);
+		createEReference(eRootEClass, EROOT__ECOMPOSITECOMPONENT);
+		createEReference(eRootEClass, EROOT__EALLOCATIONCONTEXT);
 
 		// Create enums
 		possibleReturnTypesEEnum = createEEnum(POSSIBLE_RETURN_TYPES);
@@ -1830,6 +2147,8 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 
 		initEClass(eServiceEClass, EService.class, "EService", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEService_Name(), ecorePackage.getEString(), "name", null, 0, 1, EService.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eAssemblyContextEClass, EAssemblyContext.class, "EAssemblyContext", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1911,6 +2230,8 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 				this.getEAssemblyContext_EncapsulatedBySystem(), "encapsulates", null, 0, -1, ESystem.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getESystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ESystem.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eAssemblyConnectorEClass, EAssemblyConnector.class, "EAssemblyConnector", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1920,6 +2241,9 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		initEReference(getEAssemblyConnector_LinkFrom(), this.getEProvidedRole(), this.getEProvidedRole_LinkedFrom(),
 				"linkFrom", null, 1, 1, EAssemblyConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEAssemblyConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				EAssemblyConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(eContainerEClass, EContainer.class, "EContainer", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1999,6 +2323,8 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 		initEReference(getERequiredRole_LinkedTo(), this.getEAssemblyConnector(), this.getEAssemblyConnector_LinkTo(),
 				"linkedTo", null, 0, 1, ERequiredRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getERequiredRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, ERequiredRole.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eProvidedRoleEClass, EProvidedRole.class, "EProvidedRole", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -2006,6 +2332,8 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 				this.getEAssemblyConnector_LinkFrom(), "linkedFrom", null, 0, 1, EProvidedRole.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getEProvidedRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, EProvidedRole.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eEnvironmentViewTypeEClass, EEnvironmentViewType.class, "EEnvironmentViewType", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2100,6 +2428,74 @@ public class Component_basedPackageImpl extends EPackageImpl implements Componen
 
 		initEClass(eViewTypeEClass, EViewType.class, "EViewType", IS_ABSTRACT, IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(eRootEClass, ERoot.class, "ERoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getERoot_Eviewpoint(), this.getEViewPoint(), null, "eviewpoint", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Eviewtype(), this.getEViewType(), null, "eviewtype", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Eparameter(), this.getEParameter(), null, "eparameter", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Esignature(), this.getESignature(), null, "esignature", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Edelegationconnector(), this.getEDelegationConnector(), null, "edelegationconnector",
+				null, 0, -1, ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Erole(), this.getERole(), null, "erole", null, 0, -1, ERoot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getERoot_Elink(), this.getELink(), null, "elink", null, 0, -1, ERoot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getERoot_Econtainer(), this.getEContainer(), null, "econtainer", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Eassemblyconnector(), this.getEAssemblyConnector(), null, "eassemblyconnector", null, 0,
+				-1, ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Eassemblycontext(), this.getEAssemblyContext(), null, "eassemblycontext", null, 0, -1,
+				ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Ecomponent(), this.getEComponent(), null, "ecomponent", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Eservice(), this.getEService(), null, "eservice", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Einterface(), this.getEInterface(), null, "einterface", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Esystem(), this.getESystem(), null, "esystem", null, 0, -1, ERoot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getERoot_Erepository(), this.getERepository(), null, "erepository", null, 0, -1, ERoot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Ebehaviourdescription(), this.getEBehaviourDescription(), null, "ebehaviourdescription",
+				null, 0, -1, ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Eexternalcall(), this.getEExternalCall(), null, "eexternalcall", null, 0, -1,
+				ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Einternalaction(), this.getEInternalAction(), null, "einternalaction", null, 0, -1,
+				ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Ebranch(), this.getEBranch(), null, "ebranch", null, 0, -1, ERoot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getERoot_Eloop(), this.getELoop(), null, "eloop", null, 0, -1, ERoot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getERoot_Ecompositecomponent(), this.getECompositeComponent(), null, "ecompositecomponent", null,
+				0, -1, ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getERoot_Eallocationcontext(), this.getEAllocationContext(), null, "eallocationcontext", null, 0,
+				-1, ERoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(possibleReturnTypesEEnum, PossibleReturnTypes.class, "PossibleReturnTypes");

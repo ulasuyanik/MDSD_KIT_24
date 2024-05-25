@@ -13,6 +13,7 @@ import mdsd.component_based.EAssemblyContext;
 import mdsd.component_based.EAssemblyViewPoint;
 import mdsd.component_based.EAssemblyViewType;
 import mdsd.component_based.EBehaviourDescription;
+import mdsd.component_based.EBranch;
 import mdsd.component_based.EComponent;
 import mdsd.component_based.ECompositeComponent;
 import mdsd.component_based.EContainer;
@@ -20,7 +21,9 @@ import mdsd.component_based.EDeploymentViewPoint;
 import mdsd.component_based.EEnvironmentViewType;
 import mdsd.component_based.EExternalCall;
 import mdsd.component_based.EInterface;
+import mdsd.component_based.EInternalAction;
 import mdsd.component_based.ELink;
+import mdsd.component_based.ELoop;
 import mdsd.component_based.EParameter;
 import mdsd.component_based.EProvidedDelegationConnector;
 import mdsd.component_based.EProvidedRole;
@@ -28,6 +31,8 @@ import mdsd.component_based.ERepository;
 import mdsd.component_based.ERepositoryViewType;
 import mdsd.component_based.ERequiredDelegationConnector;
 import mdsd.component_based.ERequiredRole;
+import mdsd.component_based.ERoot;
+import mdsd.component_based.EService;
 import mdsd.component_based.ESignature;
 import mdsd.component_based.ESystem;
 import mdsd.component_based.ESystemIndependentViewPoint;
@@ -77,6 +82,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case Component_basedPackage.EBEHAVIOUR_DESCRIPTION:
 				sequence_EBehaviourDescription(context, (EBehaviourDescription) semanticObject); 
 				return; 
+			case Component_basedPackage.EBRANCH:
+				sequence_EBranch(context, (EBranch) semanticObject); 
+				return; 
 			case Component_basedPackage.ECOMPONENT:
 				sequence_EComponent_Impl(context, (EComponent) semanticObject); 
 				return; 
@@ -98,8 +106,14 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case Component_basedPackage.EINTERFACE:
 				sequence_EInterface(context, (EInterface) semanticObject); 
 				return; 
+			case Component_basedPackage.EINTERNAL_ACTION:
+				sequence_EInternalAction(context, (EInternalAction) semanticObject); 
+				return; 
 			case Component_basedPackage.ELINK:
 				sequence_ELink(context, (ELink) semanticObject); 
+				return; 
+			case Component_basedPackage.ELOOP:
+				sequence_ELoop(context, (ELoop) semanticObject); 
 				return; 
 			case Component_basedPackage.EPARAMETER:
 				sequence_EParameter(context, (EParameter) semanticObject); 
@@ -121,6 +135,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case Component_basedPackage.EREQUIRED_ROLE:
 				sequence_ERequiredRole(context, (ERequiredRole) semanticObject); 
+				return; 
+			case Component_basedPackage.EROOT:
+				sequence_ERoot(context, (ERoot) semanticObject); 
+				return; 
+			case Component_basedPackage.ESERVICE:
+				sequence_EService(context, (EService) semanticObject); 
 				return; 
 			case Component_basedPackage.ESIGNATURE:
 				sequence_ESignature(context, (ESignature) semanticObject); 
@@ -157,7 +177,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     EAllocationViewType returns EAllocationViewType
 	 *
 	 * Constraint:
-	 *     (includes+=EAllocationContext includes+=EAllocationContext*)
+	 *     (includes+=EAllocationContext includes+=EAllocationContext*)?
 	 * </pre>
 	 */
 	protected void sequence_EAllocationViewType(ISerializationContext context, EAllocationViewType semanticObject) {
@@ -171,19 +191,22 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     EAssemblyConnector returns EAssemblyConnector
 	 *
 	 * Constraint:
-	 *     (linkTo=[ERequiredRole|ID] linkFrom=[EProvidedRole|ID])
+	 *     (name=EString linkTo=[ERequiredRole|ID] linkFrom=[EProvidedRole|ID])
 	 * </pre>
 	 */
 	protected void sequence_EAssemblyConnector(ISerializationContext context, EAssemblyConnector semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__NAME));
 			if (transientValues.isValueTransient(semanticObject, Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_TO) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_TO));
 			if (transientValues.isValueTransient(semanticObject, Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_FROM) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_FROM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEAssemblyConnectorAccess().getLinkToERequiredRoleIDTerminalRuleCall_2_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_TO, false));
-		feeder.accept(grammarAccess.getEAssemblyConnectorAccess().getLinkFromEProvidedRoleIDTerminalRuleCall_3_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_FROM, false));
+		feeder.accept(grammarAccess.getEAssemblyConnectorAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEAssemblyConnectorAccess().getLinkToERequiredRoleIDTerminalRuleCall_4_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_TO, false));
+		feeder.accept(grammarAccess.getEAssemblyConnectorAccess().getLinkFromEProvidedRoleIDTerminalRuleCall_5_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_FROM, false));
 		feeder.finish();
 	}
 	
@@ -225,7 +248,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEAssemblyViewPointAccess().getAssemblyViewTypeEAssemblyViewTypeParserRuleCall_2_1_0(), semanticObject.getAssemblyViewType());
+		feeder.accept(grammarAccess.getEAssemblyViewPointAccess().getAssemblyViewTypeEAssemblyViewTypeParserRuleCall_3_1_0(), semanticObject.getAssemblyViewType());
 		feeder.finish();
 	}
 	
@@ -237,10 +260,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     EAssemblyViewType returns EAssemblyViewType
 	 *
 	 * Constraint:
-	 *     (
-	 *         (mainArtifacts+=EAssemblyContext mainArtifacts+=EAssemblyContext* (showsComponents+=[EComponent|ID] showsComponents+=[EComponent|ID]*)) | 
-	 *         (showsComponents+=[EComponent|ID] showsComponents+=[EComponent|ID]*)
-	 *     )?
+	 *     ((mainArtifacts+=EAssemblyContext mainArtifacts+=EAssemblyContext*)? (showsComponents+=[EComponent|ID] showsComponents+=[EComponent|ID]*)?)
 	 * </pre>
 	 */
 	protected void sequence_EAssemblyViewType(ISerializationContext context, EAssemblyViewType semanticObject) {
@@ -255,26 +275,28 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         (
-	 *             internalAction+=EInternalAction 
-	 *             internalAction+=EInternalAction* 
-	 *             (
-	 *                 ((loop+=ELoop loop+=ELoop*) (externalCall+=EExternalCall externalCall+=EExternalCall*)) | 
-	 *                 (externalCall+=EExternalCall externalCall+=EExternalCall*)
-	 *             )
-	 *         ) | 
-	 *         (
-	 *             ((internalAction+=EInternalAction internalAction+=EInternalAction* (loop+=ELoop loop+=ELoop*)) | (loop+=ELoop loop+=ELoop*))? 
-	 *             branch+=EBranch 
-	 *             branch+=EBranch* 
-	 *             (externalCall+=EExternalCall externalCall+=EExternalCall*)
-	 *         ) | 
-	 *         ((loop+=ELoop loop+=ELoop*) (externalCall+=EExternalCall externalCall+=EExternalCall*)) | 
-	 *         (externalCall+=EExternalCall externalCall+=EExternalCall*)
-	 *     )?
+	 *         (internalAction+=EInternalAction internalAction+=EInternalAction*)? 
+	 *         (loop+=ELoop loop+=ELoop*)? 
+	 *         (branch+=EBranch branch+=EBranch*)? 
+	 *         (externalCall+=EExternalCall externalCall+=EExternalCall*)?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_EBehaviourDescription(ISerializationContext context, EBehaviourDescription semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EBranch returns EBranch
+	 *
+	 * Constraint:
+	 *     {EBranch}
+	 * </pre>
+	 */
+	protected void sequence_EBranch(ISerializationContext context, EBranch semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -358,8 +380,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEDeploymentViewPointAccess().getAllocationViewTypeEAllocationViewTypeParserRuleCall_3_0(), semanticObject.getAllocationViewType());
-		feeder.accept(grammarAccess.getEDeploymentViewPointAccess().getEnvironmentViewTypeEEnvironmentViewTypeParserRuleCall_5_0(), semanticObject.getEnvironmentViewType());
+		feeder.accept(grammarAccess.getEDeploymentViewPointAccess().getAllocationViewTypeEAllocationViewTypeParserRuleCall_4_0(), semanticObject.getAllocationViewType());
+		feeder.accept(grammarAccess.getEDeploymentViewPointAccess().getEnvironmentViewTypeEEnvironmentViewTypeParserRuleCall_6_0(), semanticObject.getEnvironmentViewType());
 		feeder.finish();
 	}
 	
@@ -371,10 +393,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     EEnvironmentViewType returns EEnvironmentViewType
 	 *
 	 * Constraint:
-	 *     (
-	 *         (showsLinks+=[ELink|ID] showsLinks+=[ELink|ID]* (showsContainers+=[EContainer|ID] showsContainers+=[EContainer|ID]*)) | 
-	 *         (showsContainers+=[EContainer|ID] showsContainers+=[EContainer|ID]*)
-	 *     )?
+	 *     ((showsLinks+=[ELink|ID] showsLinks+=[ELink|ID]*)? (showsContainers+=[EContainer|ID] showsContainers+=[EContainer|ID]*)?)
 	 * </pre>
 	 */
 	protected void sequence_EEnvironmentViewType(ISerializationContext context, EEnvironmentViewType semanticObject) {
@@ -397,7 +416,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EEXTERNAL_CALL__TO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEExternalCallAccess().getToEServiceEStringParserRuleCall_2_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EEXTERNAL_CALL__TO, false));
+		feeder.accept(grammarAccess.getEExternalCallAccess().getToEServiceEStringParserRuleCall_3_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EEXTERNAL_CALL__TO, false));
 		feeder.finish();
 	}
 	
@@ -427,6 +446,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     EInternalAction returns EInternalAction
+	 *
+	 * Constraint:
+	 *     {EInternalAction}
+	 * </pre>
+	 */
+	protected void sequence_EInternalAction(ISerializationContext context, EInternalAction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     ELink returns ELink
 	 *
 	 * Constraint:
@@ -434,6 +467,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_ELink(ISerializationContext context, ELink semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ELoop returns ELoop
+	 *
+	 * Constraint:
+	 *     {ELoop}
+	 * </pre>
+	 */
+	protected void sequence_ELoop(ISerializationContext context, ELoop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -455,8 +502,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EPARAMETER__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEParameterAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEParameterAccess().getTypePossibleParameterTypesEnumRuleCall_3_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getEParameterAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEParameterAccess().getTypePossibleParameterTypesEnumRuleCall_4_1_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
@@ -479,8 +526,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_TO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEProvidedDelegationConnectorAccess().getLinkFromEInterfaceIDTerminalRuleCall_2_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_FROM, false));
-		feeder.accept(grammarAccess.getEProvidedDelegationConnectorAccess().getLinkToEProvidedRoleIDTerminalRuleCall_3_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_TO, false));
+		feeder.accept(grammarAccess.getEProvidedDelegationConnectorAccess().getLinkFromEInterfaceIDTerminalRuleCall_3_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_FROM, false));
+		feeder.accept(grammarAccess.getEProvidedDelegationConnectorAccess().getLinkToEProvidedRoleIDTerminalRuleCall_4_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_TO, false));
 		feeder.finish();
 	}
 	
@@ -492,7 +539,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     EProvidedRole returns EProvidedRole
 	 *
 	 * Constraint:
-	 *     ((roleOf=[EAssemblyContext|ID] linkedFrom=[EAssemblyConnector|ID]) | linkedFrom=[EAssemblyConnector|ID])?
+	 *     (name=EString roleOf=[EAssemblyContext|ID]? linkedFrom=[EAssemblyConnector|ID]?)
 	 * </pre>
 	 */
 	protected void sequence_EProvidedRole(ISerializationContext context, EProvidedRole semanticObject) {
@@ -507,10 +554,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ERepositoryViewType returns ERepositoryViewType
 	 *
 	 * Constraint:
-	 *     (
-	 *         (showsInterfaces+=[EInterface|ID] showsInterfaces+=[EInterface|ID]* (showsComponents+=[EComponent|ID] showsComponents+=[EComponent|ID]*)) | 
-	 *         (showsComponents+=[EComponent|ID] showsComponents+=[EComponent|ID]*)
-	 *     )?
+	 *     ((showsInterfaces+=[EInterface|ID] showsInterfaces+=[EInterface|ID]*)? (showsComponents+=[EComponent|ID] showsComponents+=[EComponent|ID]*)?)
 	 * </pre>
 	 */
 	protected void sequence_ERepositoryViewType(ISerializationContext context, ERepositoryViewType semanticObject) {
@@ -524,7 +568,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ERepository returns ERepository
 	 *
 	 * Constraint:
-	 *     ((component+=EComponent component+=EComponent* (interface+=EInterface interface+=EInterface*)) | (interface+=EInterface interface+=EInterface*))?
+	 *     ((component+=EComponent component+=EComponent*)? (interface+=EInterface interface+=EInterface*)?)
 	 * </pre>
 	 */
 	protected void sequence_ERepository(ISerializationContext context, ERepository semanticObject) {
@@ -550,8 +594,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_TO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getERequiredDelegationConnectorAccess().getLinkFromERequiredRoleIDTerminalRuleCall_2_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_FROM, false));
-		feeder.accept(grammarAccess.getERequiredDelegationConnectorAccess().getLinkToEInterfaceIDTerminalRuleCall_3_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_TO, false));
+		feeder.accept(grammarAccess.getERequiredDelegationConnectorAccess().getLinkFromERequiredRoleIDTerminalRuleCall_3_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_FROM, false));
+		feeder.accept(grammarAccess.getERequiredDelegationConnectorAccess().getLinkToEInterfaceIDTerminalRuleCall_4_1_0_1(), semanticObject.eGet(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_TO, false));
 		feeder.finish();
 	}
 	
@@ -563,11 +607,68 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ERequiredRole returns ERequiredRole
 	 *
 	 * Constraint:
-	 *     ((roleOf=[EAssemblyContext|ID] linkedTo=[EAssemblyConnector|ID]) | linkedTo=[EAssemblyConnector|ID])?
+	 *     (name=EString roleOf=[EAssemblyContext|ID]? linkedTo=[EAssemblyConnector|ID]?)
 	 * </pre>
 	 */
 	protected void sequence_ERequiredRole(ISerializationContext context, ERequiredRole semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ERoot returns ERoot
+	 *
+	 * Constraint:
+	 *     (
+	 *         (eviewpoint+=EViewPoint eviewpoint+=EViewPoint*)? 
+	 *         (eviewtype+=EViewType eviewtype+=EViewType*)? 
+	 *         (eparameter+=EParameter eparameter+=EParameter*)? 
+	 *         (esignature+=ESignature esignature+=ESignature*)? 
+	 *         (edelegationconnector+=EDelegationConnector edelegationconnector+=EDelegationConnector*)? 
+	 *         (erole+=ERole erole+=ERole*)? 
+	 *         (elink+=ELink elink+=ELink*)? 
+	 *         (econtainer+=EContainer econtainer+=EContainer*)? 
+	 *         (eassemblyconnector+=EAssemblyConnector eassemblyconnector+=EAssemblyConnector*)? 
+	 *         (eassemblycontext+=EAssemblyContext eassemblycontext+=EAssemblyContext*)? 
+	 *         (ecomponent+=EComponent ecomponent+=EComponent*)? 
+	 *         (eservice+=EService eservice+=EService*)? 
+	 *         (einterface+=EInterface einterface+=EInterface*)? 
+	 *         (esystem+=ESystem esystem+=ESystem*)? 
+	 *         (erepository+=ERepository erepository+=ERepository*)? 
+	 *         (ebehaviourdescription+=EBehaviourDescription ebehaviourdescription+=EBehaviourDescription*)? 
+	 *         (eexternalcall+=EExternalCall eexternalcall+=EExternalCall*)? 
+	 *         (einternalaction+=EInternalAction einternalaction+=EInternalAction*)? 
+	 *         (ebranch+=EBranch ebranch+=EBranch*)? 
+	 *         (eloop+=ELoop eloop+=ELoop*)? 
+	 *         (ecompositecomponent+=ECompositeComponent ecompositecomponent+=ECompositeComponent*)? 
+	 *         (eallocationcontext+=EAllocationContext eallocationcontext+=EAllocationContext*)?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ERoot(ISerializationContext context, ERoot semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EService returns EService
+	 *
+	 * Constraint:
+	 *     name=EString
+	 * </pre>
+	 */
+	protected void sequence_EService(ISerializationContext context, EService semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Component_basedPackage.Literals.ESERVICE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.ESERVICE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEServiceAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -606,7 +707,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getESystemIndependentViewPointAccess().getRepositoryViewTypeERepositoryViewTypeParserRuleCall_2_1_0(), semanticObject.getRepositoryViewType());
+		feeder.accept(grammarAccess.getESystemIndependentViewPointAccess().getRepositoryViewTypeERepositoryViewTypeParserRuleCall_3_1_0(), semanticObject.getRepositoryViewType());
 		feeder.finish();
 	}
 	
@@ -618,6 +719,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=EString 
 	 *         provides+=[EInterface|ID] 
 	 *         provides+=[EInterface|ID]* 
 	 *         (requires+=[EInterface|ID] requires+=[EInterface|ID]*)? 

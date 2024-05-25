@@ -78,6 +78,7 @@ public class Component_basedTables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_EComponent = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EComponent", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_ECompositeComponent = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ECompositeComponent", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_EContainer = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EContainer", 0);
+	public static final /*@NonInvalid*/ ClassId CLSSid_EDelegationConnector = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EDelegationConnector", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_EDeploymentViewPoint = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EDeploymentViewPoint", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_EEnvironmentViewType = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EEnvironmentViewType", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_EExternalCall = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EExternalCall", 0);
@@ -93,10 +94,13 @@ public class Component_basedTables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_ERequiredDelegationConnector = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ERequiredDelegationConnector", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_ERequiredRole = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ERequiredRole", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_ERole = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ERole", 0);
+	public static final /*@NonInvalid*/ ClassId CLSSid_ERoot = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ERoot", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_EService = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EService", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_ESignature = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ESignature", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_ESystem = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ESystem", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_ESystemIndependentViewPoint = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("ESystemIndependentViewPoint", 0);
+	public static final /*@NonInvalid*/ ClassId CLSSid_EViewPoint = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EViewPoint", 0);
+	public static final /*@NonInvalid*/ ClassId CLSSid_EViewType = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getClassId("EViewType", 0);
 	public static final /*@NonInvalid*/ EnumerationId ENUMid_PossibleParameterTypes = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getEnumerationId("PossibleParameterTypes");
 	public static final /*@NonInvalid*/ EnumerationId ENUMid_PossibleReturnTypes = Component_basedTables.PACKid_http_c_s_s_www_example_org_s_component_based.getEnumerationId("PossibleReturnTypes");
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
@@ -114,12 +118,15 @@ public class Component_basedTables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_ERole = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_ERole, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_ESignature = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_ESignature, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EAllocationContext = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EAllocationContext, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EAssemblyConnector = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EAssemblyConnector, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EAssemblyContext = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EAssemblyContext, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EBehaviourDescription = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EBehaviourDescription, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EBranch = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EBranch, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EComponent = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EComponent, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ECompositeComponent = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ECompositeComponent, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EContainer = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EContainer, true, ValueUtil.integerValueOf(2), ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EContainer_0 = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EContainer, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EDelegationConnector = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EDelegationConnector, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EExternalCall = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EExternalCall, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EInterface = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EInterface, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EInterface_0 = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EInterface, true, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
@@ -127,11 +134,14 @@ public class Component_basedTables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ELink = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ELink, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ELoop = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ELoop, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EParameter = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EParameter, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ERepository = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ERepository, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ERole = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ERole, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EService = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EService, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ESignature = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ESignature, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ESystem = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ESystem, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_ESystem_0 = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_ESystem, true, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EViewPoint = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EViewPoint, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EViewType = TypeId.ORDERED_SET.getSpecializedId(Component_basedTables.CLSSid_EViewType, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_EContainer = TypeId.SEQUENCE.getSpecializedId(Component_basedTables.CLSSid_EContainer, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_EInterface = TypeId.SEQUENCE.getSpecializedId(Component_basedTables.CLSSid_EInterface, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_ERole = TypeId.SEQUENCE.getSpecializedId(Component_basedTables.CLSSid_ERole, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
@@ -196,6 +206,7 @@ public class Component_basedTables extends AbstractTables
 		public static final EcoreExecutorType _ERequiredDelegationConnector = new EcoreExecutorType(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR, PACKAGE, 0);
 		public static final EcoreExecutorType _ERequiredRole = new EcoreExecutorType(Component_basedPackage.Literals.EREQUIRED_ROLE, PACKAGE, 0);
 		public static final EcoreExecutorType _ERole = new EcoreExecutorType(Component_basedPackage.Literals.EROLE, PACKAGE, 0 | ExecutorType.ABSTRACT);
+		public static final EcoreExecutorType _ERoot = new EcoreExecutorType(Component_basedPackage.Literals.EROOT, PACKAGE, 0);
 		public static final EcoreExecutorType _EService = new EcoreExecutorType(Component_basedPackage.Literals.ESERVICE, PACKAGE, 0);
 		public static final EcoreExecutorType _ESignature = new EcoreExecutorType(Component_basedPackage.Literals.ESIGNATURE, PACKAGE, 0);
 		public static final EcoreExecutorType _ESystem = new EcoreExecutorType(Component_basedPackage.Literals.ESYSTEM, PACKAGE, 0);
@@ -234,6 +245,7 @@ public class Component_basedTables extends AbstractTables
 			_ERequiredDelegationConnector,
 			_ERequiredRole,
 			_ERole,
+			_ERoot,
 			_EService,
 			_ESignature,
 			_ESystem,
@@ -387,6 +399,10 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorFragment _ERole__OclAny = new ExecutorFragment(Types._ERole, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _ERole__OclElement = new ExecutorFragment(Types._ERole, OCLstdlibTables.Types._OclElement);
 
+		private static final ExecutorFragment _ERoot__ERoot = new ExecutorFragment(Types._ERoot, Component_basedTables.Types._ERoot);
+		private static final ExecutorFragment _ERoot__OclAny = new ExecutorFragment(Types._ERoot, OCLstdlibTables.Types._OclAny);
+		private static final ExecutorFragment _ERoot__OclElement = new ExecutorFragment(Types._ERoot, OCLstdlibTables.Types._OclElement);
+
 		private static final ExecutorFragment _EService__EService = new ExecutorFragment(Types._EService, Component_basedTables.Types._EService);
 		private static final ExecutorFragment _EService__OclAny = new ExecutorFragment(Types._EService, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _EService__OclElement = new ExecutorFragment(Types._EService, OCLstdlibTables.Types._OclElement);
@@ -506,12 +522,15 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EAllocationContext__specifies = new EcoreExecutorProperty(Component_basedPackage.Literals.EALLOCATION_CONTEXT__SPECIFIES, Types._EAllocationContext, 1);
 		public static final ExecutorProperty _EAllocationContext__specifiesFor = new EcoreExecutorProperty(Component_basedPackage.Literals.EALLOCATION_CONTEXT__SPECIFIES_FOR, Types._EAllocationContext, 2);
 		public static final ExecutorProperty _EAllocationContext__EAllocationViewType__includes = new ExecutorPropertyWithImplementation("EAllocationViewType", Types._EAllocationContext, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EALLOCATION_VIEW_TYPE__INCLUDES));
+		public static final ExecutorProperty _EAllocationContext__ERoot__eallocationcontext = new ExecutorPropertyWithImplementation("ERoot", Types._EAllocationContext, 4, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EALLOCATIONCONTEXT));
 
 		public static final ExecutorProperty _EAllocationViewType__includes = new EcoreExecutorProperty(Component_basedPackage.Literals.EALLOCATION_VIEW_TYPE__INCLUDES, Types._EAllocationViewType, 0);
 		public static final ExecutorProperty _EAllocationViewType__EDeploymentViewPoint__allocationViewType = new ExecutorPropertyWithImplementation("EDeploymentViewPoint", Types._EAllocationViewType, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE));
 
 		public static final ExecutorProperty _EAssemblyConnector__linkFrom = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_FROM, Types._EAssemblyConnector, 0);
 		public static final ExecutorProperty _EAssemblyConnector__linkTo = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__LINK_TO, Types._EAssemblyConnector, 1);
+		public static final ExecutorProperty _EAssemblyConnector__name = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_CONNECTOR__NAME, Types._EAssemblyConnector, 2);
+		public static final ExecutorProperty _EAssemblyConnector__ERoot__eassemblyconnector = new ExecutorPropertyWithImplementation("ERoot", Types._EAssemblyConnector, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EASSEMBLYCONNECTOR));
 
 		public static final ExecutorProperty _EAssemblyContext__allocated = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_CONTEXT__ALLOCATED, Types._EAssemblyContext, 0);
 		public static final ExecutorProperty _EAssemblyContext__encapsulatedByComponent = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_CONTEXT__ENCAPSULATED_BY_COMPONENT, Types._EAssemblyContext, 1);
@@ -522,6 +541,7 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EAssemblyContext__EAllocationContext__specifies = new ExecutorPropertyWithImplementation("EAllocationContext", Types._EAssemblyContext, 6, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EALLOCATION_CONTEXT__SPECIFIES));
 		public static final ExecutorProperty _EAssemblyContext__EAssemblyViewType__mainArtifacts = new ExecutorPropertyWithImplementation("EAssemblyViewType", Types._EAssemblyContext, 7, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_TYPE__MAIN_ARTIFACTS));
 		public static final ExecutorProperty _EAssemblyContext__ERole__roleOf = new ExecutorPropertyWithImplementation("ERole", Types._EAssemblyContext, 8, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROLE__ROLE_OF));
+		public static final ExecutorProperty _EAssemblyContext__ERoot__eassemblycontext = new ExecutorPropertyWithImplementation("ERoot", Types._EAssemblyContext, 9, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EASSEMBLYCONTEXT));
 
 		public static final ExecutorProperty _EAssemblyViewPoint__assemblyViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_POINT__ASSEMBLY_VIEW_TYPE, Types._EAssemblyViewPoint, 0);
 
@@ -534,8 +554,10 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EBehaviourDescription__internalAction = new EcoreExecutorProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__INTERNAL_ACTION, Types._EBehaviourDescription, 2);
 		public static final ExecutorProperty _EBehaviourDescription__loop = new EcoreExecutorProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__LOOP, Types._EBehaviourDescription, 3);
 		public static final ExecutorProperty _EBehaviourDescription__EComponent__behaviourDescription = new ExecutorPropertyWithImplementation("EComponent", Types._EBehaviourDescription, 4, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ECOMPONENT__BEHAVIOUR_DESCRIPTION));
+		public static final ExecutorProperty _EBehaviourDescription__ERoot__ebehaviourdescription = new ExecutorPropertyWithImplementation("ERoot", Types._EBehaviourDescription, 5, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EBEHAVIOURDESCRIPTION));
 
 		public static final ExecutorProperty _EBranch__EBehaviourDescription__branch = new ExecutorPropertyWithImplementation("EBehaviourDescription", Types._EBranch, 0, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__BRANCH));
+		public static final ExecutorProperty _EBranch__ERoot__ebranch = new ExecutorPropertyWithImplementation("ERoot", Types._EBranch, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EBRANCH));
 
 		public static final ExecutorProperty _EComponent__behaviourDescription = new EcoreExecutorProperty(Component_basedPackage.Literals.ECOMPONENT__BEHAVIOUR_DESCRIPTION, Types._EComponent, 0);
 		public static final ExecutorProperty _EComponent__name = new EcoreExecutorProperty(Component_basedPackage.Literals.ECOMPONENT__NAME, Types._EComponent, 1);
@@ -548,14 +570,19 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EComponent__EAssemblyViewType__showsComponents = new ExecutorPropertyWithImplementation("EAssemblyViewType", Types._EComponent, 8, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_VIEW_TYPE__SHOWS_COMPONENTS));
 		public static final ExecutorProperty _EComponent__ERepository__component = new ExecutorPropertyWithImplementation("ERepository", Types._EComponent, 9, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EREPOSITORY__COMPONENT));
 		public static final ExecutorProperty _EComponent__ERepositoryViewType__showsComponents = new ExecutorPropertyWithImplementation("ERepositoryViewType", Types._EComponent, 10, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EREPOSITORY_VIEW_TYPE__SHOWS_COMPONENTS));
+		public static final ExecutorProperty _EComponent__ERoot__ecomponent = new ExecutorPropertyWithImplementation("ERoot", Types._EComponent, 11, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ECOMPONENT));
 
 		public static final ExecutorProperty _ECompositeComponent__encapsulates = new EcoreExecutorProperty(Component_basedPackage.Literals.ECOMPOSITE_COMPONENT__ENCAPSULATES, Types._ECompositeComponent, 0);
+		public static final ExecutorProperty _ECompositeComponent__ERoot__ecompositecomponent = new ExecutorPropertyWithImplementation("ERoot", Types._ECompositeComponent, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ECOMPOSITECOMPONENT));
 
 		public static final ExecutorProperty _EContainer__connectedTo = new EcoreExecutorProperty(Component_basedPackage.Literals.ECONTAINER__CONNECTED_TO, Types._EContainer, 0);
 		public static final ExecutorProperty _EContainer__name = new EcoreExecutorProperty(Component_basedPackage.Literals.ECONTAINER__NAME, Types._EContainer, 1);
 		public static final ExecutorProperty _EContainer__EAllocationContext__controls = new ExecutorPropertyWithImplementation("EAllocationContext", Types._EContainer, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EALLOCATION_CONTEXT__CONTROLS));
 		public static final ExecutorProperty _EContainer__EAssemblyContext__allocated = new ExecutorPropertyWithImplementation("EAssemblyContext", Types._EContainer, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_CONTEXT__ALLOCATED));
 		public static final ExecutorProperty _EContainer__EEnvironmentViewType__showsContainers = new ExecutorPropertyWithImplementation("EEnvironmentViewType", Types._EContainer, 4, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EENVIRONMENT_VIEW_TYPE__SHOWS_CONTAINERS));
+		public static final ExecutorProperty _EContainer__ERoot__econtainer = new ExecutorPropertyWithImplementation("ERoot", Types._EContainer, 5, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ECONTAINER));
+
+		public static final ExecutorProperty _EDelegationConnector__ERoot__edelegationconnector = new ExecutorPropertyWithImplementation("ERoot", Types._EDelegationConnector, 0, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EDELEGATIONCONNECTOR));
 
 		public static final ExecutorProperty _EDeploymentViewPoint__allocationViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ALLOCATION_VIEW_TYPE, Types._EDeploymentViewPoint, 0);
 		public static final ExecutorProperty _EDeploymentViewPoint__environmentViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.EDEPLOYMENT_VIEW_POINT__ENVIRONMENT_VIEW_TYPE, Types._EDeploymentViewPoint, 1);
@@ -566,6 +593,7 @@ public class Component_basedTables extends AbstractTables
 
 		public static final ExecutorProperty _EExternalCall__to = new EcoreExecutorProperty(Component_basedPackage.Literals.EEXTERNAL_CALL__TO, Types._EExternalCall, 0);
 		public static final ExecutorProperty _EExternalCall__EBehaviourDescription__externalCall = new ExecutorPropertyWithImplementation("EBehaviourDescription", Types._EExternalCall, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__EXTERNAL_CALL));
+		public static final ExecutorProperty _EExternalCall__ERoot__eexternalcall = new ExecutorPropertyWithImplementation("ERoot", Types._EExternalCall, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EEXTERNALCALL));
 
 		public static final ExecutorProperty _EInterface__name = new EcoreExecutorProperty(Component_basedPackage.Literals.EINTERFACE__NAME, Types._EInterface, 0);
 		public static final ExecutorProperty _EInterface__providedByComponent = new EcoreExecutorProperty(Component_basedPackage.Literals.EINTERFACE__PROVIDED_BY_COMPONENT, Types._EInterface, 1);
@@ -578,27 +606,34 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _EInterface__ERepository__interface = new ExecutorPropertyWithImplementation("ERepository", Types._EInterface, 8, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EREPOSITORY__INTERFACE));
 		public static final ExecutorProperty _EInterface__ERepositoryViewType__showsInterfaces = new ExecutorPropertyWithImplementation("ERepositoryViewType", Types._EInterface, 9, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EREPOSITORY_VIEW_TYPE__SHOWS_INTERFACES));
 		public static final ExecutorProperty _EInterface__ERequiredDelegationConnector__linkTo = new ExecutorPropertyWithImplementation("ERequiredDelegationConnector", Types._EInterface, 10, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_TO));
+		public static final ExecutorProperty _EInterface__ERoot__einterface = new ExecutorPropertyWithImplementation("ERoot", Types._EInterface, 11, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EINTERFACE));
 
 		public static final ExecutorProperty _EInternalAction__EBehaviourDescription__internalAction = new ExecutorPropertyWithImplementation("EBehaviourDescription", Types._EInternalAction, 0, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__INTERNAL_ACTION));
+		public static final ExecutorProperty _EInternalAction__ERoot__einternalaction = new ExecutorPropertyWithImplementation("ERoot", Types._EInternalAction, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EINTERNALACTION));
 
 		public static final ExecutorProperty _ELink__connects = new EcoreExecutorProperty(Component_basedPackage.Literals.ELINK__CONNECTS, Types._ELink, 0);
 		public static final ExecutorProperty _ELink__name = new EcoreExecutorProperty(Component_basedPackage.Literals.ELINK__NAME, Types._ELink, 1);
 		public static final ExecutorProperty _ELink__EEnvironmentViewType__showsLinks = new ExecutorPropertyWithImplementation("EEnvironmentViewType", Types._ELink, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EENVIRONMENT_VIEW_TYPE__SHOWS_LINKS));
+		public static final ExecutorProperty _ELink__ERoot__elink = new ExecutorPropertyWithImplementation("ERoot", Types._ELink, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ELINK));
 
 		public static final ExecutorProperty _ELoop__EBehaviourDescription__loop = new ExecutorPropertyWithImplementation("EBehaviourDescription", Types._ELoop, 0, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EBEHAVIOUR_DESCRIPTION__LOOP));
+		public static final ExecutorProperty _ELoop__ERoot__eloop = new ExecutorPropertyWithImplementation("ERoot", Types._ELoop, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ELOOP));
 
 		public static final ExecutorProperty _EParameter__name = new EcoreExecutorProperty(Component_basedPackage.Literals.EPARAMETER__NAME, Types._EParameter, 0);
 		public static final ExecutorProperty _EParameter__type = new EcoreExecutorProperty(Component_basedPackage.Literals.EPARAMETER__TYPE, Types._EParameter, 1);
-		public static final ExecutorProperty _EParameter__ESignature__parameter = new ExecutorPropertyWithImplementation("ESignature", Types._EParameter, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ESIGNATURE__PARAMETER));
+		public static final ExecutorProperty _EParameter__ERoot__eparameter = new ExecutorPropertyWithImplementation("ERoot", Types._EParameter, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EPARAMETER));
+		public static final ExecutorProperty _EParameter__ESignature__parameter = new ExecutorPropertyWithImplementation("ESignature", Types._EParameter, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ESIGNATURE__PARAMETER));
 
 		public static final ExecutorProperty _EProvidedDelegationConnector__linkFrom = new EcoreExecutorProperty(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_FROM, Types._EProvidedDelegationConnector, 0);
 		public static final ExecutorProperty _EProvidedDelegationConnector__linkTo = new EcoreExecutorProperty(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_TO, Types._EProvidedDelegationConnector, 1);
 
 		public static final ExecutorProperty _EProvidedRole__linkedFrom = new EcoreExecutorProperty(Component_basedPackage.Literals.EPROVIDED_ROLE__LINKED_FROM, Types._EProvidedRole, 0);
-		public static final ExecutorProperty _EProvidedRole__EProvidedDelegationConnector__linkTo = new ExecutorPropertyWithImplementation("EProvidedDelegationConnector", Types._EProvidedRole, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_TO));
+		public static final ExecutorProperty _EProvidedRole__name = new EcoreExecutorProperty(Component_basedPackage.Literals.EPROVIDED_ROLE__NAME, Types._EProvidedRole, 1);
+		public static final ExecutorProperty _EProvidedRole__EProvidedDelegationConnector__linkTo = new ExecutorPropertyWithImplementation("EProvidedDelegationConnector", Types._EProvidedRole, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EPROVIDED_DELEGATION_CONNECTOR__LINK_TO));
 
 		public static final ExecutorProperty _ERepository__component = new EcoreExecutorProperty(Component_basedPackage.Literals.EREPOSITORY__COMPONENT, Types._ERepository, 0);
 		public static final ExecutorProperty _ERepository__interface = new EcoreExecutorProperty(Component_basedPackage.Literals.EREPOSITORY__INTERFACE, Types._ERepository, 1);
+		public static final ExecutorProperty _ERepository__ERoot__erepository = new ExecutorPropertyWithImplementation("ERoot", Types._ERepository, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EREPOSITORY));
 
 		public static final ExecutorProperty _ERepositoryViewType__showsComponents = new EcoreExecutorProperty(Component_basedPackage.Literals.EREPOSITORY_VIEW_TYPE__SHOWS_COMPONENTS, Types._ERepositoryViewType, 0);
 		public static final ExecutorProperty _ERepositoryViewType__showsInterfaces = new EcoreExecutorProperty(Component_basedPackage.Literals.EREPOSITORY_VIEW_TYPE__SHOWS_INTERFACES, Types._ERepositoryViewType, 1);
@@ -608,28 +643,62 @@ public class Component_basedTables extends AbstractTables
 		public static final ExecutorProperty _ERequiredDelegationConnector__linkTo = new EcoreExecutorProperty(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_TO, Types._ERequiredDelegationConnector, 1);
 
 		public static final ExecutorProperty _ERequiredRole__linkedTo = new EcoreExecutorProperty(Component_basedPackage.Literals.EREQUIRED_ROLE__LINKED_TO, Types._ERequiredRole, 0);
-		public static final ExecutorProperty _ERequiredRole__ERequiredDelegationConnector__linkFrom = new ExecutorPropertyWithImplementation("ERequiredDelegationConnector", Types._ERequiredRole, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_FROM));
+		public static final ExecutorProperty _ERequiredRole__name = new EcoreExecutorProperty(Component_basedPackage.Literals.EREQUIRED_ROLE__NAME, Types._ERequiredRole, 1);
+		public static final ExecutorProperty _ERequiredRole__ERequiredDelegationConnector__linkFrom = new ExecutorPropertyWithImplementation("ERequiredDelegationConnector", Types._ERequiredRole, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EREQUIRED_DELEGATION_CONNECTOR__LINK_FROM));
 
 		public static final ExecutorProperty _ERole__roleOf = new EcoreExecutorProperty(Component_basedPackage.Literals.EROLE__ROLE_OF, Types._ERole, 0);
 		public static final ExecutorProperty _ERole__EAssemblyContext__roles = new ExecutorPropertyWithImplementation("EAssemblyContext", Types._ERole, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EASSEMBLY_CONTEXT__ROLES));
 		public static final ExecutorProperty _ERole__EInterface__resultsIn = new ExecutorPropertyWithImplementation("EInterface", Types._ERole, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EINTERFACE__RESULTS_IN));
+		public static final ExecutorProperty _ERole__ERoot__erole = new ExecutorPropertyWithImplementation("ERoot", Types._ERole, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EROLE));
 
-		public static final ExecutorProperty _EService__EComponent__providesDirectly = new ExecutorPropertyWithImplementation("EComponent", Types._EService, 0, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ECOMPONENT__PROVIDES_DIRECTLY));
-		public static final ExecutorProperty _EService__EExternalCall__to = new ExecutorPropertyWithImplementation("EExternalCall", Types._EService, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EEXTERNAL_CALL__TO));
-		public static final ExecutorProperty _EService__ESignature__correspondsTo = new ExecutorPropertyWithImplementation("ESignature", Types._EService, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ESIGNATURE__CORRESPONDS_TO));
+		public static final ExecutorProperty _ERoot__eallocationcontext = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EALLOCATIONCONTEXT, Types._ERoot, 0);
+		public static final ExecutorProperty _ERoot__eassemblyconnector = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EASSEMBLYCONNECTOR, Types._ERoot, 1);
+		public static final ExecutorProperty _ERoot__eassemblycontext = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EASSEMBLYCONTEXT, Types._ERoot, 2);
+		public static final ExecutorProperty _ERoot__ebehaviourdescription = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EBEHAVIOURDESCRIPTION, Types._ERoot, 3);
+		public static final ExecutorProperty _ERoot__ebranch = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EBRANCH, Types._ERoot, 4);
+		public static final ExecutorProperty _ERoot__ecomponent = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ECOMPONENT, Types._ERoot, 5);
+		public static final ExecutorProperty _ERoot__ecompositecomponent = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ECOMPOSITECOMPONENT, Types._ERoot, 6);
+		public static final ExecutorProperty _ERoot__econtainer = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ECONTAINER, Types._ERoot, 7);
+		public static final ExecutorProperty _ERoot__edelegationconnector = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EDELEGATIONCONNECTOR, Types._ERoot, 8);
+		public static final ExecutorProperty _ERoot__eexternalcall = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EEXTERNALCALL, Types._ERoot, 9);
+		public static final ExecutorProperty _ERoot__einterface = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EINTERFACE, Types._ERoot, 10);
+		public static final ExecutorProperty _ERoot__einternalaction = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EINTERNALACTION, Types._ERoot, 11);
+		public static final ExecutorProperty _ERoot__elink = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ELINK, Types._ERoot, 12);
+		public static final ExecutorProperty _ERoot__eloop = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ELOOP, Types._ERoot, 13);
+		public static final ExecutorProperty _ERoot__eparameter = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EPARAMETER, Types._ERoot, 14);
+		public static final ExecutorProperty _ERoot__erepository = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EREPOSITORY, Types._ERoot, 15);
+		public static final ExecutorProperty _ERoot__erole = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EROLE, Types._ERoot, 16);
+		public static final ExecutorProperty _ERoot__eservice = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ESERVICE, Types._ERoot, 17);
+		public static final ExecutorProperty _ERoot__esignature = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ESIGNATURE, Types._ERoot, 18);
+		public static final ExecutorProperty _ERoot__esystem = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__ESYSTEM, Types._ERoot, 19);
+		public static final ExecutorProperty _ERoot__eviewpoint = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EVIEWPOINT, Types._ERoot, 20);
+		public static final ExecutorProperty _ERoot__eviewtype = new EcoreExecutorProperty(Component_basedPackage.Literals.EROOT__EVIEWTYPE, Types._ERoot, 21);
+
+		public static final ExecutorProperty _EService__name = new EcoreExecutorProperty(Component_basedPackage.Literals.ESERVICE__NAME, Types._EService, 0);
+		public static final ExecutorProperty _EService__EComponent__providesDirectly = new ExecutorPropertyWithImplementation("EComponent", Types._EService, 1, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ECOMPONENT__PROVIDES_DIRECTLY));
+		public static final ExecutorProperty _EService__EExternalCall__to = new ExecutorPropertyWithImplementation("EExternalCall", Types._EService, 2, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EEXTERNAL_CALL__TO));
+		public static final ExecutorProperty _EService__ERoot__eservice = new ExecutorPropertyWithImplementation("ERoot", Types._EService, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ESERVICE));
+		public static final ExecutorProperty _EService__ESignature__correspondsTo = new ExecutorPropertyWithImplementation("ESignature", Types._EService, 4, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.ESIGNATURE__CORRESPONDS_TO));
 
 		public static final ExecutorProperty _ESignature__correspondsTo = new EcoreExecutorProperty(Component_basedPackage.Literals.ESIGNATURE__CORRESPONDS_TO, Types._ESignature, 0);
 		public static final ExecutorProperty _ESignature__name = new EcoreExecutorProperty(Component_basedPackage.Literals.ESIGNATURE__NAME, Types._ESignature, 1);
 		public static final ExecutorProperty _ESignature__parameter = new EcoreExecutorProperty(Component_basedPackage.Literals.ESIGNATURE__PARAMETER, Types._ESignature, 2);
 		public static final ExecutorProperty _ESignature__returnType = new EcoreExecutorProperty(Component_basedPackage.Literals.ESIGNATURE__RETURN_TYPE, Types._ESignature, 3);
 		public static final ExecutorProperty _ESignature__EInterface__signature = new ExecutorPropertyWithImplementation("EInterface", Types._ESignature, 4, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EINTERFACE__SIGNATURE));
+		public static final ExecutorProperty _ESignature__ERoot__esignature = new ExecutorPropertyWithImplementation("ERoot", Types._ESignature, 5, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ESIGNATURE));
 
 		public static final ExecutorProperty _ESystem__encapsulates = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM__ENCAPSULATES, Types._ESystem, 0);
-		public static final ExecutorProperty _ESystem__provides = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM__PROVIDES, Types._ESystem, 1);
-		public static final ExecutorProperty _ESystem__requires = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM__REQUIRES, Types._ESystem, 2);
-		public static final ExecutorProperty _ESystem__EAllocationContext__specifiesFor = new ExecutorPropertyWithImplementation("EAllocationContext", Types._ESystem, 3, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EALLOCATION_CONTEXT__SPECIFIES_FOR));
+		public static final ExecutorProperty _ESystem__name = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM__NAME, Types._ESystem, 1);
+		public static final ExecutorProperty _ESystem__provides = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM__PROVIDES, Types._ESystem, 2);
+		public static final ExecutorProperty _ESystem__requires = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM__REQUIRES, Types._ESystem, 3);
+		public static final ExecutorProperty _ESystem__EAllocationContext__specifiesFor = new ExecutorPropertyWithImplementation("EAllocationContext", Types._ESystem, 4, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EALLOCATION_CONTEXT__SPECIFIES_FOR));
+		public static final ExecutorProperty _ESystem__ERoot__esystem = new ExecutorPropertyWithImplementation("ERoot", Types._ESystem, 5, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__ESYSTEM));
 
 		public static final ExecutorProperty _ESystemIndependentViewPoint__repositoryViewType = new EcoreExecutorProperty(Component_basedPackage.Literals.ESYSTEM_INDEPENDENT_VIEW_POINT__REPOSITORY_VIEW_TYPE, Types._ESystemIndependentViewPoint, 0);
+
+		public static final ExecutorProperty _EViewPoint__ERoot__eviewpoint = new ExecutorPropertyWithImplementation("ERoot", Types._EViewPoint, 0, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EVIEWPOINT));
+
+		public static final ExecutorProperty _EViewType__ERoot__eviewtype = new ExecutorPropertyWithImplementation("ERoot", Types._EViewType, 0, new EcoreLibraryOppositeProperty(Component_basedPackage.Literals.EROOT__EVIEWTYPE));
 		static {
 			Init.initEnd();
 		}
@@ -876,6 +945,14 @@ public class Component_basedTables extends AbstractTables
 			};
 		private static final int /*@NonNull*/ [] __ERole = { 1,1,1 };
 
+		private static final ExecutorFragment /*@NonNull*/ [] _ERoot =
+			{
+				Fragments._ERoot__OclAny /* 0 */,
+				Fragments._ERoot__OclElement /* 1 */,
+				Fragments._ERoot__ERoot /* 2 */
+			};
+		private static final int /*@NonNull*/ [] __ERoot = { 1,1,1 };
+
 		private static final ExecutorFragment /*@NonNull*/ [] _EService =
 			{
 				Fragments._EService__OclAny /* 0 */,
@@ -983,6 +1060,7 @@ public class Component_basedTables extends AbstractTables
 			Types._ERequiredDelegationConnector.initFragments(_ERequiredDelegationConnector, __ERequiredDelegationConnector);
 			Types._ERequiredRole.initFragments(_ERequiredRole, __ERequiredRole);
 			Types._ERole.initFragments(_ERole, __ERole);
+			Types._ERoot.initFragments(_ERoot, __ERoot);
 			Types._EService.initFragments(_EService, __EService);
 			Types._ESignature.initFragments(_ESignature, __ESignature);
 			Types._ESystem.initFragments(_ESystem, __ESystem);
@@ -1917,6 +1995,39 @@ public class Component_basedTables extends AbstractTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
+		private static final ExecutorOperation /*@NonNull*/ [] _ERoot__ERoot = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _ERoot__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _ERoot__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances(Integer[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclBase /* oclBase() */,
+			OCLstdlibTables.Operations._OclElement__1_oclBase /* oclBase(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclExtension /* oclExtension(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__0_oclExtensions /* oclExtensions() */,
+			OCLstdlibTables.Operations._OclElement__1_oclExtensions /* oclExtensions(OclStereotype[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
 		private static final ExecutorOperation /*@NonNull*/ [] _EService__EService = {};
 		private static final ExecutorOperation /*@NonNull*/ [] _EService__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -2336,6 +2447,10 @@ public class Component_basedTables extends AbstractTables
 			Fragments._ERole__OclAny.initOperations(_ERole__OclAny);
 			Fragments._ERole__OclElement.initOperations(_ERole__OclElement);
 
+			Fragments._ERoot__ERoot.initOperations(_ERoot__ERoot);
+			Fragments._ERoot__OclAny.initOperations(_ERoot__OclAny);
+			Fragments._ERoot__OclElement.initOperations(_ERoot__OclElement);
+
 			Fragments._EService__EService.initOperations(_EService__EService);
 			Fragments._EService__OclAny.initOperations(_EService__OclAny);
 			Fragments._EService__OclElement.initOperations(_EService__OclElement);
@@ -2411,6 +2526,7 @@ public class Component_basedTables extends AbstractTables
 		private static final ExecutorProperty /*@NonNull*/ [] _EAssemblyConnector = {
 			Component_basedTables.Properties._EAssemblyConnector__linkFrom,
 			Component_basedTables.Properties._EAssemblyConnector__linkTo,
+			Component_basedTables.Properties._EAssemblyConnector__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -2555,6 +2671,7 @@ public class Component_basedTables extends AbstractTables
 
 		private static final ExecutorProperty /*@NonNull*/ [] _EProvidedRole = {
 			Component_basedTables.Properties._EProvidedRole__linkedFrom,
+			Component_basedTables.Properties._EProvidedRole__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
 			Component_basedTables.Properties._ERole__roleOf
@@ -2583,6 +2700,7 @@ public class Component_basedTables extends AbstractTables
 
 		private static final ExecutorProperty /*@NonNull*/ [] _ERequiredRole = {
 			Component_basedTables.Properties._ERequiredRole__linkedTo,
+			Component_basedTables.Properties._ERequiredRole__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
 			Component_basedTables.Properties._ERole__roleOf
@@ -2594,7 +2712,35 @@ public class Component_basedTables extends AbstractTables
 			Component_basedTables.Properties._ERole__roleOf
 		};
 
+		private static final ExecutorProperty /*@NonNull*/ [] _ERoot = {
+			Component_basedTables.Properties._ERoot__eallocationcontext,
+			Component_basedTables.Properties._ERoot__eassemblyconnector,
+			Component_basedTables.Properties._ERoot__eassemblycontext,
+			Component_basedTables.Properties._ERoot__ebehaviourdescription,
+			Component_basedTables.Properties._ERoot__ebranch,
+			Component_basedTables.Properties._ERoot__ecomponent,
+			Component_basedTables.Properties._ERoot__ecompositecomponent,
+			Component_basedTables.Properties._ERoot__econtainer,
+			Component_basedTables.Properties._ERoot__edelegationconnector,
+			Component_basedTables.Properties._ERoot__eexternalcall,
+			Component_basedTables.Properties._ERoot__einterface,
+			Component_basedTables.Properties._ERoot__einternalaction,
+			Component_basedTables.Properties._ERoot__elink,
+			Component_basedTables.Properties._ERoot__eloop,
+			Component_basedTables.Properties._ERoot__eparameter,
+			Component_basedTables.Properties._ERoot__erepository,
+			Component_basedTables.Properties._ERoot__erole,
+			Component_basedTables.Properties._ERoot__eservice,
+			Component_basedTables.Properties._ERoot__esignature,
+			Component_basedTables.Properties._ERoot__esystem,
+			Component_basedTables.Properties._ERoot__eviewpoint,
+			Component_basedTables.Properties._ERoot__eviewtype,
+			OCLstdlibTables.Properties._OclElement__oclContainer,
+			OCLstdlibTables.Properties._OclElement__oclContents
+		};
+
 		private static final ExecutorProperty /*@NonNull*/ [] _EService = {
+			Component_basedTables.Properties._EService__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -2610,6 +2756,7 @@ public class Component_basedTables extends AbstractTables
 
 		private static final ExecutorProperty /*@NonNull*/ [] _ESystem = {
 			Component_basedTables.Properties._ESystem__encapsulates,
+			Component_basedTables.Properties._ESystem__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
 			Component_basedTables.Properties._ESystem__provides,
@@ -2675,6 +2822,7 @@ public class Component_basedTables extends AbstractTables
 			Fragments._ERequiredDelegationConnector__ERequiredDelegationConnector.initProperties(_ERequiredDelegationConnector);
 			Fragments._ERequiredRole__ERequiredRole.initProperties(_ERequiredRole);
 			Fragments._ERole__ERole.initProperties(_ERole);
+			Fragments._ERoot__ERoot.initProperties(_ERoot);
 			Fragments._EService__EService.initProperties(_EService);
 			Fragments._ESignature__ESignature.initProperties(_ESignature);
 			Fragments._ESystem__ESystem.initProperties(_ESystem);

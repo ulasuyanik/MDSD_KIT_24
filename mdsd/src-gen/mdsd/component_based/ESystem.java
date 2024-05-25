@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mdsd.component_based.ESystem#getProvides <em>Provides</em>}</li>
  *   <li>{@link mdsd.component_based.ESystem#getRequires <em>Requires</em>}</li>
  *   <li>{@link mdsd.component_based.ESystem#getEncapsulates <em>Encapsulates</em>}</li>
+ *   <li>{@link mdsd.component_based.ESystem#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see mdsd.component_based.Component_basedPackage#getESystem()
@@ -66,5 +67,27 @@ public interface ESystem extends EObject {
 	 * @generated
 	 */
 	EList<EAssemblyContext> getEncapsulates();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see mdsd.component_based.Component_basedPackage#getESystem_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link mdsd.component_based.ESystem#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // ESystem

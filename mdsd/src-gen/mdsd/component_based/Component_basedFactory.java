@@ -283,15 +283,6 @@ public interface Component_basedFactory extends EFactory {
 	ELoop createELoop();
 
 	/**
-	 * Returns a new object of class '<em>ERoot</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ERoot</em>'.
-	 * @generated
-	 */
-	ERoot createERoot();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

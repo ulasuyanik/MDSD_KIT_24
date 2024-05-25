@@ -31,7 +31,6 @@ import mdsd.component_based.ERepository;
 import mdsd.component_based.ERepositoryViewType;
 import mdsd.component_based.ERequiredDelegationConnector;
 import mdsd.component_based.ERequiredRole;
-import mdsd.component_based.ERoot;
 import mdsd.component_based.EService;
 import mdsd.component_based.ESignature;
 import mdsd.component_based.ESystem;
@@ -135,9 +134,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case Component_basedPackage.EREQUIRED_ROLE:
 				sequence_ERequiredRole(context, (ERequiredRole) semanticObject); 
-				return; 
-			case Component_basedPackage.EROOT:
-				sequence_ERoot(context, (ERoot) semanticObject); 
 				return; 
 			case Component_basedPackage.ESERVICE:
 				sequence_EService(context, (EService) semanticObject); 
@@ -618,43 +614,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     ERoot returns ERoot
-	 *
-	 * Constraint:
-	 *     (
-	 *         (eviewpoint+=EViewPoint eviewpoint+=EViewPoint*)? 
-	 *         (eviewtype+=EViewType eviewtype+=EViewType*)? 
-	 *         (eparameter+=EParameter eparameter+=EParameter*)? 
-	 *         (esignature+=ESignature esignature+=ESignature*)? 
-	 *         (edelegationconnector+=EDelegationConnector edelegationconnector+=EDelegationConnector*)? 
-	 *         (erole+=ERole erole+=ERole*)? 
-	 *         (elink+=ELink elink+=ELink*)? 
-	 *         (econtainer+=EContainer econtainer+=EContainer*)? 
-	 *         (eassemblyconnector+=EAssemblyConnector eassemblyconnector+=EAssemblyConnector*)? 
-	 *         (eassemblycontext+=EAssemblyContext eassemblycontext+=EAssemblyContext*)? 
-	 *         (ecomponent+=EComponent ecomponent+=EComponent*)? 
-	 *         (eservice+=EService eservice+=EService*)? 
-	 *         (einterface+=EInterface einterface+=EInterface*)? 
-	 *         (esystem+=ESystem esystem+=ESystem*)? 
-	 *         (erepository+=ERepository erepository+=ERepository*)? 
-	 *         (ebehaviourdescription+=EBehaviourDescription ebehaviourdescription+=EBehaviourDescription*)? 
-	 *         (eexternalcall+=EExternalCall eexternalcall+=EExternalCall*)? 
-	 *         (einternalaction+=EInternalAction einternalaction+=EInternalAction*)? 
-	 *         (ebranch+=EBranch ebranch+=EBranch*)? 
-	 *         (eloop+=ELoop eloop+=ELoop*)? 
-	 *         (ecompositecomponent+=ECompositeComponent ecompositecomponent+=ECompositeComponent*)? 
-	 *         (eallocationcontext+=EAllocationContext eallocationcontext+=EAllocationContext*)?
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_ERoot(ISerializationContext context, ERoot semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     EService returns EService
 	 *
 	 * Constraint:
@@ -723,7 +682,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         provides+=[EInterface|ID] 
 	 *         provides+=[EInterface|ID]* 
 	 *         (requires+=[EInterface|ID] requires+=[EInterface|ID]*)? 
-	 *         (encapsulates+=[EAssemblyContext|ID] encapsulates+=[EAssemblyContext|ID]*)?
+	 *         (encapsulates+=[EAssemblyContext|ID] encapsulates+=[EAssemblyContext|ID]*)? 
+	 *         (containsRepos+=ERepository containsRepos+=ERepository*)? 
+	 *         (containsContainers+=EContainer containsContainers+=EContainer*)?
 	 *     )
 	 * </pre>
 	 */

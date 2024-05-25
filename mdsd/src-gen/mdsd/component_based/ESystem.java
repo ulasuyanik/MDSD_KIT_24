@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mdsd.component_based.ESystem#getRequires <em>Requires</em>}</li>
  *   <li>{@link mdsd.component_based.ESystem#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link mdsd.component_based.ESystem#getName <em>Name</em>}</li>
+ *   <li>{@link mdsd.component_based.ESystem#getContainsRepos <em>Contains Repos</em>}</li>
+ *   <li>{@link mdsd.component_based.ESystem#getContainsContainers <em>Contains Containers</em>}</li>
  * </ul>
  *
  * @see mdsd.component_based.Component_basedPackage#getESystem()
@@ -89,5 +91,29 @@ public interface ESystem extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Contains Repos</b></em>' containment reference list.
+	 * The list contents are of type {@link mdsd.component_based.ERepository}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contains Repos</em>' containment reference list.
+	 * @see mdsd.component_based.Component_basedPackage#getESystem_ContainsRepos()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ERepository> getContainsRepos();
+
+	/**
+	 * Returns the value of the '<em><b>Contains Containers</b></em>' containment reference list.
+	 * The list contents are of type {@link mdsd.component_based.EContainer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contains Containers</em>' containment reference list.
+	 * @see mdsd.component_based.Component_basedPackage#getESystem_ContainsContainers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EContainer> getContainsContainers();
 
 } // ESystem

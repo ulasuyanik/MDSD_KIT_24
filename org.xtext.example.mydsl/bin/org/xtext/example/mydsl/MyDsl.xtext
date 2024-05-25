@@ -4,32 +4,15 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 import "http://www.example.org/component_based" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-ERoot returns ERoot:
-	{ERoot}
-	'ERoot'
+ESystem returns ESystem:
+	'ESystem'
+	name=EString
 	'{'
-		('eviewpoint:'  eviewpoint+=EViewPoint ( "," eviewpoint+=EViewPoint)*  )?
-		('eviewtype:'  eviewtype+=EViewType ( "," eviewtype+=EViewType)*  )?
-		('eparameter:'  eparameter+=EParameter ( "," eparameter+=EParameter)*  )?
-		('esignature:'  esignature+=ESignature ( "," esignature+=ESignature)*  )?
-		('edelegationconnector:'  edelegationconnector+=EDelegationConnector ( "," edelegationconnector+=EDelegationConnector)*  )?
-		('erole:'  erole+=ERole ( "," erole+=ERole)* )?
-		('elink:'  elink+=ELink ( "," elink+=ELink)*  )?
-		('econtainer:'  econtainer+=EContainer ( "," econtainer+=EContainer)* )?
-		('eassemblyconnector:'  eassemblyconnector+=EAssemblyConnector ( "," eassemblyconnector+=EAssemblyConnector)* )?
-		('eassemblycontext:'  eassemblycontext+=EAssemblyContext ( "," eassemblycontext+=EAssemblyContext)*  )?
-		('ecomponent:'  ecomponent+=EComponent ( "," ecomponent+=EComponent)*  )?
-		('eservice:'  eservice+=EService ( "," eservice+=EService)*  )?
-		('einterface:'  einterface+=EInterface ( "," einterface+=EInterface)* )?
-		('esystem:' esystem+=ESystem ( "," esystem+=ESystem)* )?
-		('erepository:' erepository+=ERepository ( "," erepository+=ERepository)* )?
-		('ebehaviourdescription:' ebehaviourdescription+=EBehaviourDescription ( "," ebehaviourdescription+=EBehaviourDescription)*  )?
-		('eexternalcall:' eexternalcall+=EExternalCall ( "," eexternalcall+=EExternalCall)*  )?
-		('einternalaction:' einternalaction+=EInternalAction ( "," einternalaction+=EInternalAction)*)?
-		('ebranch:' ebranch+=EBranch ( "," ebranch+=EBranch)* )?
-		('eloop:' eloop+=ELoop ( "," eloop+=ELoop)* )?
-		('ecompositecomponent:' ecompositecomponent+=ECompositeComponent ( "," ecompositecomponent+=ECompositeComponent)*)?
-		('eallocationcontext:' eallocationcontext+=EAllocationContext ( "," eallocationcontext+=EAllocationContext)*)?
+		("provides:" provides+=[EInterface]( "," provides+=[EInterface])*)
+		("requires:" requires+=[EInterface]( "," requires+=[EInterface])*)?
+		("encapsulates:" encapsulates+=[EAssemblyContext]( "," encapsulates+=[EAssemblyContext])*)?
+		('containsRepos:' containsRepos+=ERepository ( "," containsRepos+=ERepository)* )?
+		('containsContainers:'containsContainers+=EContainer ( "," containsContainers+=EContainer)* )?
 	'}';
 
 EInterface returns EInterface:
@@ -43,15 +26,6 @@ EInterface returns EInterface:
 		("requiredByComponent:" requiredByComponent+=[EComponent|EString] ( "," requiredByComponent+=[EComponent|EString])* )?
 		("requiredBySystem:" requiredBySystem+=[ESystem|EString] ( "," requiredBySystem+=[ESystem|EString])* )?
 		("signature:" signature+=ESignature ( "," signature+=ESignature)* )?
-	"}";
-
-ESystem returns ESystem:
-	{ESystem}
-	"ESystem" name=EString
-	"{"
-		("provides:" provides+=[EInterface]( "," provides+=[EInterface])*)
-		("requires:" requires+=[EInterface]( "," requires+=[EInterface])*)?
-		("encapsulates:" encapsulates+=[EAssemblyContext]( "," encapsulates+=[EAssemblyContext])*)?
 	"}";
 
 EParameter returns EParameter:

@@ -321,13 +321,6 @@ public class Component_basedSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Component_basedPackage.EROOT: {
-			ERoot eRoot = (ERoot) theEObject;
-			T result = caseERoot(eRoot);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -825,21 +818,6 @@ public class Component_basedSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEViewType(EViewType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ERoot</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ERoot</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseERoot(ERoot object) {
 		return null;
 	}
 

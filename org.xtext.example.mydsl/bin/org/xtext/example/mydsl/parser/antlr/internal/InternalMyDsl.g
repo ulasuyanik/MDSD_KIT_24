@@ -44,7 +44,7 @@ import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "ERoot";
+    	return "ESystem";
    	}
 
    	@Override
@@ -61,15 +61,15 @@ import org.xtext.example.mydsl.services.MyDslGrammarAccess;
     }
 }
 
-// Entry rule entryRuleERoot
-entryRuleERoot returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getERootRule()); }
-	iv_ruleERoot=ruleERoot
-	{ $current=$iv_ruleERoot.current; }
+// Entry rule entryRuleESystem
+entryRuleESystem returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getESystemRule()); }
+	iv_ruleESystem=ruleESystem
+	{ $current=$iv_ruleESystem.current; }
 	EOF;
 
-// Rule ERoot
-ruleERoot returns [EObject current=null]
+// Rule ESystem
+ruleESystem returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -77,191 +77,167 @@ ruleERoot returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getERootAccess().getERootAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='ERoot'
+		otherlv_0='ESystem'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getERootAccess().getERootKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getESystemAccess().getESystemKeyword_0());
 		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getESystemAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getESystemRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.xtext.example.mydsl.MyDsl.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getERootAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getESystemAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='eviewpoint:'
+			otherlv_3='provides:'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getERootAccess().getEviewpointKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getESystemAccess().getProvidesKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getERootAccess().getEviewpointEViewPointParserRuleCall_3_1_0());
-					}
-					lv_eviewpoint_4_0=ruleEViewPoint
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
+							$current = createModelElement(grammarAccess.getESystemRule());
 						}
-						add(
-							$current,
-							"eviewpoint",
-							lv_eviewpoint_4_0,
-							"org.xtext.example.mydsl.MyDsl.EViewPoint");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_4=RULE_ID
+					{
+						newLeafNode(otherlv_4, grammarAccess.getESystemAccess().getProvidesEInterfaceCrossReference_3_1_0());
 					}
 				)
 			)
 			(
 				otherlv_5=','
 				{
-					newLeafNode(otherlv_5, grammarAccess.getERootAccess().getCommaKeyword_3_2_0());
+					newLeafNode(otherlv_5, grammarAccess.getESystemAccess().getCommaKeyword_3_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getERootAccess().getEviewpointEViewPointParserRuleCall_3_2_1_0());
-						}
-						lv_eviewpoint_6_0=ruleEViewPoint
-						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
+								$current = createModelElement(grammarAccess.getESystemRule());
 							}
-							add(
-								$current,
-								"eviewpoint",
-								lv_eviewpoint_6_0,
-								"org.xtext.example.mydsl.MyDsl.EViewPoint");
-							afterParserOrEnumRuleCall();
+						}
+						otherlv_6=RULE_ID
+						{
+							newLeafNode(otherlv_6, grammarAccess.getESystemAccess().getProvidesEInterfaceCrossReference_3_2_1_0());
 						}
 					)
 				)
 			)*
-		)?
+		)
 		(
-			otherlv_7='eviewtype:'
+			otherlv_7='requires:'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getERootAccess().getEviewtypeKeyword_4_0());
+				newLeafNode(otherlv_7, grammarAccess.getESystemAccess().getRequiresKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getERootAccess().getEviewtypeEViewTypeParserRuleCall_4_1_0());
-					}
-					lv_eviewtype_8_0=ruleEViewType
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
+							$current = createModelElement(grammarAccess.getESystemRule());
 						}
-						add(
-							$current,
-							"eviewtype",
-							lv_eviewtype_8_0,
-							"org.xtext.example.mydsl.MyDsl.EViewType");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_8=RULE_ID
+					{
+						newLeafNode(otherlv_8, grammarAccess.getESystemAccess().getRequiresEInterfaceCrossReference_4_1_0());
 					}
 				)
 			)
 			(
 				otherlv_9=','
 				{
-					newLeafNode(otherlv_9, grammarAccess.getERootAccess().getCommaKeyword_4_2_0());
+					newLeafNode(otherlv_9, grammarAccess.getESystemAccess().getCommaKeyword_4_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getERootAccess().getEviewtypeEViewTypeParserRuleCall_4_2_1_0());
-						}
-						lv_eviewtype_10_0=ruleEViewType
-						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
+								$current = createModelElement(grammarAccess.getESystemRule());
 							}
-							add(
-								$current,
-								"eviewtype",
-								lv_eviewtype_10_0,
-								"org.xtext.example.mydsl.MyDsl.EViewType");
-							afterParserOrEnumRuleCall();
+						}
+						otherlv_10=RULE_ID
+						{
+							newLeafNode(otherlv_10, grammarAccess.getESystemAccess().getRequiresEInterfaceCrossReference_4_2_1_0());
 						}
 					)
 				)
 			)*
 		)?
 		(
-			otherlv_11='eparameter:'
+			otherlv_11='encapsulates:'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getERootAccess().getEparameterKeyword_5_0());
+				newLeafNode(otherlv_11, grammarAccess.getESystemAccess().getEncapsulatesKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getERootAccess().getEparameterEParameterParserRuleCall_5_1_0());
-					}
-					lv_eparameter_12_0=ruleEParameter
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
+							$current = createModelElement(grammarAccess.getESystemRule());
 						}
-						add(
-							$current,
-							"eparameter",
-							lv_eparameter_12_0,
-							"org.xtext.example.mydsl.MyDsl.EParameter");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_12=RULE_ID
+					{
+						newLeafNode(otherlv_12, grammarAccess.getESystemAccess().getEncapsulatesEAssemblyContextCrossReference_5_1_0());
 					}
 				)
 			)
 			(
 				otherlv_13=','
 				{
-					newLeafNode(otherlv_13, grammarAccess.getERootAccess().getCommaKeyword_5_2_0());
+					newLeafNode(otherlv_13, grammarAccess.getESystemAccess().getCommaKeyword_5_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getERootAccess().getEparameterEParameterParserRuleCall_5_2_1_0());
-						}
-						lv_eparameter_14_0=ruleEParameter
-						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
+								$current = createModelElement(grammarAccess.getESystemRule());
 							}
-							add(
-								$current,
-								"eparameter",
-								lv_eparameter_14_0,
-								"org.xtext.example.mydsl.MyDsl.EParameter");
-							afterParserOrEnumRuleCall();
+						}
+						otherlv_14=RULE_ID
+						{
+							newLeafNode(otherlv_14, grammarAccess.getESystemAccess().getEncapsulatesEAssemblyContextCrossReference_5_2_1_0());
 						}
 					)
 				)
 			)*
 		)?
 		(
-			otherlv_15='esignature:'
+			otherlv_15='containsRepos:'
 			{
-				newLeafNode(otherlv_15, grammarAccess.getERootAccess().getEsignatureKeyword_6_0());
+				newLeafNode(otherlv_15, grammarAccess.getESystemAccess().getContainsReposKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getERootAccess().getEsignatureESignatureParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getESystemAccess().getContainsReposERepositoryParserRuleCall_6_1_0());
 					}
-					lv_esignature_16_0=ruleESignature
+					lv_containsRepos_16_0=ruleERepository
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
+							$current = createModelElementForParent(grammarAccess.getESystemRule());
 						}
 						add(
 							$current,
-							"esignature",
-							lv_esignature_16_0,
-							"org.xtext.example.mydsl.MyDsl.ESignature");
+							"containsRepos",
+							lv_containsRepos_16_0,
+							"org.xtext.example.mydsl.MyDsl.ERepository");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -269,572 +245,22 @@ ruleERoot returns [EObject current=null]
 			(
 				otherlv_17=','
 				{
-					newLeafNode(otherlv_17, grammarAccess.getERootAccess().getCommaKeyword_6_2_0());
+					newLeafNode(otherlv_17, grammarAccess.getESystemAccess().getCommaKeyword_6_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getERootAccess().getEsignatureESignatureParserRuleCall_6_2_1_0());
+							newCompositeNode(grammarAccess.getESystemAccess().getContainsReposERepositoryParserRuleCall_6_2_1_0());
 						}
-						lv_esignature_18_0=ruleESignature
+						lv_containsRepos_18_0=ruleERepository
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
+								$current = createModelElementForParent(grammarAccess.getESystemRule());
 							}
 							add(
 								$current,
-								"esignature",
-								lv_esignature_18_0,
-								"org.xtext.example.mydsl.MyDsl.ESignature");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_19='edelegationconnector:'
-			{
-				newLeafNode(otherlv_19, grammarAccess.getERootAccess().getEdelegationconnectorKeyword_7_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEdelegationconnectorEDelegationConnectorParserRuleCall_7_1_0());
-					}
-					lv_edelegationconnector_20_0=ruleEDelegationConnector
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"edelegationconnector",
-							lv_edelegationconnector_20_0,
-							"org.xtext.example.mydsl.MyDsl.EDelegationConnector");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_21=','
-				{
-					newLeafNode(otherlv_21, grammarAccess.getERootAccess().getCommaKeyword_7_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEdelegationconnectorEDelegationConnectorParserRuleCall_7_2_1_0());
-						}
-						lv_edelegationconnector_22_0=ruleEDelegationConnector
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"edelegationconnector",
-								lv_edelegationconnector_22_0,
-								"org.xtext.example.mydsl.MyDsl.EDelegationConnector");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_23='erole:'
-			{
-				newLeafNode(otherlv_23, grammarAccess.getERootAccess().getEroleKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEroleERoleParserRuleCall_8_1_0());
-					}
-					lv_erole_24_0=ruleERole
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"erole",
-							lv_erole_24_0,
-							"org.xtext.example.mydsl.MyDsl.ERole");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_25=','
-				{
-					newLeafNode(otherlv_25, grammarAccess.getERootAccess().getCommaKeyword_8_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEroleERoleParserRuleCall_8_2_1_0());
-						}
-						lv_erole_26_0=ruleERole
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"erole",
-								lv_erole_26_0,
-								"org.xtext.example.mydsl.MyDsl.ERole");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_27='elink:'
-			{
-				newLeafNode(otherlv_27, grammarAccess.getERootAccess().getElinkKeyword_9_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getElinkELinkParserRuleCall_9_1_0());
-					}
-					lv_elink_28_0=ruleELink
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"elink",
-							lv_elink_28_0,
-							"org.xtext.example.mydsl.MyDsl.ELink");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_29=','
-				{
-					newLeafNode(otherlv_29, grammarAccess.getERootAccess().getCommaKeyword_9_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getElinkELinkParserRuleCall_9_2_1_0());
-						}
-						lv_elink_30_0=ruleELink
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"elink",
-								lv_elink_30_0,
-								"org.xtext.example.mydsl.MyDsl.ELink");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_31='econtainer:'
-			{
-				newLeafNode(otherlv_31, grammarAccess.getERootAccess().getEcontainerKeyword_10_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEcontainerEContainerParserRuleCall_10_1_0());
-					}
-					lv_econtainer_32_0=ruleEContainer
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"econtainer",
-							lv_econtainer_32_0,
-							"org.xtext.example.mydsl.MyDsl.EContainer");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_33=','
-				{
-					newLeafNode(otherlv_33, grammarAccess.getERootAccess().getCommaKeyword_10_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEcontainerEContainerParserRuleCall_10_2_1_0());
-						}
-						lv_econtainer_34_0=ruleEContainer
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"econtainer",
-								lv_econtainer_34_0,
-								"org.xtext.example.mydsl.MyDsl.EContainer");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_35='eassemblyconnector:'
-			{
-				newLeafNode(otherlv_35, grammarAccess.getERootAccess().getEassemblyconnectorKeyword_11_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEassemblyconnectorEAssemblyConnectorParserRuleCall_11_1_0());
-					}
-					lv_eassemblyconnector_36_0=ruleEAssemblyConnector
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"eassemblyconnector",
-							lv_eassemblyconnector_36_0,
-							"org.xtext.example.mydsl.MyDsl.EAssemblyConnector");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_37=','
-				{
-					newLeafNode(otherlv_37, grammarAccess.getERootAccess().getCommaKeyword_11_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEassemblyconnectorEAssemblyConnectorParserRuleCall_11_2_1_0());
-						}
-						lv_eassemblyconnector_38_0=ruleEAssemblyConnector
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"eassemblyconnector",
-								lv_eassemblyconnector_38_0,
-								"org.xtext.example.mydsl.MyDsl.EAssemblyConnector");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_39='eassemblycontext:'
-			{
-				newLeafNode(otherlv_39, grammarAccess.getERootAccess().getEassemblycontextKeyword_12_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEassemblycontextEAssemblyContextParserRuleCall_12_1_0());
-					}
-					lv_eassemblycontext_40_0=ruleEAssemblyContext
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"eassemblycontext",
-							lv_eassemblycontext_40_0,
-							"org.xtext.example.mydsl.MyDsl.EAssemblyContext");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_41=','
-				{
-					newLeafNode(otherlv_41, grammarAccess.getERootAccess().getCommaKeyword_12_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEassemblycontextEAssemblyContextParserRuleCall_12_2_1_0());
-						}
-						lv_eassemblycontext_42_0=ruleEAssemblyContext
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"eassemblycontext",
-								lv_eassemblycontext_42_0,
-								"org.xtext.example.mydsl.MyDsl.EAssemblyContext");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_43='ecomponent:'
-			{
-				newLeafNode(otherlv_43, grammarAccess.getERootAccess().getEcomponentKeyword_13_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEcomponentEComponentParserRuleCall_13_1_0());
-					}
-					lv_ecomponent_44_0=ruleEComponent
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"ecomponent",
-							lv_ecomponent_44_0,
-							"org.xtext.example.mydsl.MyDsl.EComponent");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_45=','
-				{
-					newLeafNode(otherlv_45, grammarAccess.getERootAccess().getCommaKeyword_13_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEcomponentEComponentParserRuleCall_13_2_1_0());
-						}
-						lv_ecomponent_46_0=ruleEComponent
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"ecomponent",
-								lv_ecomponent_46_0,
-								"org.xtext.example.mydsl.MyDsl.EComponent");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_47='eservice:'
-			{
-				newLeafNode(otherlv_47, grammarAccess.getERootAccess().getEserviceKeyword_14_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEserviceEServiceParserRuleCall_14_1_0());
-					}
-					lv_eservice_48_0=ruleEService
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"eservice",
-							lv_eservice_48_0,
-							"org.xtext.example.mydsl.MyDsl.EService");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_49=','
-				{
-					newLeafNode(otherlv_49, grammarAccess.getERootAccess().getCommaKeyword_14_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEserviceEServiceParserRuleCall_14_2_1_0());
-						}
-						lv_eservice_50_0=ruleEService
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"eservice",
-								lv_eservice_50_0,
-								"org.xtext.example.mydsl.MyDsl.EService");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_51='einterface:'
-			{
-				newLeafNode(otherlv_51, grammarAccess.getERootAccess().getEinterfaceKeyword_15_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEinterfaceEInterfaceParserRuleCall_15_1_0());
-					}
-					lv_einterface_52_0=ruleEInterface
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"einterface",
-							lv_einterface_52_0,
-							"org.xtext.example.mydsl.MyDsl.EInterface");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_53=','
-				{
-					newLeafNode(otherlv_53, grammarAccess.getERootAccess().getCommaKeyword_15_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEinterfaceEInterfaceParserRuleCall_15_2_1_0());
-						}
-						lv_einterface_54_0=ruleEInterface
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"einterface",
-								lv_einterface_54_0,
-								"org.xtext.example.mydsl.MyDsl.EInterface");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_55='esystem:'
-			{
-				newLeafNode(otherlv_55, grammarAccess.getERootAccess().getEsystemKeyword_16_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEsystemESystemParserRuleCall_16_1_0());
-					}
-					lv_esystem_56_0=ruleESystem
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"esystem",
-							lv_esystem_56_0,
-							"org.xtext.example.mydsl.MyDsl.ESystem");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_57=','
-				{
-					newLeafNode(otherlv_57, grammarAccess.getERootAccess().getCommaKeyword_16_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEsystemESystemParserRuleCall_16_2_1_0());
-						}
-						lv_esystem_58_0=ruleESystem
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"esystem",
-								lv_esystem_58_0,
-								"org.xtext.example.mydsl.MyDsl.ESystem");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_59='erepository:'
-			{
-				newLeafNode(otherlv_59, grammarAccess.getERootAccess().getErepositoryKeyword_17_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getErepositoryERepositoryParserRuleCall_17_1_0());
-					}
-					lv_erepository_60_0=ruleERepository
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"erepository",
-							lv_erepository_60_0,
-							"org.xtext.example.mydsl.MyDsl.ERepository");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_61=','
-				{
-					newLeafNode(otherlv_61, grammarAccess.getERootAccess().getCommaKeyword_17_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getErepositoryERepositoryParserRuleCall_17_2_1_0());
-						}
-						lv_erepository_62_0=ruleERepository
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"erepository",
-								lv_erepository_62_0,
+								"containsRepos",
+								lv_containsRepos_18_0,
 								"org.xtext.example.mydsl.MyDsl.ERepository");
 							afterParserOrEnumRuleCall();
 						}
@@ -843,358 +269,58 @@ ruleERoot returns [EObject current=null]
 			)*
 		)?
 		(
-			otherlv_63='ebehaviourdescription:'
+			otherlv_19='containsContainers:'
 			{
-				newLeafNode(otherlv_63, grammarAccess.getERootAccess().getEbehaviourdescriptionKeyword_18_0());
+				newLeafNode(otherlv_19, grammarAccess.getESystemAccess().getContainsContainersKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getERootAccess().getEbehaviourdescriptionEBehaviourDescriptionParserRuleCall_18_1_0());
+						newCompositeNode(grammarAccess.getESystemAccess().getContainsContainersEContainerParserRuleCall_7_1_0());
 					}
-					lv_ebehaviourdescription_64_0=ruleEBehaviourDescription
+					lv_containsContainers_20_0=ruleEContainer
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
+							$current = createModelElementForParent(grammarAccess.getESystemRule());
 						}
 						add(
 							$current,
-							"ebehaviourdescription",
-							lv_ebehaviourdescription_64_0,
-							"org.xtext.example.mydsl.MyDsl.EBehaviourDescription");
+							"containsContainers",
+							lv_containsContainers_20_0,
+							"org.xtext.example.mydsl.MyDsl.EContainer");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_65=','
+				otherlv_21=','
 				{
-					newLeafNode(otherlv_65, grammarAccess.getERootAccess().getCommaKeyword_18_2_0());
+					newLeafNode(otherlv_21, grammarAccess.getESystemAccess().getCommaKeyword_7_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getERootAccess().getEbehaviourdescriptionEBehaviourDescriptionParserRuleCall_18_2_1_0());
+							newCompositeNode(grammarAccess.getESystemAccess().getContainsContainersEContainerParserRuleCall_7_2_1_0());
 						}
-						lv_ebehaviourdescription_66_0=ruleEBehaviourDescription
+						lv_containsContainers_22_0=ruleEContainer
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
+								$current = createModelElementForParent(grammarAccess.getESystemRule());
 							}
 							add(
 								$current,
-								"ebehaviourdescription",
-								lv_ebehaviourdescription_66_0,
-								"org.xtext.example.mydsl.MyDsl.EBehaviourDescription");
+								"containsContainers",
+								lv_containsContainers_22_0,
+								"org.xtext.example.mydsl.MyDsl.EContainer");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
 		)?
-		(
-			otherlv_67='eexternalcall:'
-			{
-				newLeafNode(otherlv_67, grammarAccess.getERootAccess().getEexternalcallKeyword_19_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEexternalcallEExternalCallParserRuleCall_19_1_0());
-					}
-					lv_eexternalcall_68_0=ruleEExternalCall
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"eexternalcall",
-							lv_eexternalcall_68_0,
-							"org.xtext.example.mydsl.MyDsl.EExternalCall");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_69=','
-				{
-					newLeafNode(otherlv_69, grammarAccess.getERootAccess().getCommaKeyword_19_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEexternalcallEExternalCallParserRuleCall_19_2_1_0());
-						}
-						lv_eexternalcall_70_0=ruleEExternalCall
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"eexternalcall",
-								lv_eexternalcall_70_0,
-								"org.xtext.example.mydsl.MyDsl.EExternalCall");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_71='einternalaction:'
-			{
-				newLeafNode(otherlv_71, grammarAccess.getERootAccess().getEinternalactionKeyword_20_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEinternalactionEInternalActionParserRuleCall_20_1_0());
-					}
-					lv_einternalaction_72_0=ruleEInternalAction
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"einternalaction",
-							lv_einternalaction_72_0,
-							"org.xtext.example.mydsl.MyDsl.EInternalAction");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_73=','
-				{
-					newLeafNode(otherlv_73, grammarAccess.getERootAccess().getCommaKeyword_20_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEinternalactionEInternalActionParserRuleCall_20_2_1_0());
-						}
-						lv_einternalaction_74_0=ruleEInternalAction
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"einternalaction",
-								lv_einternalaction_74_0,
-								"org.xtext.example.mydsl.MyDsl.EInternalAction");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_75='ebranch:'
-			{
-				newLeafNode(otherlv_75, grammarAccess.getERootAccess().getEbranchKeyword_21_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEbranchEBranchParserRuleCall_21_1_0());
-					}
-					lv_ebranch_76_0=ruleEBranch
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"ebranch",
-							lv_ebranch_76_0,
-							"org.xtext.example.mydsl.MyDsl.EBranch");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_77=','
-				{
-					newLeafNode(otherlv_77, grammarAccess.getERootAccess().getCommaKeyword_21_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEbranchEBranchParserRuleCall_21_2_1_0());
-						}
-						lv_ebranch_78_0=ruleEBranch
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"ebranch",
-								lv_ebranch_78_0,
-								"org.xtext.example.mydsl.MyDsl.EBranch");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_79='eloop:'
-			{
-				newLeafNode(otherlv_79, grammarAccess.getERootAccess().getEloopKeyword_22_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEloopELoopParserRuleCall_22_1_0());
-					}
-					lv_eloop_80_0=ruleELoop
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"eloop",
-							lv_eloop_80_0,
-							"org.xtext.example.mydsl.MyDsl.ELoop");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_81=','
-				{
-					newLeafNode(otherlv_81, grammarAccess.getERootAccess().getCommaKeyword_22_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEloopELoopParserRuleCall_22_2_1_0());
-						}
-						lv_eloop_82_0=ruleELoop
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"eloop",
-								lv_eloop_82_0,
-								"org.xtext.example.mydsl.MyDsl.ELoop");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_83='ecompositecomponent:'
-			{
-				newLeafNode(otherlv_83, grammarAccess.getERootAccess().getEcompositecomponentKeyword_23_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEcompositecomponentECompositeComponentParserRuleCall_23_1_0());
-					}
-					lv_ecompositecomponent_84_0=ruleECompositeComponent
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"ecompositecomponent",
-							lv_ecompositecomponent_84_0,
-							"org.xtext.example.mydsl.MyDsl.ECompositeComponent");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_85=','
-				{
-					newLeafNode(otherlv_85, grammarAccess.getERootAccess().getCommaKeyword_23_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEcompositecomponentECompositeComponentParserRuleCall_23_2_1_0());
-						}
-						lv_ecompositecomponent_86_0=ruleECompositeComponent
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"ecompositecomponent",
-								lv_ecompositecomponent_86_0,
-								"org.xtext.example.mydsl.MyDsl.ECompositeComponent");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_87='eallocationcontext:'
-			{
-				newLeafNode(otherlv_87, grammarAccess.getERootAccess().getEallocationcontextKeyword_24_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getERootAccess().getEallocationcontextEAllocationContextParserRuleCall_24_1_0());
-					}
-					lv_eallocationcontext_88_0=ruleEAllocationContext
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getERootRule());
-						}
-						add(
-							$current,
-							"eallocationcontext",
-							lv_eallocationcontext_88_0,
-							"org.xtext.example.mydsl.MyDsl.EAllocationContext");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_89=','
-				{
-					newLeafNode(otherlv_89, grammarAccess.getERootAccess().getCommaKeyword_24_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getERootAccess().getEallocationcontextEAllocationContextParserRuleCall_24_2_1_0());
-						}
-						lv_eallocationcontext_90_0=ruleEAllocationContext
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getERootRule());
-							}
-							add(
-								$current,
-								"eallocationcontext",
-								lv_eallocationcontext_90_0,
-								"org.xtext.example.mydsl.MyDsl.EAllocationContext");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		otherlv_91='}'
+		otherlv_23='}'
 		{
-			newLeafNode(otherlv_91, grammarAccess.getERootAccess().getRightCurlyBracketKeyword_25());
+			newLeafNode(otherlv_23, grammarAccess.getESystemAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
@@ -1526,177 +652,6 @@ ruleEInterface returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleESystem
-entryRuleESystem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getESystemRule()); }
-	iv_ruleESystem=ruleESystem
-	{ $current=$iv_ruleESystem.current; }
-	EOF;
-
-// Rule ESystem
-ruleESystem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getESystemAccess().getESystemAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='ESystem'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getESystemAccess().getESystemKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getESystemAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getESystemRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.xtext.example.mydsl.MyDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getESystemAccess().getLeftCurlyBracketKeyword_3());
-		}
-		(
-			otherlv_4='provides:'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getESystemAccess().getProvidesKeyword_4_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getESystemRule());
-						}
-					}
-					otherlv_5=RULE_ID
-					{
-						newLeafNode(otherlv_5, grammarAccess.getESystemAccess().getProvidesEInterfaceCrossReference_4_1_0());
-					}
-				)
-			)
-			(
-				otherlv_6=','
-				{
-					newLeafNode(otherlv_6, grammarAccess.getESystemAccess().getCommaKeyword_4_2_0());
-				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getESystemRule());
-							}
-						}
-						otherlv_7=RULE_ID
-						{
-							newLeafNode(otherlv_7, grammarAccess.getESystemAccess().getProvidesEInterfaceCrossReference_4_2_1_0());
-						}
-					)
-				)
-			)*
-		)
-		(
-			otherlv_8='requires:'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getESystemAccess().getRequiresKeyword_5_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getESystemRule());
-						}
-					}
-					otherlv_9=RULE_ID
-					{
-						newLeafNode(otherlv_9, grammarAccess.getESystemAccess().getRequiresEInterfaceCrossReference_5_1_0());
-					}
-				)
-			)
-			(
-				otherlv_10=','
-				{
-					newLeafNode(otherlv_10, grammarAccess.getESystemAccess().getCommaKeyword_5_2_0());
-				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getESystemRule());
-							}
-						}
-						otherlv_11=RULE_ID
-						{
-							newLeafNode(otherlv_11, grammarAccess.getESystemAccess().getRequiresEInterfaceCrossReference_5_2_1_0());
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_12='encapsulates:'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getESystemAccess().getEncapsulatesKeyword_6_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getESystemRule());
-						}
-					}
-					otherlv_13=RULE_ID
-					{
-						newLeafNode(otherlv_13, grammarAccess.getESystemAccess().getEncapsulatesEAssemblyContextCrossReference_6_1_0());
-					}
-				)
-			)
-			(
-				otherlv_14=','
-				{
-					newLeafNode(otherlv_14, grammarAccess.getESystemAccess().getCommaKeyword_6_2_0());
-				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getESystemRule());
-							}
-						}
-						otherlv_15=RULE_ID
-						{
-							newLeafNode(otherlv_15, grammarAccess.getESystemAccess().getEncapsulatesEAssemblyContextCrossReference_6_2_1_0());
-						}
-					)
-				)
-			)*
-		)?
-		otherlv_16='}'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getESystemAccess().getRightCurlyBracketKeyword_7());
-		}
-	)
-;
-
 // Entry rule entryRuleEParameter
 entryRuleEParameter returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getEParameterRule()); }
@@ -1775,51 +730,6 @@ ruleEParameter returns [EObject current=null]
 		otherlv_6='}'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getEParameterAccess().getRightCurlyBracketKeyword_5());
-		}
-	)
-;
-
-// Entry rule entryRuleEViewPoint
-entryRuleEViewPoint returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEViewPointRule()); }
-	iv_ruleEViewPoint=ruleEViewPoint
-	{ $current=$iv_ruleEViewPoint.current; }
-	EOF;
-
-// Rule EViewPoint
-ruleEViewPoint returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getEViewPointAccess().getESystemIndependentViewPointParserRuleCall_0());
-		}
-		this_ESystemIndependentViewPoint_0=ruleESystemIndependentViewPoint
-		{
-			$current = $this_ESystemIndependentViewPoint_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEViewPointAccess().getEAssemblyViewPointParserRuleCall_1());
-		}
-		this_EAssemblyViewPoint_1=ruleEAssemblyViewPoint
-		{
-			$current = $this_EAssemblyViewPoint_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEViewPointAccess().getEDeploymentViewPointParserRuleCall_2());
-		}
-		this_EDeploymentViewPoint_2=ruleEDeploymentViewPoint
-		{
-			$current = $this_EDeploymentViewPoint_2.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -2622,101 +1532,6 @@ ruleEProvidedRole returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleELink
-entryRuleELink returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getELinkRule()); }
-	iv_ruleELink=ruleELink
-	{ $current=$iv_ruleELink.current; }
-	EOF;
-
-// Rule ELink
-ruleELink returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getELinkAccess().getELinkAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='ELink'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getELinkAccess().getELinkKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getELinkAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getELinkRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.xtext.example.mydsl.MyDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getELinkAccess().getLeftCurlyBracketKeyword_3());
-		}
-		(
-			otherlv_4='connects:'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getELinkAccess().getConnectsKeyword_4_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getELinkRule());
-						}
-					}
-					otherlv_5=RULE_ID
-					{
-						newLeafNode(otherlv_5, grammarAccess.getELinkAccess().getConnectsEContainerCrossReference_4_1_0());
-					}
-				)
-			)
-			(
-				otherlv_6=','
-				{
-					newLeafNode(otherlv_6, grammarAccess.getELinkAccess().getCommaKeyword_4_2_0());
-				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getELinkRule());
-							}
-						}
-						otherlv_7=RULE_ID
-						{
-							newLeafNode(otherlv_7, grammarAccess.getELinkAccess().getConnectsEContainerCrossReference_4_2_1_0());
-						}
-					)
-				)
-			)+
-		)
-		otherlv_8='}'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getELinkAccess().getRightCurlyBracketKeyword_5());
-		}
-	)
-;
-
 // Entry rule entryRuleEAssemblyContext
 entryRuleEAssemblyContext returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getEAssemblyContextRule()); }
@@ -2957,101 +1772,6 @@ ruleEAssemblyContext returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleEAssemblyConnector
-entryRuleEAssemblyConnector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEAssemblyConnectorRule()); }
-	iv_ruleEAssemblyConnector=ruleEAssemblyConnector
-	{ $current=$iv_ruleEAssemblyConnector.current; }
-	EOF;
-
-// Rule EAssemblyConnector
-ruleEAssemblyConnector returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getEAssemblyConnectorAccess().getEAssemblyConnectorAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='EAssemblyConnector'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getEAssemblyConnectorAccess().getEAssemblyConnectorKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getEAssemblyConnectorAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEAssemblyConnectorRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.xtext.example.mydsl.MyDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getEAssemblyConnectorAccess().getLeftCurlyBracketKeyword_3());
-		}
-		(
-			otherlv_4='linkTo:'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getEAssemblyConnectorAccess().getLinkToKeyword_4_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEAssemblyConnectorRule());
-						}
-					}
-					otherlv_5=RULE_ID
-					{
-						newLeafNode(otherlv_5, grammarAccess.getEAssemblyConnectorAccess().getLinkToERequiredRoleCrossReference_4_1_0());
-					}
-				)
-			)
-		)
-		(
-			otherlv_6='linkFrom:'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getEAssemblyConnectorAccess().getLinkFromKeyword_5_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEAssemblyConnectorRule());
-						}
-					}
-					otherlv_7=RULE_ID
-					{
-						newLeafNode(otherlv_7, grammarAccess.getEAssemblyConnectorAccess().getLinkFromEProvidedRoleCrossReference_5_1_0());
-					}
-				)
-			)
-		)
-		otherlv_8='}'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getEAssemblyConnectorAccess().getRightCurlyBracketKeyword_6());
-		}
-	)
-;
-
 // Entry rule entryRuleEProvidedDelegationConnector
 entryRuleEProvidedDelegationConnector returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getEProvidedDelegationConnectorRule()); }
@@ -3200,42 +1920,6 @@ ruleERequiredDelegationConnector returns [EObject current=null]
 		otherlv_7='}'
 		{
 			newLeafNode(otherlv_7, grammarAccess.getERequiredDelegationConnectorAccess().getRightCurlyBracketKeyword_5());
-		}
-	)
-;
-
-// Entry rule entryRuleEDelegationConnector
-entryRuleEDelegationConnector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEDelegationConnectorRule()); }
-	iv_ruleEDelegationConnector=ruleEDelegationConnector
-	{ $current=$iv_ruleEDelegationConnector.current; }
-	EOF;
-
-// Rule EDelegationConnector
-ruleEDelegationConnector returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getEDelegationConnectorAccess().getEProvidedDelegationConnectorParserRuleCall_0());
-		}
-		this_EProvidedDelegationConnector_0=ruleEProvidedDelegationConnector
-		{
-			$current = $this_EProvidedDelegationConnector_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEDelegationConnectorAccess().getERequiredDelegationConnectorParserRuleCall_1());
-		}
-		this_ERequiredDelegationConnector_1=ruleERequiredDelegationConnector
-		{
-			$current = $this_ERequiredDelegationConnector_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -3446,60 +2130,6 @@ ruleEDeploymentViewPoint returns [EObject current=null]
 		otherlv_7='}'
 		{
 			newLeafNode(otherlv_7, grammarAccess.getEDeploymentViewPointAccess().getRightCurlyBracketKeyword_7());
-		}
-	)
-;
-
-// Entry rule entryRuleEViewType
-entryRuleEViewType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEViewTypeRule()); }
-	iv_ruleEViewType=ruleEViewType
-	{ $current=$iv_ruleEViewType.current; }
-	EOF;
-
-// Rule EViewType
-ruleEViewType returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getEViewTypeAccess().getERepositoryViewTypeParserRuleCall_0());
-		}
-		this_ERepositoryViewType_0=ruleERepositoryViewType
-		{
-			$current = $this_ERepositoryViewType_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEViewTypeAccess().getEAssemblyViewTypeParserRuleCall_1());
-		}
-		this_EAssemblyViewType_1=ruleEAssemblyViewType
-		{
-			$current = $this_EAssemblyViewType_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEViewTypeAccess().getEAllocationViewTypeParserRuleCall_2());
-		}
-		this_EAllocationViewType_2=ruleEAllocationViewType
-		{
-			$current = $this_EAllocationViewType_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEViewTypeAccess().getEEnvironmentViewTypeParserRuleCall_3());
-		}
-		this_EEnvironmentViewType_3=ruleEEnvironmentViewType
-		{
-			$current = $this_EEnvironmentViewType_3.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -4519,55 +3149,6 @@ ruleEBehaviourDescription returns [EObject current=null]
 		{
 			newLeafNode(otherlv_19, grammarAccess.getEBehaviourDescriptionAccess().getRightCurlyBracketKeyword_7());
 		}
-	)
-;
-
-// Entry rule entryRuleEService
-entryRuleEService returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEServiceRule()); }
-	iv_ruleEService=ruleEService
-	{ $current=$iv_ruleEService.current; }
-	EOF;
-
-// Rule EService
-ruleEService returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getEServiceAccess().getEServiceAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='EService'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getEServiceAccess().getEServiceKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getEServiceAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEServiceRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.xtext.example.mydsl.MyDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
 	)
 ;
 

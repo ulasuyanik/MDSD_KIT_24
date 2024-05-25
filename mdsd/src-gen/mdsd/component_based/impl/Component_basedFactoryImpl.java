@@ -115,8 +115,6 @@ public class Component_basedFactoryImpl extends EFactoryImpl implements Componen
 			return createEBranch();
 		case Component_basedPackage.ELOOP:
 			return createELoop();
-		case Component_basedPackage.EROOT:
-			return createERoot();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -477,17 +475,6 @@ public class Component_basedFactoryImpl extends EFactoryImpl implements Componen
 	public ELoop createELoop() {
 		ELoopImpl eLoop = new ELoopImpl();
 		return eLoop;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ERoot createERoot() {
-		ERootImpl eRoot = new ERootImpl();
-		return eRoot;
 	}
 
 	/**

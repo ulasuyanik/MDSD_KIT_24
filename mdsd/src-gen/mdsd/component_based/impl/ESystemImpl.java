@@ -6,7 +6,9 @@ import java.util.Collection;
 
 import mdsd.component_based.Component_basedPackage;
 import mdsd.component_based.EAssemblyContext;
+import mdsd.component_based.EContainer;
 import mdsd.component_based.EInterface;
+import mdsd.component_based.ERepository;
 import mdsd.component_based.ESystem;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,6 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mdsd.component_based.impl.ESystemImpl#getRequires <em>Requires</em>}</li>
  *   <li>{@link mdsd.component_based.impl.ESystemImpl#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link mdsd.component_based.impl.ESystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.ESystemImpl#getContainsRepos <em>Contains Repos</em>}</li>
+ *   <li>{@link mdsd.component_based.impl.ESystemImpl#getContainsContainers <em>Contains Containers</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +94,26 @@ public class ESystemImpl extends MinimalEObjectImpl.Container implements ESystem
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContainsRepos() <em>Contains Repos</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainsRepos()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ERepository> containsRepos;
+
+	/**
+	 * The cached value of the '{@link #getContainsContainers() <em>Contains Containers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainsContainers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EContainer> containsContainers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,6 +205,34 @@ public class ESystemImpl extends MinimalEObjectImpl.Container implements ESystem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<ERepository> getContainsRepos() {
+		if (containsRepos == null) {
+			containsRepos = new EObjectContainmentEList<ERepository>(ERepository.class, this,
+					Component_basedPackage.ESYSTEM__CONTAINS_REPOS);
+		}
+		return containsRepos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<EContainer> getContainsContainers() {
+		if (containsContainers == null) {
+			containsContainers = new EObjectContainmentEList<EContainer>(EContainer.class, this,
+					Component_basedPackage.ESYSTEM__CONTAINS_CONTAINERS);
+		}
+		return containsContainers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -208,6 +261,10 @@ public class ESystemImpl extends MinimalEObjectImpl.Container implements ESystem
 			return ((InternalEList<?>) getRequires()).basicRemove(otherEnd, msgs);
 		case Component_basedPackage.ESYSTEM__ENCAPSULATES:
 			return ((InternalEList<?>) getEncapsulates()).basicRemove(otherEnd, msgs);
+		case Component_basedPackage.ESYSTEM__CONTAINS_REPOS:
+			return ((InternalEList<?>) getContainsRepos()).basicRemove(otherEnd, msgs);
+		case Component_basedPackage.ESYSTEM__CONTAINS_CONTAINERS:
+			return ((InternalEList<?>) getContainsContainers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -228,6 +285,10 @@ public class ESystemImpl extends MinimalEObjectImpl.Container implements ESystem
 			return getEncapsulates();
 		case Component_basedPackage.ESYSTEM__NAME:
 			return getName();
+		case Component_basedPackage.ESYSTEM__CONTAINS_REPOS:
+			return getContainsRepos();
+		case Component_basedPackage.ESYSTEM__CONTAINS_CONTAINERS:
+			return getContainsContainers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,6 +317,14 @@ public class ESystemImpl extends MinimalEObjectImpl.Container implements ESystem
 		case Component_basedPackage.ESYSTEM__NAME:
 			setName((String) newValue);
 			return;
+		case Component_basedPackage.ESYSTEM__CONTAINS_REPOS:
+			getContainsRepos().clear();
+			getContainsRepos().addAll((Collection<? extends ERepository>) newValue);
+			return;
+		case Component_basedPackage.ESYSTEM__CONTAINS_CONTAINERS:
+			getContainsContainers().clear();
+			getContainsContainers().addAll((Collection<? extends EContainer>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -280,6 +349,12 @@ public class ESystemImpl extends MinimalEObjectImpl.Container implements ESystem
 		case Component_basedPackage.ESYSTEM__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case Component_basedPackage.ESYSTEM__CONTAINS_REPOS:
+			getContainsRepos().clear();
+			return;
+		case Component_basedPackage.ESYSTEM__CONTAINS_CONTAINERS:
+			getContainsContainers().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -300,6 +375,10 @@ public class ESystemImpl extends MinimalEObjectImpl.Container implements ESystem
 			return encapsulates != null && !encapsulates.isEmpty();
 		case Component_basedPackage.ESYSTEM__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case Component_basedPackage.ESYSTEM__CONTAINS_REPOS:
+			return containsRepos != null && !containsRepos.isEmpty();
+		case Component_basedPackage.ESYSTEM__CONTAINS_CONTAINERS:
+			return containsContainers != null && !containsContainers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

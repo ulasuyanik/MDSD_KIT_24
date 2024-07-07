@@ -38,7 +38,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="usesInterfaceFrom" upperBound="-1"
         eType="#//EComponent" eOpposite="#//EComponent/providesInterfaceTo"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providesDirectly" upperBound="-1"
-        eType="#//EService"/>
+        eType="#//EService" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="provides" upperBound="-1"
         eType="#//EInterface" eOpposite="#//EInterface/providedByComponent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"

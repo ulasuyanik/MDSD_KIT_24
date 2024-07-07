@@ -217,7 +217,7 @@ public interface Component_basedPackage extends EPackage {
 	int ECOMPONENT__USES_INTERFACE_FROM = 3;
 
 	/**
-	 * The feature id for the '<em><b>Provides Directly</b></em>' reference list.
+	 * The feature id for the '<em><b>Provides Directly</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -627,7 +627,7 @@ public interface Component_basedPackage extends EPackage {
 	int ECOMPOSITE_COMPONENT__USES_INTERFACE_FROM = ECOMPONENT__USES_INTERFACE_FROM;
 
 	/**
-	 * The feature id for the '<em><b>Provides Directly</b></em>' reference list.
+	 * The feature id for the '<em><b>Provides Directly</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1985,10 +1985,10 @@ public interface Component_basedPackage extends EPackage {
 	EReference getEComponent_UsesInterfaceFrom();
 
 	/**
-	 * Returns the meta object for the reference list '{@link mdsd.component_based.EComponent#getProvidesDirectly <em>Provides Directly</em>}'.
+	 * Returns the meta object for the containment reference list '{@link mdsd.component_based.EComponent#getProvidesDirectly <em>Provides Directly</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Provides Directly</em>'.
+	 * @return the meta object for the containment reference list '<em>Provides Directly</em>'.
 	 * @see mdsd.component_based.EComponent#getProvidesDirectly()
 	 * @see #getEComponent()
 	 * @generated
@@ -3230,7 +3230,7 @@ public interface Component_basedPackage extends EPackage {
 		EReference ECOMPONENT__USES_INTERFACE_FROM = eINSTANCE.getEComponent_UsesInterfaceFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Provides Directly</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Provides Directly</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

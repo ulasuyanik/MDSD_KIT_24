@@ -15,5 +15,7 @@ import mdsd.component_based.EAssemblyViewType;
 public interface EAssemblyViewPointValidator {
 	boolean validate();
 
+	boolean validateAssemblyViewType(EAssemblyViewType value);
+
 	boolean validateAssemblyviewtype(EAssemblyViewType value);
 }

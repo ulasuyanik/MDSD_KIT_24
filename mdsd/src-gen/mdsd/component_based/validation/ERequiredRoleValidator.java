@@ -16,4 +16,6 @@ public interface ERequiredRoleValidator {
 	boolean validate();
 
 	boolean validateLinkedTo(EAssemblyConnector value);
+
+	boolean validateName(String value);
 }

@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -126,7 +126,7 @@ public class EComponentImpl extends MinimalEObjectImpl.Container implements ECom
 	protected EList<EComponent> usesInterfaceFrom;
 
 	/**
-	 * The cached value of the '{@link #getProvidesDirectly() <em>Provides Directly</em>}' reference list.
+	 * The cached value of the '{@link #getProvidesDirectly() <em>Provides Directly</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProvidesDirectly()
@@ -291,7 +291,7 @@ public class EComponentImpl extends MinimalEObjectImpl.Container implements ECom
 	@Override
 	public EList<EService> getProvidesDirectly() {
 		if (providesDirectly == null) {
-			providesDirectly = new EObjectResolvingEList<EService>(EService.class, this,
+			providesDirectly = new EObjectContainmentEList<EService>(EService.class, this,
 					Component_basedPackage.ECOMPONENT__PROVIDES_DIRECTLY);
 		}
 		return providesDirectly;
@@ -471,6 +471,8 @@ public class EComponentImpl extends MinimalEObjectImpl.Container implements ECom
 			return basicSetBehaviourDescription(null, msgs);
 		case Component_basedPackage.ECOMPONENT__USES_INTERFACE_FROM:
 			return ((InternalEList<?>) getUsesInterfaceFrom()).basicRemove(otherEnd, msgs);
+		case Component_basedPackage.ECOMPONENT__PROVIDES_DIRECTLY:
+			return ((InternalEList<?>) getProvidesDirectly()).basicRemove(otherEnd, msgs);
 		case Component_basedPackage.ECOMPONENT__PROVIDES:
 			return ((InternalEList<?>) getProvides()).basicRemove(otherEnd, msgs);
 		case Component_basedPackage.ECOMPONENT__REQUIRES:

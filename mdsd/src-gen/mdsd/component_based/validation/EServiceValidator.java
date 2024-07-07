@@ -13,4 +13,6 @@ package mdsd.component_based.validation;
 public interface EServiceValidator {
 	boolean validate();
 
+	boolean validateName(String value);
+
 }

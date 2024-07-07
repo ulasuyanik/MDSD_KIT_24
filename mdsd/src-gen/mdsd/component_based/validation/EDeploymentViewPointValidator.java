@@ -16,6 +16,10 @@ import mdsd.component_based.EEnvironmentViewType;
 public interface EDeploymentViewPointValidator {
 	boolean validate();
 
+	boolean validateEnvironmentViewType(EEnvironmentViewType value);
+
+	boolean validateAllocationViewType(EAllocationViewType value);
+
 	boolean validateEnvironmentviewtype(EEnvironmentViewType value);
 
 	boolean validateAllocationviewtype(EAllocationViewType value);

@@ -18,5 +18,7 @@ public interface EAssemblyConnectorValidator {
 
 	boolean validateLinkFrom(EProvidedRole value);
 
+	boolean validateName(String value);
+
 	boolean validateLinkTo(ERequiredRole value);
 }

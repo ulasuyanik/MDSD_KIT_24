@@ -103,7 +103,6 @@ public class Component_basedTables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_EAllocationContext = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_EAllocationContext, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_EAssemblyContext = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_EAssemblyContext, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_EAssemblyViewType = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_EAssemblyViewType, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
-	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_EComponent = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_EComponent, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_EContainer = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_EContainer, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_EEnvironmentViewType = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_EEnvironmentViewType, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_EExternalCall = TypeId.BAG.getSpecializedId(Component_basedTables.CLSSid_EExternalCall, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);

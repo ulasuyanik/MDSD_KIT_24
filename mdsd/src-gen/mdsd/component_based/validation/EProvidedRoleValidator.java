@@ -16,4 +16,6 @@ public interface EProvidedRoleValidator {
 	boolean validate();
 
 	boolean validateLinkedFrom(EAssemblyConnector value);
+
+	boolean validateName(String value);
 }

@@ -105,13 +105,13 @@ public interface EComponent extends EObject {
 	EList<EComponent> getUsesInterfaceFrom();
 
 	/**
-	 * Returns the value of the '<em><b>Provides Directly</b></em>' reference list.
+	 * Returns the value of the '<em><b>Provides Directly</b></em>' containment reference list.
 	 * The list contents are of type {@link mdsd.component_based.EService}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Provides Directly</em>' reference list.
+	 * @return the value of the '<em>Provides Directly</em>' containment reference list.
 	 * @see mdsd.component_based.Component_basedPackage#getEComponent_ProvidesDirectly()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<EService> getProvidesDirectly();

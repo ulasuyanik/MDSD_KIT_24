@@ -15,5 +15,7 @@ import mdsd.component_based.ERepositoryViewType;
 public interface ESystemIndependentViewPointValidator {
 	boolean validate();
 
+	boolean validateRepositoryViewType(ERepositoryViewType value);
+
 	boolean validateRepositoryviewtype(ERepositoryViewType value);
 }

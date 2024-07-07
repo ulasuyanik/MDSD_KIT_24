@@ -43,6 +43,7 @@ Package component_based <http://www.example.org/component_based>
     Attribute type : PossibleParameterTypes<<1..1>>
 
   Class EService
+    Attribute name : EString
 
   Class EAssemblyContext
     Attribute name : EString<<1..1>>
@@ -63,10 +64,14 @@ Package component_based <http://www.example.org/component_based>
     Reference provides : EInterface<<1..*>>
     Reference requires : EInterface<<0..*>>
     Reference encapsulates : EAssemblyContext<<0..*>>
+    Attribute name : EString
+    Reference containsRepos : ERepository<<0..*>>
+    Reference containsContainers : EContainer<<0..*>>
 
   Class EAssemblyConnector
     Reference linkTo : ERequiredRole<<1..1>>
     Reference linkFrom : EProvidedRole<<1..1>>
+    Attribute name : EString
 
   Class EContainer
     Attribute name : EString<<1..1>>
@@ -98,38 +103,40 @@ Package component_based <http://www.example.org/component_based>
 
   Class ERequiredRole -> ERole
     Reference linkedTo : EAssemblyConnector
+    Attribute name : EString
 
   Class EProvidedRole -> ERole
     Reference linkedFrom : EAssemblyConnector
+    Attribute name : EString
 
-  Class EEnvironmentViewType
+  Class EEnvironmentViewType -> EViewType
     Reference showsContainers : EContainer<<0..*>>
     Reference showsLinks : ELink<<0..*>>
 
-  Class EAllocationViewType
+  Class EAllocationViewType -> EViewType
     Reference includes : EAllocationContext<<0..*>>
     Operation showComponentAllocations() : void
 
-  Class EAssemblyViewType
+  Class EAssemblyViewType -> EViewType
     Reference mainArtifacts : EAssemblyContext<<0..*>>
     Reference showsComponents : EComponent<<0..*>>
     Operation showComponentConnections() : void
 
-  Class ERepositoryViewType
+  Class ERepositoryViewType -> EViewType
     Reference showsComponents : EComponent<<0..*>>
     Reference showsInterfaces : EInterface<<0..*>>
 
   Class EViewPoint
 
   Class ESystemIndependentViewPoint -> EViewPoint
-    Reference repositoryviewtype : ERepositoryViewType<<1..1>>
+    Reference repositoryViewType : ERepositoryViewType<<1..1>>
 
   Class EAssemblyViewPoint -> EViewPoint
-    Reference assemblyviewtype : EAssemblyViewType<<1..1>>
+    Reference assemblyViewType : EAssemblyViewType<<1..1>>
 
   Class EDeploymentViewPoint -> EViewPoint
-    Reference environmentviewtype : EEnvironmentViewType<<1..1>>
-    Reference allocationviewtype : EAllocationViewType<<1..1>>
+    Reference environmentViewType : EEnvironmentViewType<<1..1>>
+    Reference allocationViewType : EAllocationViewType<<1..1>>
 
   Class EBehaviourDescription
     Reference internalAction : EInternalAction<<0..*>>
@@ -145,6 +152,8 @@ Package component_based <http://www.example.org/component_based>
   Class EBranch
 
   Class ELoop
+
+  Class EViewType
 
   Enum PossibleReturnTypes
     Literal BOOLEAN = 0

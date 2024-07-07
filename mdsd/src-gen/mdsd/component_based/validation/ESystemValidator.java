@@ -5,8 +5,10 @@
 package mdsd.component_based.validation;
 
 import mdsd.component_based.EAssemblyContext;
+import mdsd.component_based.EContainer;
 import mdsd.component_based.EInterface;
 
+import mdsd.component_based.ERepository;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -23,4 +25,10 @@ public interface ESystemValidator {
 	boolean validateRequires(EList<EInterface> value);
 
 	boolean validateEncapsulates(EList<EAssemblyContext> value);
+
+	boolean validateName(String value);
+
+	boolean validateContainsRepos(EList<ERepository> value);
+
+	boolean validateContainsContainers(EList<EContainer> value);
 }

@@ -1,0 +1,30 @@
+ESystem system{
+	provides: CommunicationInterface
+	containsRepos: ERepository 
+	{
+		component:EComponent WebBrowser{providesInterfaceTo: WebGUI providesDirectly: EService HTTPDownloadService provides: HTTP}, 
+				  EComponent WebGUI{providesInterfaceTo:MediaManager, MediaStore usesInterfaceFrom:WebBrowser provides: MediaStore requires: HTTP}, 
+				  EComponent MediaManager{providesInterfaceTo:DBCache,DigitalWaterMarking usesInterfaceFrom: WebGUI provides: AudioDB, Sound requires: MediaStore},
+				  EComponent DBCache{usesInterfaceFrom:MediaManager requires: AudioDB},
+		 		  EComponent MediaStore{providesInterfaceTo:PoolingAudioDB usesInterfaceFrom:MediaStore provides: AudioDB requires: MediaStore},
+		 		  EComponent DigitalWaterMarking{usesInterfaceFrom:MediaManager requires:Sound},
+		 		  EComponent PoolingAudioDB{usesInterfaceFrom: MediaStore requires:AudioDB}
+		interface:EInterface MediaStore{
+					signature: ESignature download{returnType: String},
+							   ESignature upload{returnType: String}
+				  },
+				  EInterface HTTP{
+				  	signature: ESignature HTTPDownload{returnType: String},
+				  			   ESignature HTTPUpload{returnType: String}
+				  }, 
+				  EInterface Sound{
+				  	signature: ESignature watermark{returnType: String}
+				  },
+				  EInterface AudioDB{
+				  	signature: ESignature queryDB{returnType: String},
+				  			   ESignature addFile{returnType: String}
+				  },
+				  EInterface CommunicationInterface{}
+	}
+	containsContainers:EContainer Client{}, EContainer DatabaseServer{}, EContainer ApplicationServer{}
+}

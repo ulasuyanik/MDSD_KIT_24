@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EEnvironmentViewType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based">
+  <showsContainers href="Container/ApplicationServer.component_based#/"/>
+  <showsContainers href="Container/DatabaseServer.component_based#/"/>
+  <showsLinks href="Link/ApplicationDatabaseLink.component_based#/"/>
+</component_based:EEnvironmentViewType>

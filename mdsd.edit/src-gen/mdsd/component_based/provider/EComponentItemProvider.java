@@ -173,6 +173,7 @@ public class EComponentItemProvider extends ItemProviderAdapter implements IEdit
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Component_basedPackage.Literals.ECOMPONENT__BEHAVIOUR_DESCRIPTION);
+			childrenFeatures.add(Component_basedPackage.Literals.ECOMPONENT__PROVIDES_DIRECTLY);
 		}
 		return childrenFeatures;
 	}
@@ -240,6 +241,7 @@ public class EComponentItemProvider extends ItemProviderAdapter implements IEdit
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case Component_basedPackage.ECOMPONENT__BEHAVIOUR_DESCRIPTION:
+		case Component_basedPackage.ECOMPONENT__PROVIDES_DIRECTLY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -259,6 +261,9 @@ public class EComponentItemProvider extends ItemProviderAdapter implements IEdit
 
 		newChildDescriptors.add(createChildParameter(Component_basedPackage.Literals.ECOMPONENT__BEHAVIOUR_DESCRIPTION,
 				Component_basedFactory.eINSTANCE.createEBehaviourDescription()));
+
+		newChildDescriptors.add(createChildParameter(Component_basedPackage.Literals.ECOMPONENT__PROVIDES_DIRECTLY,
+				Component_basedFactory.eINSTANCE.createEService()));
 	}
 
 	/**

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EAssemblyViewPoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_based="http://www.example.org/component_based">
+  <assemblyviewtype>
+    <mainArtifacts name="PoolingAudioDB">
+      <roles xsi:type="component_based:EProvidedRole" roleOf="//@assemblyviewtype/@mainArtifacts.0">
+        <linkedFrom href="AssemblyConnector/MMtoWGUI.component_based#/"/>
+      </roles>
+      <instantiates href="Component/PoolingAudioDB.component_based#/"/>
+    </mainArtifacts>
+    <mainArtifacts name="DigitalWatermarking">
+      <roles xsi:type="component_based:EProvidedRole" roleOf="//@assemblyviewtype/@mainArtifacts.1"/>
+      <encapsulatedByComponent href="CompositeComponent/MediaCompComponent.component_based#/"/>
+      <encapsulatedBySystem href="System/MediaBasedSystem.component_based#/"/>
+      <instantiates href="Component/DigitalWatermarking.component_based#/"/>
+    </mainArtifacts>
+    <mainArtifacts name="MediaManager">
+      <roles xsi:type="component_based:ERequiredRole" roleOf="//@assemblyviewtype/@mainArtifacts.2">
+        <linkedTo href="AssemblyConnector/DBCtoMM.component_based#/"/>
+      </roles>
+      <roles xsi:type="component_based:ERequiredRole" roleOf="//@assemblyviewtype/@mainArtifacts.2"/>
+      <roles xsi:type="component_based:EProvidedRole" roleOf="//@assemblyviewtype/@mainArtifacts.2"/>
+      <encapsulatedByComponent href="CompositeComponent/MediaCompComponent.component_based#/"/>
+      <encapsulatedBySystem href="System/MediaBasedSystem.component_based#/"/>
+      <instantiates href="Component/DBCache.component_based#/"/>
+    </mainArtifacts>
+    <mainArtifacts name="DBCache">
+      <roles xsi:type="component_based:ERequiredRole" roleOf="//@assemblyviewtype/@mainArtifacts.3">
+        <linkedTo href="AssemblyConnector/DMtoMM.component_based#/"/>
+      </roles>
+      <roles xsi:type="component_based:EProvidedRole" roleOf="//@assemblyviewtype/@mainArtifacts.3">
+        <linkedFrom href="AssemblyConnector/PADBtoDBC.component_based#/"/>
+      </roles>
+      <encapsulatedByComponent href="CompositeComponent/MediaCompComponent.component_based#/"/>
+      <encapsulatedBySystem href="System/MediaBasedSystem.component_based#/"/>
+      <instantiates href="Component/DBCache.component_based#/"/>
+    </mainArtifacts>
+    <mainArtifacts name="WebGUI">
+      <roles xsi:type="component_based:ERequiredRole" roleOf="//@assemblyviewtype/@mainArtifacts.4">
+        <linkedTo href="AssemblyConnector/MMtoWGUI.component_based#/"/>
+      </roles>
+      <roles xsi:type="component_based:EProvidedRole" roleOf="//@assemblyviewtype/@mainArtifacts.4"/>
+      <encapsulatedBySystem href="System/MediaBasedSystem.component_based#/"/>
+      <instantiates href="Component/WebGUI.component_based#/"/>
+    </mainArtifacts>
+    <mainArtifacts name="MediaStoreComposite">
+      <roles xsi:type="component_based:EProvidedRole" roleOf="//@assemblyviewtype/@mainArtifacts.5">
+        <linkedFrom href="AssemblyConnector/DMtoMM.component_based#/"/>
+      </roles>
+      <roles xsi:type="component_based:ERequiredRole" roleOf="//@assemblyviewtype/@mainArtifacts.5">
+        <linkedTo href="AssemblyConnector/PADBtoDBC.component_based#/"/>
+      </roles>
+      <encapsulatedBySystem href="System/MediaBasedSystem.component_based#/"/>
+      <instantiates href="CompositeComponent/MediaCompComponent.component_based#/"/>
+    </mainArtifacts>
+    <showsComponents href="Component/DBCache.component_based#/"/>
+    <showsComponents href="Component/DigitalWatermarking.component_based#/"/>
+    <showsComponents href="Component/MediaManager.component_based#/"/>
+    <showsComponents href="Component/PoolingAudioDB.component_based#/"/>
+    <showsComponents href="Component/WebGUI.component_based#/"/>
+    <showsComponents href="CompositeComponent/MediaCompComponent.component_based#/"/>
+  </assemblyviewtype>
+</component_based:EAssemblyViewPoint>

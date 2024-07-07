@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_based="http://www.example.org/component_based" name="HTTP">
+  <signature name="HTTPDownload">
+    <correspondsTo href="../Service/WebGUIDownloadService.component_based#/"/>
+  </signature>
+  <signature name="HTTPUpload">
+    <correspondsTo href="../Service/WebGUIUploadService.component_based#/"/>
+  </signature>
+  <resultsIn xsi:type="component_based:EProvidedRole" href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.2/@roles.2"/>
+  <providedByComponent href="../Component/WebGUI.component_based#/"/>
+  <providedBySystem href="../System/MediaBasedSystem.component_based#/"/>
+</component_based:EInterface>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EAssemblyConnector xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based">
+  <linkTo href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.2/@roles.0"/>
+</component_based:EAssemblyConnector>

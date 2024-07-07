@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based" name="DigitalWatermarking">
+  <provides href="../Interface/Sound.component_based#/"/>
+</component_based:EComponent>

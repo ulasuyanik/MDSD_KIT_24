@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_based="http://www.example.org/component_based" name="MediaStore">
+  <signature name="download">
+    <correspondsTo href="../Service/MMDownloadService.component_based#/"/>
+  </signature>
+  <signature name="upload">
+    <correspondsTo href="../Service/MMUploadService.component_based#/"/>
+  </signature>
+  <resultsIn xsi:type="component_based:EProvidedRole" href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.0/@roles.0"/>
+  <resultsIn xsi:type="component_based:EProvidedRole" href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.4/@roles.1"/>
+  <resultsIn xsi:type="component_based:ERequiredRole" href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.2/@roles.0"/>
+  <providedByComponent href="../Component/MediaManager.component_based#/"/>
+  <providedByComponent href="../CompositeComponent/MediaCompComponent.component_based#/"/>
+  <requiredByComponent href="../Component/WebGUI.component_based#/"/>
+</component_based:EInterface>

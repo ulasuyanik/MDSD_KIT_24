@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository:BasicComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2 ../model/pcm.ecore#//repository" entityName="MediaManager"/>

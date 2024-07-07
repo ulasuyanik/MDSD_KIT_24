@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based" name="Application Server">
+  <connectedTo href="../Link/ApplicationDatabaseLink.component_based#/"/>
+</component_based:EContainer>

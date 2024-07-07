@@ -1,0 +1,36 @@
+module generator.MdsdGenerator
+
+import org.eclipse.emf.mwe.utils.*
+ 
+var targetDir = "src-gen"
+var modelPath = "ComponentBasedModels"
+ 
+Workflow {
+ 
+
+    bean = StandaloneSetup {
+        registerGeneratedEPackage = "mdsd.component_based.Component_basedPackage"
+    }
+    
+    component = DirectoryCleaner {
+        directory = targetDir
+    }
+ 
+    component = generator.MdsdGeneratorSupport {}
+ 
+    component = org.eclipse.xtext.mwe.Reader {
+        path = modelPath
+        register = generator.MdsdGeneratorSetup {}
+        loadResource = {
+            slot = "ComponentBasedModels"
+        }
+    }
+ 
+    component = org.eclipse.xtext.generator.GeneratorComponent {
+        register = generator.MdsdGeneratorSetup {}
+        slot = 'ComponentBasedModels'
+        outlet = {
+            path = targetDir
+        }
+    }
+}

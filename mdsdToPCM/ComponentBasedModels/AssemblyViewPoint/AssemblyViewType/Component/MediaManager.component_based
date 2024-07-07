@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based" name="MediaManager">
+  <providesInterfaceTo href="WebGUI.component_based#/"/>
+  <usesInterfaceFrom href="DBCache.component_based#/"/>
+  <usesInterfaceFrom href="DigitalWatermarking.component_based#/"/>
+  <providesDirectly href="../Service/MMDownloadService.component_based#/"/>
+  <providesDirectly href="../Service/MMUploadService.component_based#/"/>
+  <provides href="../Interface/MediaStore.component_based#/"/>
+  <requires href="../Interface/AudioDB.component_based#/"/>
+  <requires href="../Interface/Sound.component_based#/"/>
+</component_based:EComponent>

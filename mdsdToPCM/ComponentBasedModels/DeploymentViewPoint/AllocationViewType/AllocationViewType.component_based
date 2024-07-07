@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:EAllocationViewType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based">
+  <includes>
+    <controls href="../EnvironmentViewType/Container/DatabaseServer.component_based#/"/>
+    <specifiesFor href="../../AssemblyViewPoint/AssemblyViewType/System/MediaBasedSystem.component_based#/"/>
+    <specifies href="../../AssemblyViewPoint/AssemblyViewType/AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.0"/>
+  </includes>
+  <includes>
+    <controls href="../EnvironmentViewType/Container/ApplicationServer.component_based#/"/>
+    <specifiesFor href="../../AssemblyViewPoint/AssemblyViewType/System/MediaBasedSystem.component_based#/"/>
+    <specifies href="../../AssemblyViewPoint/AssemblyViewType/AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.5"/>
+  </includes>
+  <includes>
+    <controls href="../EnvironmentViewType/Container/ApplicationServer.component_based#/"/>
+    <specifiesFor href="../../AssemblyViewPoint/AssemblyViewType/System/MediaBasedSystem.component_based#/"/>
+    <specifies href="../../AssemblyViewPoint/AssemblyViewType/AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.4"/>
+  </includes>
+</component_based:EAllocationViewType>

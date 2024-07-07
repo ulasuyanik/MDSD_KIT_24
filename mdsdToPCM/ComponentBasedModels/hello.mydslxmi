@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:ESystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based" provides="//@containsRepos.0/@interface.4" name="system">
+  <containsRepos>
+    <component name="WebBrowser" providesInterfaceTo="//@containsRepos.0/@component.1 //@containsRepos.0/@component.1" provides="//@containsRepos.0/@interface.1"/>
+    <component name="WebGUI" providesInterfaceTo="//@containsRepos.0/@component.2 //@containsRepos.0/@component.4 //@containsRepos.0/@component.2" usesInterfaceFrom="//@containsRepos.0/@component.0 //@containsRepos.0/@component.0" provides="//@containsRepos.0/@interface.0" requires="//@containsRepos.0/@interface.1"/>
+    <component name="MediaManager" providesInterfaceTo="//@containsRepos.0/@component.3 //@containsRepos.0/@component.5 //@containsRepos.0/@component.3 //@containsRepos.0/@component.5" usesInterfaceFrom="//@containsRepos.0/@component.1 //@containsRepos.0/@component.1" provides="//@containsRepos.0/@interface.3 //@containsRepos.0/@interface.2" requires="//@containsRepos.0/@interface.0"/>
+    <component name="DBCache" usesInterfaceFrom="//@containsRepos.0/@component.2 //@containsRepos.0/@component.2" requires="//@containsRepos.0/@interface.3"/>
+    <component name="MediaStore" providesInterfaceTo="//@containsRepos.0/@component.6 //@containsRepos.0/@component.4 //@containsRepos.0/@component.6" usesInterfaceFrom="//@containsRepos.0/@component.4 //@containsRepos.0/@component.1" provides="//@containsRepos.0/@interface.3" requires="//@containsRepos.0/@interface.0"/>
+    <component name="DigitalWaterMarking" usesInterfaceFrom="//@containsRepos.0/@component.2 //@containsRepos.0/@component.2" requires="//@containsRepos.0/@interface.2"/>
+    <component name="PoolingAudioDB" usesInterfaceFrom="//@containsRepos.0/@component.4 //@containsRepos.0/@component.4" requires="//@containsRepos.0/@interface.3"/>
+    <interface name="MediaStore" providedByComponent="//@containsRepos.0/@component.1" requiredByComponent="//@containsRepos.0/@component.2 //@containsRepos.0/@component.4">
+      <signature name="download" returnType="String"/>
+      <signature name="upload" returnType="String"/>
+    </interface>
+    <interface name="HTTP" providedByComponent="//@containsRepos.0/@component.0" requiredByComponent="//@containsRepos.0/@component.1">
+      <signature name="HTTPDownload" returnType="String"/>
+      <signature name="HTTPUpload" returnType="String"/>
+    </interface>
+    <interface name="Sound" providedByComponent="//@containsRepos.0/@component.2" requiredByComponent="//@containsRepos.0/@component.5">
+      <signature name="watermark" returnType="String"/>
+    </interface>
+    <interface name="AudioDB" providedByComponent="//@containsRepos.0/@component.2 //@containsRepos.0/@component.4" requiredByComponent="//@containsRepos.0/@component.3 //@containsRepos.0/@component.6">
+      <signature name="queryDB" returnType="String"/>
+      <signature name="addFile" returnType="String"/>
+    </interface>
+    <interface name="CommunicationInterface" providedBySystem="/"/>
+  </containsRepos>
+  <containsContainers name="Client"/>
+  <containsContainers name="DatabaseServer"/>
+  <containsContainers name="ApplicationServer"/>
+</component_based:ESystem>

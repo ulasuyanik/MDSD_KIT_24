@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_based:ESystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component_based="http://www.example.org/component_based">
+  <provides href="../Interface/HTTP.component_based#/"/>
+  <encapsulates href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.1"/>
+  <encapsulates href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.2"/>
+  <encapsulates href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.3"/>
+  <encapsulates href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.4"/>
+  <encapsulates href="../AssemblyViewType.component_based#//@assemblyviewtype/@mainArtifacts.5"/>
+</component_based:ESystem>

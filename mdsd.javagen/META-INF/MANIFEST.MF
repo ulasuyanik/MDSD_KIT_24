@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Javagen
+Bundle-SymbolicName: mdsd.javagen
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-22
+Automatic-Module-Name: mdsd.javagen
+Export-Package: generator
+Import-Package: mdsd.component_based
+Require-Bundle: org.eclipse.emf.common;bundle-version="2.30.0",
+ org.eclipse.emf.ecore;bundle-version="2.36.0",
+ org.eclipse.xtext;bundle-version="2.35.0",
+ org.eclipse.xtend;bundle-version="2.2.0",
+ org.xtext.example.mydsl;bundle-version="1.0.0",
+ org.eclipse.emf.mwe2.launch;bundle-version="2.18.0",
+ org.eclipse.emf.ecore.xmi.source;bundle-version="2.37.0"

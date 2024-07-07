@@ -1,0 +1,64 @@
+modeltype source "strict" uses component_based("http://www.example.org/component_based");
+modeltype target "strict" uses pcm("http://palladiosimulator.org/PalladioComponentModel/5.2");
+
+transformation Ecore2Uml(in inModel : source, out outModel : target) {
+
+    main() {
+    
+    	var dummySeff:target::seff::ServiceEffectSpecification;
+    	
+        inModel.rootObjects()[component_based::EComponent]->map ComponentToPalladioComponent();
+        inModel.rootObjects()[component_based::EInterface]->map InterfaceToPalladioInterface();
+    }
+
+    mapping component_based::EComponent::ComponentToPalladioComponent() : target::repository::BasicComponent {
+        entityName := self.name;
+        log('Mapping EComponent to BasicComponent: ' + self.name);
+    }
+
+    mapping component_based::EAssemblyContext::AssemblyContextToPalladioAssemblyContext() : target::core::composition::AssemblyContext {
+        entityName := self.name;
+        log('Mapping EAssemblyContext to AssemblyContext: ' + self.name);
+    }
+
+    mapping component_based::EContainer::ContainerToPalladioResourceContainer() : target::resourceenvironment::ResourceContainer {
+        entityName := self.name;
+        log('Mapping EContainer to ResourceContainer: ' + self.name);
+    }
+
+    mapping component_based::ESignature::SignatureToPalladioSignature() : target::repository::OperationSignature {
+        init {
+            log('Instantiating target::repository::Signature for ESignature: ' + self.name);
+        }
+        //returnType__OperationSignature := self.returnType.objectsOfType();
+        entityName := self.name;
+        log('Mapping ESignature to Signature: ' + self.name);
+    }
+
+    mapping component_based::EInterface::InterfaceToPalladioInterface() : target::repository::Interface {
+        init {
+            log('Initialized signatures_Interface as an empty set for Interface: ' + self.name);
+        }
+        entityName := self.name;
+        log('Mapping EInterface to Interface: ' + self.name)
+    }
+    
+    mapping component_based::EAssemblyContext::EACtoAC() : target::core::composition::AssemblyContext {
+    	entityName = self.name;
+    }
+    
+   helper  mapEnumToPalladioDataType(enumValue : component_based::PossibleReturnTypes) : target::repository::DataType =
+        if self = component_based::EDataType::INT then
+        	target::repository::PrimitiveDataType {
+            primitiveType := target::repository::PrimitiveTypeEnum::INT
+        }
+        else
+        -- Handle default case or unknown types
+         return target::repository::PrimitiveDataType {
+            primitiveType := target::repository::PrimitiveTypeEnum::STRING
+        }
+        
+    	endif;
+    
+    
+}

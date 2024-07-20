@@ -8,7 +8,14 @@ transformation Ecore2Uml(in inModel : source, out outModel : target) {
 	
     main() {
     	var repos = inModel.rootObjects()[component_based::ERepository];
-    	repos->map ERepositoryToRepository();
+    	if (repos->notEmpty()) {
+    		repos->map ERepositoryToRepository();
+    	} else {
+    		var dummyRep = object component_based::ERepository {};
+    		var mappedRep = dummyRep->map ERepositoryToRepository()->asList()->first();
+    		inModel.rootObjects()[component_based::EComponent]->map EComponentToBasicComponent(mappedRep);
+			inModel.rootObjects()[component_based::EInterface]->map EInterfaceToOperationInterface(mappedRep);
+    	}	
     }
     
     mapping component_based::EAssemblyContext::EAssemblyContextToAssemblyContext(src : target::repository::RepositoryComponent) : target::core::composition::AssemblyContext {

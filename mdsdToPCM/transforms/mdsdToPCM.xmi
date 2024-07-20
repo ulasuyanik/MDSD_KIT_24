@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repository:BasicComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2 ../model/pcm.ecore#//repository" entityName="MediaManager"/>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_based="http://www.example.org/component_based" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xsi:schemaLocation="http://www.example.org/component_based ../../mdsd/model/component_based.ecore http://palladiosimulator.org/PalladioComponentModel/Repository/5.2 ../model/pcm.ecore#//repository">
+  <component_based:ERepository/>
+  <repository:Repository entityName="Repository0" repositoryDescription="">
+    <components__Repository xsi:type="repository:BasicComponent" entityName="MediaManager"/>
+    <interfaces__Repository xsi:type="repository:EventGroup" entityName="providesEventGroup0"/>
+    <interfaces__Repository xsi:type="repository:EventGroup" entityName="requiresEventGroup0"/>
+  </repository:Repository>
+</xmi:XMI>

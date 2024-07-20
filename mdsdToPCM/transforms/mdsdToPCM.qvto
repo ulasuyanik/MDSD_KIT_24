@@ -3,62 +3,215 @@ modeltype target "strict" uses pcm("http://palladiosimulator.org/PalladioCompone
 
 transformation Ecore2Uml(in inModel : source, out outModel : target) {
 
+	property repoCount = 0;
+	property roleCount = 0;
+	
     main() {
-    
-    	var dummySeff:target::seff::ServiceEffectSpecification;
-    	
-        inModel.rootObjects()[component_based::EComponent]->map ComponentToPalladioComponent();
-        inModel.rootObjects()[component_based::EInterface]->map InterfaceToPalladioInterface();
-    }
-
-    mapping component_based::EComponent::ComponentToPalladioComponent() : target::repository::BasicComponent {
-        entityName := self.name;
-        log('Mapping EComponent to BasicComponent: ' + self.name);
-    }
-
-    mapping component_based::EAssemblyContext::AssemblyContextToPalladioAssemblyContext() : target::core::composition::AssemblyContext {
-        entityName := self.name;
-        log('Mapping EAssemblyContext to AssemblyContext: ' + self.name);
-    }
-
-    mapping component_based::EContainer::ContainerToPalladioResourceContainer() : target::resourceenvironment::ResourceContainer {
-        entityName := self.name;
-        log('Mapping EContainer to ResourceContainer: ' + self.name);
-    }
-
-    mapping component_based::ESignature::SignatureToPalladioSignature() : target::repository::OperationSignature {
-        init {
-            log('Instantiating target::repository::Signature for ESignature: ' + self.name);
-        }
-        //returnType__OperationSignature := self.returnType.objectsOfType();
-        entityName := self.name;
-        log('Mapping ESignature to Signature: ' + self.name);
-    }
-
-    mapping component_based::EInterface::InterfaceToPalladioInterface() : target::repository::Interface {
-        init {
-            log('Initialized signatures_Interface as an empty set for Interface: ' + self.name);
-        }
-        entityName := self.name;
-        log('Mapping EInterface to Interface: ' + self.name)
+    	var repos = inModel.rootObjects()[component_based::ERepository];
+    	repos->map ERepositoryToRepository();
     }
     
-    mapping component_based::EAssemblyContext::EACtoAC() : target::core::composition::AssemblyContext {
-    	entityName = self.name;
+    mapping component_based::EAssemblyContext::EAssemblyContextToAssemblyContext(src : target::repository::RepositoryComponent) : target::core::composition::AssemblyContext {
+        entityName := self.name;
+        configParameterUsages__AssemblyContext := null;
+        encapsulatedComponent__AssemblyContext := src;
     }
     
-   helper  mapEnumToPalladioDataType(enumValue : component_based::PossibleReturnTypes) : target::repository::DataType =
-        if self = component_based::EDataType::INT then
-        	target::repository::PrimitiveDataType {
-            primitiveType := target::repository::PrimitiveTypeEnum::INT
-        }
-        else
-        -- Handle default case or unknown types
-         return target::repository::PrimitiveDataType {
-            primitiveType := target::repository::PrimitiveTypeEnum::STRING
-        }
+    mapping component_based::EContainer::EContainerToResourceContainer() : target::resourceenvironment::ResourceContainer {
+        entityName := self.name;
+    }  
+    
+    mapping component_based::EProvidedDelegationConnector::EProvidedDelegationConnectorToProvidedDelegationConnector(src : target::core::composition::AssemblyContext) : target::core::composition::ProvidedDelegationConnector {
+		assemblyContext_ProvidedDelegationConnector := src;
+		innerProvidedRole_ProvidedDelegationConnector := self.linkTo->map ERoleToOperationProvidedRole(src.encapsulatedComponent__AssemblyContext)->asList()->first();
+		outerProvidedRole_ProvidedDelegationConnector := self.linkTo->map ERoleToOperationProvidedRole(src.encapsulatedComponent__AssemblyContext)->asList()->first();
+    }
+    
+    mapping component_based::ERequiredDelegationConnector::ERequiredDelegationConnectorToRequiredDelegationConnector(src : target::core::composition::AssemblyContext) : target::core::composition::RequiredDelegationConnector {
+		assemblyContext_RequiredDelegationConnector := src;
+		innerRequiredRole_RequiredDelegationConnector := self.linkFrom->map ERoleToOperationRequiredRole(src.encapsulatedComponent__AssemblyContext)->asList()->first();
+		outerRequiredRole_RequiredDelegationConnector := self.linkFrom->map ERoleToOperationRequiredRole(src.encapsulatedComponent__AssemblyContext)->asList()->first();
+    }
+    
+    mapping component_based::EAssemblyConnector::EAssemblyConnectorToAssemblyConnector() : target::core::composition::AssemblyConnector {
+		entityName := self.name;
+    }
+    
+    mapping component_based::EComponent::EComponentToBasicComponent(repo : target::repository::Repository) : target::repository::BasicComponent {
+     	passiveResource_BasicComponent := null;
+     	serviceEffectSpecifications__BasicComponent := self.behaviourDescription->map EBehaviourDescriptionToResourceDemandingSEFF(result);
+        entityName := self.name;
+        repository__RepositoryComponent := repo;
+        parentCompleteComponentTypes := null;
+        resourceRequiredRoles__ResourceInterfaceRequiringEntity := null;
         
-    	endif;
+        var providesEventGroup := object target::repository::EventGroup {
+        	eventTypes__EventGroup := null;
+        	repository__Interface := repo;
+        	entityName := "providesEventGroup" + roleCount.toString();
+        };   
+        providedRoles_InterfaceProvidingEntity := self.provides.resultsIn->map ERoleToOperationProvidedRole(result);
+        
+        var requiresEventGroup := object target::repository::EventGroup {
+        	eventTypes__EventGroup := null;
+        	repository__Interface := repo;
+        	entityName := "requiresEventGroup" + roleCount.toString();
+        };  
+        requiredRoles_InterfaceRequiringEntity := self.requires.resultsIn->map ERoleToOperationRequiredRole(result);
+        
+        componentParameterUsage_ImplementationComponentType := null;
+    }
+    
+    mapping component_based::EBehaviourDescription::EBehaviourDescriptionToResourceDemandingSEFF(src : target::repository::BasicComponent) : target::seff::ResourceDemandingSEFF {
+		resourceDemandingInternalBehaviours := null;
+		steps_Behaviour := null;
+		basicComponent_ServiceEffectSpecification := src;
+		abstractBranchTransition_ResourceDemandingBehaviour := self.branch->map EBranchToBranch()->first();
+		abstractLoopAction_ResourceDemandingBehaviour := self.loop->map ELoopToLoop()->first();
+    }
+
+	mapping component_based::ECompositeComponent::ECompositeComponentToCompositeComponent(repo : target::repository::Repository) : target::repository::CompositeComponent {
+        entityName := self.name;
+        repository__RepositoryComponent := repo;
+        parentCompleteComponentTypes := null;
+        resourceRequiredRoles__ResourceInterfaceRequiringEntity := null;
+        
+        var providesEventGroup := object target::repository::EventGroup {
+        	eventTypes__EventGroup := null;
+        	repository__Interface := repo;
+        	entityName := "providesEventGroup" + roleCount.toString();
+        };   
+        providedRoles_InterfaceProvidingEntity := self.provides.resultsIn->map ERoleToOperationProvidedRole(result);
+        
+        var requiresEventGroup := object target::repository::EventGroup {
+        	eventTypes__EventGroup := null;
+        	repository__Interface := repo;
+        	entityName := "requiresEventGroup" + roleCount.toString();
+        };  
+        requiredRoles_InterfaceRequiringEntity := self.requires.resultsIn->map ERoleToOperationRequiredRole(result);
+        
+        componentParameterUsage_ImplementationComponentType := null;
+        eventChannel__ComposedStructure := null;
+        connectors__ComposedStructure := null;
+        assemblyContexts__ComposedStructure := self.encapsulates->EAssemblyContextToAssemblyContext(result);
+	}
+	
+	mapping component_based::ERepository::ERepositoryToRepository() : target::repository::Repository {
+		components__Repository := self.component->map EComponentToBasicComponent(result);
+		interfaces__Repository := self.interface->map EInterfaceToOperationInterface(result);
+		entityName := "Repository" + repoCount.toString();
+		repoCount := repoCount + 1;
+		repositoryDescription := "";
+		failureTypes__Repository := null;		
+	}
+	
+	mapping component_based::ERole::ERoleToOperationRequiredRole(src : target::repository::RepositoryComponent) : target::repository::OperationRequiredRole {
+		entityName := "Role" + roleCount.toString();
+		roleCount := roleCount + 1;
+		//eventGroup__SourceRole := eg;
+		requiringEntity_RequiredRole := src;
+		
+	}
+	
+	mapping component_based::ERole::ERoleToOperationProvidedRole(src : target::repository::RepositoryComponent) : target::repository::OperationProvidedRole {
+		entityName := "Role" + roleCount.toString();
+		roleCount := roleCount + 1;
+		//eventGroup__SinkRole := eg;
+		providingEntity_ProvidedRole := src;
+	}
+
+    mapping component_based::ESignature::ESignatureToOperationSignature(interface : target::repository::OperationInterface) : target::repository::OperationSignature {
+        entityName := self.name;
+        interface__OperationSignature := interface;
+        failureType := null;
+        var returnType := self.returnType;
+        returnType__OperationSignature := returnType->map PossibleReturnTypesToPrimitiveDataType(returnType)->asList()->first();
+        parameters__OperationSignature := self.parameter->map EParameterToParameter(result);
+    }
+    
+    mapping component_based::EParameter::EParameterToParameter(sig : target::repository::OperationSignature): target::repository::Parameter{
+    	parameterName := self.name;
+    	operationSignature__Parameter := sig;
+    	var parameterType := self.type;
+    	dataType__Parameter := parameterType->map PossibleParameterTypesToPrimitiveDataType(parameterType)->asList()->first();
+    	modifier__Parameter := target::repository::ParameterModifier::none;
+    }
+    
+    mapping component_based::EDelegationConnector::EDelegationConnectorToDelegationConnector() : target::core::composition::DelegationConnector {
+		init {}
+	}
+    
+    mapping component_based::EInterface::EInterfaceToOperationInterface(repo : target::repository::Repository) : target::repository::OperationInterface {
+        entityName := self.name;
+        signatures__OperationInterface := self.signature->map ESignatureToOperationSignature(result);
+        //parentInterfaces__Interface := self.inherits->map EInterfaceToOperationInterface();
+        parentInterfaces__Interface := null;
+        protocols__Interface := null;
+        repository__Interface := repo;
+        requiredCharacterisations := null;
+    }
+    
+    mapping component_based::ELink::ELinkToLinkingResource() : target::resourceenvironment::LinkingResource{
+        entityName := self.name;
+    }
+    
+    mapping component_based::EAllocationContext::EAllocationContextToAllocationContext() : target::allocation::AllocationContext{
+    
+    }
+    
+    mapping component_based::EExternalCall::EExternalCallToExternalCallAction() : target::seff::ExternalCallAction{
+    
+    }
+    
+    mapping component_based::EInternalAction::EInternalActionToInternalCallAction() : target::seff::InternalCallAction{
+    
+    }
+    
+    mapping component_based::ELoop ::ELoopToLoop() : target::seff::AbstractLoopAction{
+    	init{}
+    }
+    
+    mapping component_based::EBranch ::EBranchToBranch() : target::seff::AbstractBranchTransition{
+    	init{}
+    }
+    
+    mapping component_based::ESystem::ESystemToSystem() : target::system::System{
+        entityName := self.name;
+    }
+    
+    mapping component_based::PossibleParameterTypes::PossibleParameterTypesToPrimitiveDataType(in parameter_type: PossibleParameterTypes): target::repository::PrimitiveDataType { 
+        if(parameter_type = component_based::PossibleParameterTypes::INT) {
+            type := target::repository::PrimitiveTypeEnum::INT;
+        } else if(parameter_type = component_based::PossibleParameterTypes::STRING) {
+            type := target::repository::PrimitiveTypeEnum::STRING;
+        } else if(parameter_type = component_based::PossibleParameterTypes::BOOLEAN) {
+            type := target::repository::PrimitiveTypeEnum::BOOL;
+        } else if(parameter_type = component_based::PossibleParameterTypes::DOUBLE) {
+            type := target::repository::PrimitiveTypeEnum::DOUBLE;
+        } else if(parameter_type = component_based::PossibleParameterTypes::CHAR) {
+            type := target::repository::PrimitiveTypeEnum::CHAR;
+        } else if(parameter_type = component_based::PossibleParameterTypes::LONG) {
+            type := target::repository::PrimitiveTypeEnum::LONG;
+        } 
+    }
+    
+    mapping component_based::PossibleReturnTypes::PossibleReturnTypesToPrimitiveDataType(in parameter_type: PossibleReturnTypes): target::repository::PrimitiveDataType { 
+    	type :=null;
+    	
+        if(parameter_type = component_based::PossibleReturnTypes::INT) {
+            type := target::repository::PrimitiveTypeEnum::INT;
+        } else if(parameter_type = component_based::PossibleReturnTypes::STRING) {
+            type := target::repository::PrimitiveTypeEnum::STRING;
+        } else if(parameter_type = component_based::PossibleReturnTypes::BOOLEAN) {
+            type := target::repository::PrimitiveTypeEnum::BOOL;
+        } else if(parameter_type = component_based::PossibleReturnTypes::DOUBLE) {
+            type := target::repository::PrimitiveTypeEnum::DOUBLE;
+        } else if(parameter_type = component_based::PossibleReturnTypes::CHAR) {
+            type := target::repository::PrimitiveTypeEnum::CHAR;
+        } else if(parameter_type = component_based::PossibleReturnTypes::LONG) {
+            type := target::repository::PrimitiveTypeEnum::LONG;
+        }
+    }
     
     
 }
